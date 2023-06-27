@@ -81,8 +81,9 @@ export default class RequestResponseLog {
     }
 
     private xmlToJson(xml: string): any {
-        if (parser.validate(xml) === true) {
-            return parser.parse(xml, { ignoreNameSpace: true });
+        if (parser.XMLValidator.validate(xml) === true) {
+            const parser1 = new parser.XMLParser({ removeNSPrefix: true })
+            return parser1.parse(xml);
         }
         return { info: "invalid xml" };
     }
