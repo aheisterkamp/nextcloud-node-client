@@ -2799,13 +2799,14 @@ export default class Client {
 
     const xmlBody: string = await response.text();
 
-    if (parser.validate(xmlBody) !== true) {
+    if (parser.XMLValidator.validate(xmlBody) !== true) {
       throw new ClientError(`The response is not valid XML: ${xmlBody}`, "ERR_RESPONSE_NOT_INVALID_XML");
     }
     const options: any = {
-      ignoreNameSpace: true,
+      removeNSPrefix: true,
     };
-    const body: any = parser.parse(xmlBody, options);
+    const parser1 = new parser.XMLParser(options);
+    const body: any = parser1.parse(xmlBody);
 
     // ensure that we have a multistatus response
     if (!body.multistatus || !body.multistatus.response) {
