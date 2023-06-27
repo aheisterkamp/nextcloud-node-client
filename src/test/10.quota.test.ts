@@ -30,7 +30,7 @@ describe("10-NEXCLOUD-NODE-CLIENT-QUOTA", function () {
         let q;
         try {
             q = await client.getQuota();
-        } catch (e) {
+        } catch (e: any) {
             expect(e, "expect no exception").to.be.equal(null);
         }
         expect(q, "quota to have property used").to.have.property("used");
@@ -59,7 +59,7 @@ describe("10-NEXCLOUD-NODE-CLIENT-QUOTA", function () {
         try {
             q = await lclient.getQuota();
             expect(true, "expect an exception").to.be.equal(false);
-        } catch (e) {
+        } catch (e: any) {
             expect(true, "expect an exception").to.be.equal(true);
         }
 
@@ -87,7 +87,7 @@ describe("10-NEXCLOUD-NODE-CLIENT-QUOTA", function () {
         try {
             q = await lclient.getQuota();
             expect(true, "expect an exception").to.be.equal(false);
-        } catch (e) {
+        } catch (e: any) {
             expect(true, "expect an exception").to.be.equal(true);
         }
 
@@ -114,7 +114,7 @@ describe("10-NEXCLOUD-NODE-CLIENT-QUOTA", function () {
         let q;
         try {
             q = await lclient.getQuota();
-        } catch (e) {
+        } catch (e: any) {
             expect(true, "expect no exception").to.be.equal(e.message);
         }
 
@@ -142,7 +142,7 @@ describe("10-NEXCLOUD-NODE-CLIENT-QUOTA", function () {
         try {
             q = await lclient.getQuota();
             expect(true, "expect an exception").to.be.equal(false);
-        } catch (e) {
+        } catch (e: any) {
             expect(true, "expect an exception").to.be.equal(true);
 
         }

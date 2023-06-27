@@ -42,7 +42,7 @@ describe("14-NEXCLOUD-NODE-CLIENT-STREAMS", function () {
         /*
             try {
                 await share.setPassword("some password");
-            } catch (e) {
+            } catch (e: any) {
                 expect(e.message, "expect no exception setting password").to.be.equal(null);
             }
 */
@@ -63,7 +63,7 @@ describe("14-NEXCLOUD-NODE-CLIENT-STREAMS", function () {
         /*
             try {
                 await share.setPassword("some password");
-            } catch (e) {
+            } catch (e: any) {
                 expect(e.message, "expect no exception setting password").to.be.equal(null);
             }
         */

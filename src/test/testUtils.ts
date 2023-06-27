@@ -44,7 +44,7 @@ export const getNextcloudClient = async (context: string): Promise<Client> => {
         let entries: RequestResponseLogEntry[];
         try {
             entries = await rrLog.getEntries();
-        } catch (e) {
+        } catch (e: any) {
             // throw new Error(`Error: recording does not exist for '${context}' file name; '${rrLog.getFileName()}'`);
             // tslint:disable-next-line:no-console
             // console.log(`recording does not exist for '${context}' file name; '${rrLog.getFileName()}'`);

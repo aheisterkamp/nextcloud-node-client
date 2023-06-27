@@ -228,7 +228,7 @@ export default class Client {
       try {
         const env: EnvironmentVcapServices = new EnvironmentVcapServices("nextcloud");
         server = env.getServer();
-      } catch (e) {
+      } catch (e: any) {
         const serverOptions: IServerOptions = {
           url: Environment.getNextcloudUrl(),
           basicAuth: {
@@ -665,7 +665,7 @@ export default class Client {
       try {
         log.debug("createFolder: folder = ", folderName);
         await this.createFolderInternal(folderName);
-      } catch (e) {
+      } catch (e: any) {
         // create all folders in the path
         const parts: string[] = folderName.split("/");
         parts.shift();
@@ -717,7 +717,7 @@ export default class Client {
     };
     try {
       await this.getHttpResponse(url, requestInit, [204], { description: "File delete" });
-    } catch (err) {
+    } catch (err: any) {
       log.debug("Error in deleteFile ", err.message, requestInit.method, url);
       throw err;
     }
@@ -782,7 +782,7 @@ export default class Client {
     let response: Response;
     try {
       response = await this.getHttpResponse(url, requestInit, [207], { description: "Get FileSystemElements by tags" });
-    } catch (err) {
+    } catch (err: any) {
       log.debug("Error in stat ", err.message, requestInit.method, url);
       throw err;
     }
@@ -791,7 +791,7 @@ export default class Client {
     let properties: any[] = [];
     try {
       properties = await this.getPropertiesFromWebDAVMultistatusResponse(response, "");
-    } catch (e) {
+    } catch (e: any) {
       return result;
     }
 
@@ -841,7 +841,7 @@ export default class Client {
         log.debug("getFolder: found object is file not a folder");
         return null;
       }
-    } catch (e) {
+    } catch (e: any) {
       log.debug("getFolder: exception occurred calling stat ", e.message);
       return null;
     }
@@ -945,7 +945,7 @@ export default class Client {
         log.debug("getFile: found object is a folder not a file");
         return null;
       }
-    } catch (e) {
+    } catch (e: any) {
       log.debug("getFile: exception occurred calling stat ", e.message);
       return null;
     }
@@ -970,7 +970,7 @@ export default class Client {
     };
     try {
       await this.getHttpResponse(url, requestInit, [201], { description: "File move" });
-    } catch (err) {
+    } catch (err: any) {
       log.debug(`Error in move file ${err.message as string} ${requestInit.method || ""} source: ${url} destination: ${destinationUrl}`);
       throw new ClientError(`Error: moving file failed: source=" ${sourceFileName} target= ${targetFileName} - ${err.message as string}`, "ERR_FILE_MOVE_FAILED");
     }
@@ -1002,7 +1002,7 @@ export default class Client {
     };
     try {
       await this.getHttpResponse(url, requestInit, [201], { description: "Folder move" });
-    } catch (err) {
+    } catch (err: any) {
       log.debug(`Error in move folder ${err.message as string} ${requestInit.method || ""} source: ${url} destination: ${destinationUrl}`);
       throw new ClientError(`Error: moving folder failed: source=${sourceFolderName} target=${tarName} - ${err.message as string}`, "ERR_FOLDER_MOVE_FAILED");
     }
@@ -1030,7 +1030,7 @@ export default class Client {
     let response: Response;
     try {
       response = await this.getHttpResponse(url, requestInit, [200], { description: "File get content" });
-    } catch (err) {
+    } catch (err: any) {
       log.debug(`Error getContent ${url} - error ${err.message as string}`);
       throw err;
     }
@@ -1053,11 +1053,11 @@ export default class Client {
     let response: Response;
     try {
       response = await this.getHttpResponse(url, requestInit, [200], { description: "File pipe content stream" });
-    } catch (err) {
+    } catch (err: any) {
       log.debug(`Error getContent ${url} - error ${err.message as string}`);
       throw err;
     }
-    response.body.pipe(destination);
+    response.body?.pipe(destination);
   }
 
   /**
@@ -2127,7 +2127,7 @@ export default class Client {
         try {
           user = await this.createUser({ id: option.id, email: option.email, password: option.password });
           userReport.message = `User ${option.id} created`;
-        } catch (e) {
+        } catch (e: any) {
           userReport.message = `Create user ${option.id} failed ${e.message as string}`;
           report.push(userReport);
           continue;
@@ -2148,7 +2148,7 @@ export default class Client {
           try {
             await user.disable();
             userReport.changes.push({ property: "enabled", previousValue: "true", newValue: "false" });
-          } catch (e) {
+          } catch (e: any) {
             userReport.changes.push({ property: "enabled", previousValue: "true", newValue: "true", error: e.message });
           }
         }
@@ -2157,7 +2157,7 @@ export default class Client {
           try {
             await user.enable();
             userReport.changes.push({ property: "enabled", previousValue: "false", newValue: "true" });
-          } catch (e) {
+          } catch (e: any) {
             userReport.changes.push({ property: "enabled", previousValue: "false", newValue: "false", error: e.message });
           }
         }
@@ -2171,7 +2171,7 @@ export default class Client {
           try {
             await user.demoteFromSuperAdmin();
             userReport.changes.push({ property: "superAdmin", previousValue: "true", newValue: "false" });
-          } catch (e) {
+          } catch (e: any) {
             userReport.changes.push({ property: "superAdmin", previousValue: "true", newValue: "true", error: e.message });
           }
         }
@@ -2180,7 +2180,7 @@ export default class Client {
           try {
             await user.promoteToSuperAdmin();
             userReport.changes.push({ property: "superAdmin", previousValue: "false", newValue: "true" });
-          } catch (e) {
+          } catch (e: any) {
             userReport.changes.push({ property: "superAdmin", previousValue: "false", newValue: "false", error: e.message });
           }
         }
@@ -2209,14 +2209,14 @@ export default class Client {
           if (!userGroup) {
             try {
               userGroup = await this.createUserGroup(groupId);
-            } catch (e) {
+            } catch (e: any) {
               error = e as Error;
               break;
             }
           }
           try {
             await user.addToMemberUserGroup(userGroup);
-          } catch (e) {
+          } catch (e: any) {
             error = e as Error;
             break;
           }
@@ -2225,7 +2225,7 @@ export default class Client {
         for (const groupId of groupsToRemove) {
           try {
             await user.removeFromMemberUserGroup(new UserGroup(this, groupId));
-          } catch (e) {
+          } catch (e: any) {
             error = e as Error;
             break;
           }
@@ -2255,14 +2255,14 @@ export default class Client {
           if (!userGroup) {
             try {
               userGroup = await this.createUserGroup(groupId);
-            } catch (e) {
+            } catch (e: any) {
               error = e as Error;
               break;
             }
           }
           try {
             await user.promoteToUserGroupSubadmin(userGroup);
-          } catch (e) {
+          } catch (e: any) {
             error = e as Error;
             break;
           }
@@ -2271,7 +2271,7 @@ export default class Client {
         for (const groupId of groupsToRemove) {
           try {
             await user.demoteFromSubadminUserGroup(new UserGroup(this, groupId));
-          } catch (e) {
+          } catch (e: any) {
             error = e as Error;
             break;
           }
@@ -2294,7 +2294,7 @@ export default class Client {
           try {
             await user.setDisplayName(option.displayName);
             userReport.changes.push({ property, previousValue, newValue });
-          } catch (e) {
+          } catch (e: any) {
             let message = "";
             if (e instanceof Error) {
               message = e.message;
@@ -2315,7 +2315,7 @@ export default class Client {
           try {
             await user.setEmail(option.email);
             userReport.changes.push({ property, previousValue, newValue });
-          } catch (e) {
+          } catch (e: any) {
             let message = "";
             if (e instanceof Error) {
               message = e.message;
@@ -2336,7 +2336,7 @@ export default class Client {
           try {
             await user.setLanguage(option.language);
             userReport.changes.push({ property, previousValue, newValue });
-          } catch (e) {
+          } catch (e: any) {
             let message = "";
             if (e instanceof Error) {
               message = e.message;
@@ -2357,7 +2357,7 @@ export default class Client {
           try {
             await user.setLocale(option.locale);
             userReport.changes.push({ property, previousValue, newValue });
-          } catch (e) {
+          } catch (e: any) {
             let message = "";
             if (e instanceof Error) {
               message = e.message;
@@ -2378,7 +2378,7 @@ export default class Client {
           try {
             await user.setTwitter(option.twitter);
             userReport.changes.push({ property, previousValue, newValue });
-          } catch (e) {
+          } catch (e: any) {
             let message = "";
             if (e instanceof Error) {
               message = e.message;
@@ -2399,7 +2399,7 @@ export default class Client {
           try {
             await user.setPhone(option.phone);
             userReport.changes.push({ property, previousValue, newValue });
-          } catch (e) {
+          } catch (e: any) {
             let message = "";
             if (e instanceof Error) {
               message = e.message;
@@ -2420,7 +2420,7 @@ export default class Client {
         try {
           await user.setPassword(option.password);
           userReport.changes.push({ property, previousValue, newValue: previousValue });
-        } catch (e) {
+        } catch (e: any) {
           let message = "";
           if (e instanceof Error) {
             message = e.message;
@@ -2440,7 +2440,7 @@ export default class Client {
           try {
             await user.setAddress(option.address);
             userReport.changes.push({ property, previousValue, newValue });
-          } catch (e) {
+          } catch (e: any) {
             let message = "";
             if (e instanceof Error) {
               message = e.message;
@@ -2461,7 +2461,7 @@ export default class Client {
           try {
             await user.setWebsite(option.website);
             userReport.changes.push({ property, previousValue, newValue });
-          } catch (e) {
+          } catch (e: any) {
             let message = "";
             if (e instanceof Error) {
               message = e.message;
@@ -2482,7 +2482,7 @@ export default class Client {
           try {
             await user.setQuota(option.quota);
             userReport.changes.push({ property, previousValue, newValue });
-          } catch (e) {
+          } catch (e: any) {
             let message = "";
             if (e instanceof Error) {
               message = e.message;
@@ -2504,7 +2504,7 @@ export default class Client {
           try {
             await user.resendWelcomeEmail();
             userReport.changes.push({ property, previousValue, newValue });
-          } catch (e) {
+          } catch (e: any) {
             let message = "";
             if (e instanceof Error) {
               message = e.message;
@@ -2557,7 +2557,7 @@ export default class Client {
 
     return share;
 
-    /* } catch (e) {
+    /* } catch (e: any) {
             log.debug("result " + e.message);
             log.debug("requestInit ", JSON.stringify(requestInit, null, 4));
             log.debug("headers " + JSON.stringify(headers, null, 4));
@@ -2600,7 +2600,7 @@ export default class Client {
     return await response.json();
 
     /*
-    } catch (e) {
+    } catch (e: any) {
         log.debug("result " + e.message);
         log.debug("requestInit ", JSON.stringify(requestInit, null, 4));
         log.debug("headers " + JSON.stringify(headers, null, 4));
@@ -2936,7 +2936,7 @@ export default class Client {
           }
         }
       }
-    } catch (e) {
+    } catch (e: any) {
       log.debug("Contents: exception occurred ", e.message);
     }
 
@@ -2970,7 +2970,7 @@ export default class Client {
     };
     try {
       await this.getHttpResponse(url, requestInit, [201], { description: "Folder create" });
-    } catch (err) {
+    } catch (err: any) {
       log.debug(`Error in createFolderInternal ${err.message as string} ${requestInit.method || ""} ${url}`);
       throw err;
     }
@@ -3006,7 +3006,7 @@ export default class Client {
     let response: Response;
     try {
       response = await this.getHttpResponse(url, requestInit, [207], { description: "File/Folder get details" });
-    } catch (err) {
+    } catch (err: any) {
       log.debug(`Error in stat ${err.message as string} ${requestInit.method || ""} ${url}`);
       throw err;
     }

@@ -14,7 +14,7 @@ describe("05-NEXCLOUD-NODE-CLIENT-REQUEST-RESPONSE-LOG", function () {
         try {
             await fsPromises.rmdir(baseDirName, { recursive: true });
             // tslint:disable-next-line:no-empty
-        } catch (e) { }
+        } catch (e: any) { }
     });
 
     it("01 get request response log instance", async () => {
@@ -33,7 +33,7 @@ describe("05-NEXCLOUD-NODE-CLIENT-REQUEST-RESPONSE-LOG", function () {
         try {
             await rrLog.setContext(testContextName);
             expect(true, "expect no exception").to.be.equal(true);
-        } catch (e) {
+        } catch (e: any) {
             expect(e.message, "expect no exception").to.be.equal("no exception");
         }
 
@@ -63,19 +63,19 @@ describe("05-NEXCLOUD-NODE-CLIENT-REQUEST-RESPONSE-LOG", function () {
         try {
             await rrLog.setContext(testContextName);
             expect(true, "expect no exception").to.be.equal(true);
-        } catch (e) {
+        } catch (e: any) {
             expect(e.message, "expect no exception").to.be.equal("no exception");
         }
 
         try {
             await rrLog.addEntry(new RequestResponseLogEntry(requestLogEntry, responseLogEntry));
-        } catch (e) {
+        } catch (e: any) {
             expect(e.message, "expect no exception").to.be.equal("expect no exception");
         }
 
         try {
             await rrLog.addEntry(new RequestResponseLogEntry(requestLogEntry, responseLogEntry));
-        } catch (e) {
+        } catch (e: any) {
             expect(e.message, "expect no exception").to.be.equal("expect no exception");
         }
 
@@ -111,14 +111,14 @@ describe("05-NEXCLOUD-NODE-CLIENT-REQUEST-RESPONSE-LOG", function () {
         try {
             await rrLog.addEntry(new RequestResponseLogEntry(requestLogEntry, responseLogEntry));
             expect(true, "expect an exception when adding an entry without context").to.be.equal(false);
-        } catch (e) {
+        } catch (e: any) {
             expect(e.message, "expect exception").to.be.equal("Error while recording, context not set");
         }
 
         try {
             const rrLogEntries: RequestResponseLogEntry[] = await rrLog.getEntries();
             expect(true, "expect an exception when getting the entries without context").to.be.equal(false);
-        } catch (e) {
+        } catch (e: any) {
             expect(e.message, "expect exception").to.be.equal("Error while getting recording request, context not set");
         }
 
@@ -148,19 +148,19 @@ describe("05-NEXCLOUD-NODE-CLIENT-REQUEST-RESPONSE-LOG", function () {
         try {
             await rrLog.setContext(testContextName);
             expect(true, "expect no exception").to.be.equal(true);
-        } catch (e) {
+        } catch (e: any) {
             expect(e.message, "expect no exception").to.be.equal("no exception");
         }
 
         try {
             await rrLog.addEntry(new RequestResponseLogEntry(requestLogEntry, responseLogEntry));
-        } catch (e) {
+        } catch (e: any) {
             expect(e.message, "expect no exception").to.be.equal("expect no exception");
         }
 
         try {
             await rrLog.addEntry(new RequestResponseLogEntry(requestLogEntry, responseLogEntry));
-        } catch (e) {
+        } catch (e: any) {
             expect(e.message, "expect no exception").to.be.equal("expect no exception");
         }
 
@@ -194,19 +194,19 @@ describe("05-NEXCLOUD-NODE-CLIENT-REQUEST-RESPONSE-LOG", function () {
         try {
             await rrLog.setContext(testContextName);
             expect(true, "expect no exception").to.be.equal(true);
-        } catch (e) {
+        } catch (e: any) {
             expect(e.message, "expect no exception").to.be.equal("no exception");
         }
 
         try {
             await rrLog.addEntry(new RequestResponseLogEntry(requestLogEntry, responseLogEntry));
-        } catch (e) {
+        } catch (e: any) {
             expect(e.message, "expect no exception").to.be.equal("expect no exception");
         }
 
         try {
             await rrLog.addEntry(new RequestResponseLogEntry(requestLogEntry, responseLogEntry));
-        } catch (e) {
+        } catch (e: any) {
             expect(e.message, "expect no exception").to.be.equal("expect no exception");
         }
 
@@ -241,19 +241,19 @@ describe("05-NEXCLOUD-NODE-CLIENT-REQUEST-RESPONSE-LOG", function () {
         try {
             await rrLog.setContext(testContextName);
             expect(true, "expect no exception").to.be.equal(true);
-        } catch (e) {
+        } catch (e: any) {
             expect(e.message, "expect no exception").to.be.equal("no exception");
         }
 
         try {
             await rrLog.addEntry(new RequestResponseLogEntry(requestLogEntry, responseLogEntry));
-        } catch (e) {
+        } catch (e: any) {
             expect(e.message, "expect no exception").to.be.equal("expect no exception");
         }
 
         try {
             await rrLog.addEntry(new RequestResponseLogEntry(requestLogEntry, responseLogEntry));
-        } catch (e) {
+        } catch (e: any) {
             expect(e.message, "expect no exception").to.be.equal("expect no exception");
         }
 
@@ -291,13 +291,13 @@ describe("05-NEXCLOUD-NODE-CLIENT-REQUEST-RESPONSE-LOG", function () {
         try {
             await rrLog.setContext(testContextName);
             expect(true, "expect no exception").to.be.equal(true);
-        } catch (e) {
+        } catch (e: any) {
             expect(e.message, "expect no exception").to.be.equal("no exception");
         }
 
         try {
             await rrLog.addEntry(new RequestResponseLogEntry(requestLogEntry, responseLogEntry));
-        } catch (e) {
+        } catch (e: any) {
             expect(e.message, "expect no exception").to.be.equal("expect no exception");
         }
 

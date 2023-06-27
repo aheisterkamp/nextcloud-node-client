@@ -66,7 +66,7 @@ export default class UploadFolderCommand extends Command {
         const fsf: FileSystemFolder = new FileSystemFolder(this.folderName);
         try {
             fileNames = await fsf.getFileNames();
-        } catch (e) {
+        } catch (e: any) {
             this.resultMetaData.errors.push(e);
             this.status = CommandStatus.failed;
             this.percentCompleted = 100;

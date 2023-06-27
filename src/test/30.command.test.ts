@@ -385,7 +385,7 @@ describe("30-NEXCLOUD-NODE-COMMAND", function () {
         let error: Error | null = null
         try {
             await command.execute();
-        } catch (e) {
+        } catch (e: any) {
             error = e;
         }
         expect(error, "it should not be possible to execute a command again").to.be.instanceOf(CommandAlreadyExecutedError);

@@ -31,7 +31,7 @@ describe("03-NEXCLOUD-NODE-CLIENT-COMMENT", function () {
         try {
             file = await client.createFile(fileName, Buffer.from("file with comments"));
             errorOccurred = false;
-        } catch (e) {
+        } catch (e: any) {
             errorOccurred = true;
         }
 
@@ -45,14 +45,14 @@ describe("03-NEXCLOUD-NODE-CLIENT-COMMENT", function () {
                 await file.addComment("C3");
                 await file.addComment("C4");
 
-            } catch (e) {
+            } catch (e: any) {
                 expect(e.message, "expect no exception").to.be.equal("");
             }
 
             try {
                 const comments = await file.getComments(1, 1);
                 expect(comments[0]).to.be.equal("C3");
-            } catch (e) {
+            } catch (e: any) {
                 expect(e.message, "expect no exception").to.be.equal("");
             }
         }
@@ -68,7 +68,7 @@ describe("03-NEXCLOUD-NODE-CLIENT-COMMENT", function () {
         try {
             folder = await client.createFolder(folderName);
             errorOccurred = false;
-        } catch (e) {
+        } catch (e: any) {
             errorOccurred = true;
         }
 
@@ -82,21 +82,21 @@ describe("03-NEXCLOUD-NODE-CLIENT-COMMENT", function () {
                 await folder.addComment("C3");
                 await folder.addComment("C4");
 
-            } catch (e) {
+            } catch (e: any) {
                 expect(e.message, "expect no exception").to.be.equal("");
             }
 
             try {
                 const comments = await folder.getComments(1, 1);
                 expect(comments[0]).to.be.equal("C3");
-            } catch (e) {
+            } catch (e: any) {
                 expect(e.message, "expect no exception").to.be.equal("");
             }
 
             try {
                 const comments = await folder.getComments();
                 expect(comments[0]).to.be.equal("C4");
-            } catch (e) {
+            } catch (e: any) {
                 expect(e.message, "expect no exception").to.be.equal("");
             }
             await folder.delete();

@@ -96,7 +96,7 @@ export default class DownloadFolderCommand extends Command {
             }
             this.resultMetaData.messages.push(files.length + " files downloaded");
 
-        } catch (e) {
+        } catch (e: any) {
             debug(e.message);
             this.resultMetaData.errors.push(e.message);
         }

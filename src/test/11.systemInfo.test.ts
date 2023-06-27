@@ -46,7 +46,7 @@ describe("11-NEXCLOUD-NODE-CLIENT-SYSTEM-INFO", function () {
             expect(sysInfo.nextcloudClient).to.have.property("version");
             expect(sysInfo.nextcloudClient.version).to.be.a("string");
 
-        } catch (e) {
+        } catch (e: any) {
             expect(e, "expect no exception").to.be.equal(null);
         }
 
@@ -72,7 +72,7 @@ describe("11-NEXCLOUD-NODE-CLIENT-SYSTEM-INFO", function () {
         let errorCode = "";
         try {
             await lclient.getSystemInfo();
-        } catch (e) {
+        } catch (e: any) {
             errorCode = e.code || e.message;
         }
         expect(errorCode, "expect an exception with the code").to.be.equal("ERR_SYSTEM_INFO_MISSING_DATA");
@@ -98,7 +98,7 @@ describe("11-NEXCLOUD-NODE-CLIENT-SYSTEM-INFO", function () {
         let errorCode = "";
         try {
             await lclient.getSystemInfo();
-        } catch (e) {
+        } catch (e: any) {
             errorCode = e.code || e.message;
         }
         expect(errorCode, "expect an exception with the code").to.be.equal("ERR_SYSTEM_INFO_MISSING_DATA");
@@ -124,7 +124,7 @@ describe("11-NEXCLOUD-NODE-CLIENT-SYSTEM-INFO", function () {
         let errorCode = "";
         try {
             await lclient.getSystemInfo();
-        } catch (e) {
+        } catch (e: any) {
             errorCode = e.code || e.message;
         }
         expect(errorCode, "expect an exception with the code").to.be.equal("ERR_SYSTEM_INFO_MISSING_DATA");
@@ -150,7 +150,7 @@ describe("11-NEXCLOUD-NODE-CLIENT-SYSTEM-INFO", function () {
         let errorCode = "";
         try {
             await lclient.getSystemInfo();
-        } catch (e) {
+        } catch (e: any) {
             errorCode = e.code || e.message;
         }
         expect(errorCode, "expect an exception with the code").to.be.equal("ERR_SYSTEM_INFO_MISSING_DATA");
@@ -176,7 +176,7 @@ describe("11-NEXCLOUD-NODE-CLIENT-SYSTEM-INFO", function () {
         let errorCode = "";
         try {
             await lclient.getSystemInfo();
-        } catch (e) {
+        } catch (e: any) {
             errorCode = e.code || e.message;
         }
         expect(errorCode, "expect an exception with the code").to.be.equal("ERR_SYSTEM_INFO_MISSING_DATA");
@@ -202,7 +202,7 @@ describe("11-NEXCLOUD-NODE-CLIENT-SYSTEM-INFO", function () {
         let errorCode = "";
         try {
             await lclient.getSystemInfo();
-        } catch (e) {
+        } catch (e: any) {
             errorCode = e.code || e.message;
         }
         expect(errorCode, "expect an exception with the code").to.be.equal("ERR_SYSTEM_INFO_MISSING_DATA");
@@ -228,7 +228,7 @@ describe("11-NEXCLOUD-NODE-CLIENT-SYSTEM-INFO", function () {
         let errorCode = "";
         try {
             await lclient.getSystemInfo();
-        } catch (e) {
+        } catch (e: any) {
             errorCode = e.code || e.message;
         }
         expect(errorCode, "expect an exception with the code").to.be.equal("ERR_SYSTEM_INFO_MISSING_DATA");
@@ -246,7 +246,7 @@ describe("11-NEXCLOUD-NODE-CLIENT-SYSTEM-INFO", function () {
             expect(sysInfo.uptimeString).to.be.a("string");
             expect(sysInfo).to.have.property("timeServersString");
             expect(sysInfo.timeServersString).to.be.a("string");
-        } catch (e) {
+        } catch (e: any) {
             expect(e, "expect no exception").to.be.equal(null);
         }
 
@@ -272,7 +272,7 @@ describe("11-NEXCLOUD-NODE-CLIENT-SYSTEM-INFO", function () {
         let errorCode = "";
         try {
             await lclient.getSystemBasicData();
-        } catch (e) {
+        } catch (e: any) {
             errorCode = e.code || e.message;
         }
         expect(errorCode, "expect an exception with the code").to.be.equal("ERR_SYSTEM_INFO_MISSING_DATA");
@@ -298,7 +298,7 @@ describe("11-NEXCLOUD-NODE-CLIENT-SYSTEM-INFO", function () {
         let errorCode = "";
         try {
             await lclient.getSystemBasicData();
-        } catch (e) {
+        } catch (e: any) {
             errorCode = e.code || e.message;
         }
         expect(errorCode, "expect an exception with the code").to.be.equal("ERR_SYSTEM_INFO_MISSING_DATA");
@@ -324,7 +324,7 @@ describe("11-NEXCLOUD-NODE-CLIENT-SYSTEM-INFO", function () {
         let errorCode = "";
         try {
             await lclient.getSystemBasicData();
-        } catch (e) {
+        } catch (e: any) {
             errorCode = e.code || e.message;
         }
         expect(errorCode, "expect an exception with the code").to.be.equal("ERR_SYSTEM_INFO_MISSING_DATA");

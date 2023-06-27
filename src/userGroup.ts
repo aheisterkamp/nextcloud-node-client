@@ -23,7 +23,7 @@ export default class UserGroup {
 
         try {
             return await this.client.deleteUserGroup(this.id);
-        } catch (e) {
+        } catch (e: any) {
             if (e instanceof UserGroupDoesNotExistError) {
                 return;
             }

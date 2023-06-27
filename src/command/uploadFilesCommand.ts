@@ -63,11 +63,11 @@ export default class UploadFilesCommand extends Command {
                         newFile = await this.client.createFile(file.targetFileName, data);
                         this.resultMetaData.messages.push(`${file.targetFileName}`);
                         this.bytesUploaded += data.length;
-                    } catch (e) {
+                    } catch (e: any) {
                         this.resultMetaData.errors.push(`${file.targetFileName}: ${e.message}`);
                         debug(file.targetFileName, e);
                     }
-                } catch (e) {
+                } catch (e: any) {
                     this.resultMetaData.errors.push(`${file.targetFileName}: ${e.message}`);
                 }
 
@@ -80,7 +80,7 @@ export default class UploadFilesCommand extends Command {
                 }
             }
 
-        } catch (e) {
+        } catch (e: any) {
             debug(e.message);
             this.resultMetaData.errors.push(e.message);
             this.percentCompleted = 100;

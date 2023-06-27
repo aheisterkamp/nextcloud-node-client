@@ -48,7 +48,7 @@ export default class GetFilesRecursivelyCommand extends Command {
             await this.processFolder(this.sourceFolder, 100);
             // console.log("file count", this.files.length);
             this.resultMetaData.messages.push(`${this.files.length} files found`);
-        } catch (e) {
+        } catch (e: any) {
             debug(e.message);
             this.resultMetaData.errors.push(e.message);
         }

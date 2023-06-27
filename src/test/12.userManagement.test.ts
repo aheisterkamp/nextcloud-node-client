@@ -53,7 +53,7 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
         let error: Error | null = null;
         try {
             await client.deleteUser(userId);
-        } catch (e) {
+        } catch (e: any) {
             error = e;
         }
         expect(error).to.be.instanceOf(UserNotFoundError);
@@ -65,7 +65,7 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
         let user: User | null = null;
         try {
             user = await client.getUser(userId);
-        } catch (e) {
+        } catch (e: any) {
             error = e;
         }
 
@@ -78,7 +78,7 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
         let error: Error | null = null;
         try {
             await client.enableUser(userId);
-        } catch (e) {
+        } catch (e: any) {
             error = e;
         }
         expect(error).to.be.instanceOf(UserNotFoundError);
@@ -89,7 +89,7 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
         let error: Error | null = null;
         try {
             await client.disableUser(userId);
-        } catch (e) {
+        } catch (e: any) {
             error = e;
         }
         expect(error).to.be.instanceOf(UserNotFoundError);
@@ -100,7 +100,7 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
         let error: Error | null = null;
         try {
             await client.getUserData(userId);
-        } catch (e) {
+        } catch (e: any) {
             error = e;
         }
         expect(error).to.be.instanceOf(UserNotFoundError);
@@ -114,13 +114,13 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
         // ensure that the user is not available
         try {
             await client.deleteUser(userId);
-        } catch (e) {
+        } catch (e: any) {
             // nop
         }
 
         try {
             user = await client.createUser({ id: userId, password: "123456" });
-        } catch (e) {
+        } catch (e: any) {
             error = e;
         }
         // password is under the most common ones
@@ -128,7 +128,7 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
 
         try {
             user = await client.createUser({ id: userId });
-        } catch (e) {
+        } catch (e: any) {
             error = e;
         }
         // email address is missing
@@ -136,7 +136,7 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
 
         try {
             user = await client.createUser({ id: userId, email: "This in an invalid @email.address" });
-        } catch (e) {
+        } catch (e: any) {
             error = e;
         }
         // wrong email address
@@ -145,7 +145,7 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
         error = null;
         try {
             user = await client.createUser({ id: userId, password: "This is a test password" });
-        } catch (e) {
+        } catch (e: any) {
             error = e;
         }
         // user should be created successfully
@@ -155,7 +155,7 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
         let user2: User | null = null;
         try {
             user2 = await client.createUser({ id: userId, password: "This is a test password 1" });
-        } catch (e) {
+        } catch (e: any) {
             error = e;
         }
         // user already exists
@@ -164,7 +164,7 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
 
         try {
             await user!.delete();
-        } catch (e) {
+        } catch (e: any) {
             // nop
         }
 
@@ -178,14 +178,14 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
         // ensure that the user is not available
         try {
             await client.deleteUser(userId);
-        } catch (e) {
+        } catch (e: any) {
             // nop
         }
 
         // create user with email address
         try {
             user = await client.createUser({ id: userId, email: "h.t.borstenson@gmail.com" });
-        } catch (e) {
+        } catch (e: any) {
             error = e;
         }
         // user should be created successfully
@@ -194,7 +194,7 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
 
         try {
             await client.deleteUser(userId);
-        } catch (e) {
+        } catch (e: any) {
             error = e;
         }
         expect(error).to.be.equal(null);
@@ -203,7 +203,7 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
         error = null;
         try {
             user = await client.createUser({ id: userId, email: "h.t.borstenson@gmail.com", password: "this is a secure password" });
-        } catch (e) {
+        } catch (e: any) {
             error = e;
         }
         // user should be created successfully
@@ -213,7 +213,7 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
         // ensure that the user is not available
         try {
             await client.deleteUser(userId);
-        } catch (e) {
+        } catch (e: any) {
             // nop
         }
 
@@ -227,14 +227,14 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
         // ensure that the user is not available
         try {
             await client.deleteUser(userId);
-        } catch (e) {
+        } catch (e: any) {
             // nop
         }
 
         // create user with password
         try {
             user = await client.createUser({ id: userId, password: "this is a secure password" });
-        } catch (e) {
+        } catch (e: any) {
             error = e;
         }
         // user should be created successfully
@@ -248,7 +248,7 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
         // disable user
         try {
             await user?.disable();
-        } catch (e) {
+        } catch (e: any) {
             error = e;
         }
         expect(error).to.be.equal(null);
@@ -260,7 +260,7 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
         // enable user
         try {
             await user?.enable();
-        } catch (e) {
+        } catch (e: any) {
             error = e;
         }
         expect(error).to.be.equal(null);
@@ -272,7 +272,7 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
         // ensure that the user is not available
         try {
             await client.deleteUser(userId);
-        } catch (e) {
+        } catch (e: any) {
             // nop
         }
 
@@ -295,7 +295,7 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
             // delete user
             try {
                 await client.deleteUser(users[i].id);
-            } catch (e) {
+            } catch (e: any) {
                 // nop
             }
         }
@@ -305,7 +305,7 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
             // create user with password
             try {
                 users[i].user = await client.createUser({ id: users[i].id, password: "this is a secure password" });
-            } catch (e) {
+            } catch (e: any) {
                 error = e;
             }
             expect(error).to.be.equal(null);
@@ -317,7 +317,7 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
         // get users
         try {
             result = await client.getUsers(userIdPrefix)
-        } catch (e) {
+        } catch (e: any) {
             error = e;
         }
         expect(error).to.be.equal(null);
@@ -328,7 +328,7 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
         // get users
         try {
             result = await client.getUsers(userIdPrefix, 2)
-        } catch (e) {
+        } catch (e: any) {
             error = e;
         }
         expect(error).to.be.equal(null);
@@ -339,7 +339,7 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
         // get users
         try {
             result = await client.getUsers(userIdPrefix, 2, userCount - 1)
-        } catch (e) {
+        } catch (e: any) {
             error = e;
         }
         expect(error).to.be.equal(null);
@@ -348,7 +348,7 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
         // get users with wrong limit
         try {
             await client.getUsers(userIdPrefix, -2)
-        } catch (e) {
+        } catch (e: any) {
             error = e;
         }
         expect(error).to.be.instanceOf(QueryLimitError);
@@ -357,7 +357,7 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
         error = null;
         try {
             await client.getUsers(userIdPrefix, 1, -1)
-        } catch (e) {
+        } catch (e: any) {
             error = e;
         }
         expect(error).to.be.instanceOf(QueryOffsetError);
@@ -367,7 +367,7 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
             // delete user
             try {
                 await client.deleteUser(users[i].id);
-            } catch (e) {
+            } catch (e: any) {
                 // nop
             }
         }
@@ -383,14 +383,14 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
         // ensure that the user is not available
         try {
             await client.deleteUser(userId);
-        } catch (e) {
+        } catch (e: any) {
             // nop
         }
 
         // create user with password
         try {
             user = await client.createUser({ id: userId, password: "this is a secure password" });
-        } catch (e) {
+        } catch (e: any) {
             error = e;
         }
         // user should be created successfully
@@ -403,7 +403,7 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
         let quota: IUserOptionsQuota;
         try {
             quota = await user!.getQuota();
-        } catch (e) {
+        } catch (e: any) {
             error = e;
         }
         expect(error, "User getQuota expect no error").to.be.equal(null);
@@ -415,14 +415,14 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
         error = null;
         try {
             await user!.setQuota(setValue);
-        } catch (e) {
+        } catch (e: any) {
             error = e;
         }
         expect(error).to.be.equal(null);
 
         try {
             quota = await user!.getQuota();
-        } catch (e) {
+        } catch (e: any) {
             error = e;
         }
         expect(error, "User getQuota expect no error").to.be.equal(null);
@@ -432,14 +432,14 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
         error = null;
         try {
             await user!.setQuota(setValue);
-        } catch (e) {
+        } catch (e: any) {
             error = e;
         }
         expect(error).to.be.equal(null);
 
         try {
             quota = await user!.getQuota();
-        } catch (e) {
+        } catch (e: any) {
             error = e;
         }
         expect(error, "User getQuota expect no error").to.be.equal(null);
@@ -449,7 +449,7 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
         try {
             quotaUF = await user!.getQuotaUserFriendly();
             // console.log(JSON.stringify(quotaUF, null, 4));
-        } catch (e) {
+        } catch (e: any) {
             error = e;
         }
         expect(error, "get getQuotaUserFriendly expect no error").to.be.equal(null);
@@ -461,7 +461,7 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
         let lastlogin: Date | null = null;
         try {
             lastlogin = await user!.getLastLogin();
-        } catch (e) {
+        } catch (e: any) {
             error = e;
         }
 
@@ -476,14 +476,14 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
         error = null;
         try {
             await user!.setDisplayName(setValue);
-        } catch (e) {
+        } catch (e: any) {
             error = e;
         }
         expect(error).to.be.equal(null);
 
         try {
             value = await user!.getDisplayName();
-        } catch (e) {
+        } catch (e: any) {
             error = e;
         }
 
@@ -498,14 +498,14 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
         error = null;
         try {
             await user!.setPhone(setValue);
-        } catch (e) {
+        } catch (e: any) {
             error = e;
         }
         expect(error).to.be.equal(null);
 
         try {
             value = await user!.getPhone();
-        } catch (e) {
+        } catch (e: any) {
             error = e;
         }
 
@@ -520,14 +520,14 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
         error = null;
         try {
             await user!.setWebsite(setValue);
-        } catch (e) {
+        } catch (e: any) {
             error = e;
         }
         expect(error).to.be.equal(null);
 
         try {
             value = await user!.getWebsite();
-        } catch (e) {
+        } catch (e: any) {
             error = e;
         }
 
@@ -542,14 +542,14 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
         error = null;
         try {
             await user!.setTwitter(setValue);
-        } catch (e) {
+        } catch (e: any) {
             error = e;
         }
         expect(error).to.be.equal(null);
 
         try {
             value = await user!.getTwitter();
-        } catch (e) {
+        } catch (e: any) {
             error = e;
         }
 
@@ -564,14 +564,14 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
         error = null;
         try {
             await user!.setAddress(setValue);
-        } catch (e) {
+        } catch (e: any) {
             error = e;
         }
         expect(error).to.be.equal(null);
 
         try {
             value = await user!.getAddress();
-        } catch (e) {
+        } catch (e: any) {
             error = e;
         }
 
@@ -586,14 +586,14 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
         error = null;
         try {
             await user!.setLanguage(setValue);
-        } catch (e) {
+        } catch (e: any) {
             error = e;
         }
         expect(error).to.be.equal(null);
 
         try {
             value = await user!.getLanguage();
-        } catch (e) {
+        } catch (e: any) {
             error = e;
         }
 
@@ -604,7 +604,7 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
         error = null;
         try {
             await user!.setLanguage("This Language is invalid");
-        } catch (e) {
+        } catch (e: any) {
             error = e;
         }
         expect(error).to.be.instanceOf(UserUpdateError);
@@ -617,14 +617,14 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
         error = null;
         try {
             await user!.setLocale(setValue);
-        } catch (e) {
+        } catch (e: any) {
             error = e;
         }
         expect(error).to.be.equal(null);
 
         try {
             value = await user!.getLocale();
-        } catch (e) {
+        } catch (e: any) {
             error = e;
         }
 
@@ -635,7 +635,7 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
         error = null;
         try {
             await user!.setLocale("This locale is invalid");
-        } catch (e) {
+        } catch (e: any) {
             error = e;
         }
         expect(error).to.be.instanceOf(UserUpdateError);
@@ -648,7 +648,7 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
         error = null;
         try {
             await user!.setPassword(setValue);
-        } catch (e) {
+        } catch (e: any) {
             error = e;
         }
         expect(error).to.be.equal(null);
@@ -658,7 +658,7 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
         error = null;
         try {
             await user!.setPassword(setValue);
-        } catch (e) {
+        } catch (e: any) {
             error = e;
         }
         expect(error).to.be.instanceOf(UserUpdateError);
@@ -669,7 +669,7 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
         error = null;
         try {
             await user!.resendWelcomeEmail()
-        } catch (e) {
+        } catch (e: any) {
             error = e;
         }
         expect(error).to.be.instanceOf(UserResendWelcomeEmailError);
@@ -682,14 +682,14 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
         error = null;
         try {
             await user!.setEmail(setValue);
-        } catch (e) {
+        } catch (e: any) {
             error = e;
         }
         expect(error).to.be.equal(null);
 
         try {
             value = await user!.getEmail();
-        } catch (e) {
+        } catch (e: any) {
             error = e;
         }
 
@@ -701,7 +701,7 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
         value = "";
         try {
             await user!.setEmail(setValue);
-        } catch (e) {
+        } catch (e: any) {
             error = e;
         }
         expect(error).to.be.instanceOf(UserUpdateError);
@@ -712,7 +712,7 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
         error = null;
         try {
             await user!.resendWelcomeEmail()
-        } catch (e) {
+        } catch (e: any) {
             error = e;
         }
         expect(error).to.be.equal(null);
@@ -720,7 +720,7 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
         // clean up user
         try {
             await user!.delete();
-        } catch (e) {
+        } catch (e: any) {
             // nop
         }
 
@@ -746,7 +746,7 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
         let users;
         try {
             users = await lclient.getUsers();
-        } catch (e) {
+        } catch (e: any) {
             expect(e.message, "expect no exception").to.be.equal(null);
         }
         expect(users).to.be.a("array");
@@ -761,7 +761,7 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
         let error: Error | null = null;
         try {
             await client.updateUserProperty(userId, UserProperty.displayName, "Some Display Name");
-        } catch (e) {
+        } catch (e: any) {
             error = e;
         }
         expect(error).to.be.instanceOf(UserNotFoundError);
@@ -777,14 +777,14 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
         // ensure that the user is not available
         try {
             await client.deleteUser(userId);
-        } catch (e) {
+        } catch (e: any) {
             // nop
         }
 
         // create user with password
         try {
             user = await client.createUser({ id: userId, password });
-        } catch (e) {
+        } catch (e: any) {
             error = e;
         }
         // user should be created successfully
@@ -799,7 +799,7 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
 
         try {
             await user!.setQuota("100MB")
-        } catch (e) {
+        } catch (e: any) {
             error = e;
         }
         expect(error).to.be.equal(null);
@@ -829,7 +829,7 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
             try {
                 await newUserClient.getQuota()
                 // console.log(await newUserClient.getQuota());
-            } catch (e) {
+            } catch (e: any) {
                 error = e;
             }
             expect(error).to.be.equal(null);
@@ -855,7 +855,7 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
         // clean up user
         try {
             await user!.delete();
-        } catch (e) {
+        } catch (e: any) {
             // nop
         }
 
@@ -866,7 +866,7 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
         let error: Error | null = null;
         try {
             await client.resendWelcomeEmail(userId);
-        } catch (e) {
+        } catch (e: any) {
             error = e;
         }
         expect(error).to.be.instanceOf(UserResendWelcomeEmailError);
@@ -878,14 +878,14 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
         let exception;
         try {
             await client.getUserGroups("", -10);
-        } catch (e) {
+        } catch (e: any) {
             exception = e;
         }
         expect(exception).to.be.instanceOf(QueryLimitError);
 
         try {
             await client.getUserGroups("", 10, -1);
-        } catch (e) {
+        } catch (e: any) {
             exception = e;
         }
         expect(exception).to.be.instanceOf(QueryOffsetError);
@@ -894,7 +894,7 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
         let userGroups: UserGroup[];
         try {
             userGroups = await client.getUserGroups("no group should ever match this string", 0, 1);
-        } catch (e) {
+        } catch (e: any) {
             exception = e;
         }
 
@@ -904,7 +904,7 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
 
         try {
             userGroups = await client.getUserGroups();
-        } catch (e) {
+        } catch (e: any) {
             exception = e;
         }
 
@@ -921,7 +921,7 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
 
         try {
             userGroup = await client.getUserGroup(userGroupId)
-        } catch (e) {
+        } catch (e: any) {
             exception = e;
         }
         expect(exception, "get user group should not raise an exception").to.be.equal(null);
@@ -929,7 +929,7 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
         if (userGroup) {
             try {
                 await userGroup.delete();
-            } catch (e) {
+            } catch (e: any) {
                 exception = e;
             }
         }
@@ -939,14 +939,14 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
         // now the user group is deleted
         try {
             await client.createUserGroup(userGroupId);
-        } catch (e) {
+        } catch (e: any) {
             exception = e;
         }
         expect(exception).to.be.equal(null);
 
         try {
             await client.createUserGroup(userGroupId);
-        } catch (e) {
+        } catch (e: any) {
             exception = e;
         }
         expect(exception).to.be.instanceOf(UserGroupAlreadyExistsError);
@@ -954,7 +954,7 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
         exception = null;
         try {
             userGroup = await client.getUserGroup(userGroupId + " this group should never exist")
-        } catch (e) {
+        } catch (e: any) {
             exception = e;
         }
         expect(exception).to.be.equal(null);
@@ -962,7 +962,7 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
 
         try {
             userGroup = await client.getUserGroup(userGroupId)
-        } catch (e) {
+        } catch (e: any) {
             exception = e;
         }
         expect(exception, "get user group should not raise an exception").to.be.equal(null);
@@ -970,7 +970,7 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
 
         try {
             await userGroup!.delete();
-        } catch (e) {
+        } catch (e: any) {
             exception = e;
         }
         expect(exception, "delete user should not raise an exception").to.be.equal(null);
@@ -985,7 +985,7 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
 
         try {
             userGroup = await client.getUserGroup(userGroupId)
-        } catch (e) {
+        } catch (e: any) {
             exception = e;
         }
         expect(exception, "get user group should not raise an exception").to.be.equal(null);
@@ -993,7 +993,7 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
         if (userGroup) {
             try {
                 await userGroup.delete();
-            } catch (e) {
+            } catch (e: any) {
                 exception = e;
             }
         }
@@ -1010,7 +1010,7 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
 
         try {
             userGroupMembers = await client.getUserGroupMembers(userGroupId)
-        } catch (e) {
+        } catch (e: any) {
             exception = e;
         }
         expect(exception, "get user group should not raise an exception").to.be.equal(null);
@@ -1018,7 +1018,7 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
 
         try {
             await client.getUserGroupMembers(userGroupId + " this group should never exist")
-        } catch (e) {
+        } catch (e: any) {
             exception = e;
         }
         expect(exception).to.be.instanceOf(UserGroupDoesNotExistError);
@@ -1028,7 +1028,7 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
 
         try {
             userGroup = await client.getUserGroup(userGroupId)
-        } catch (e) {
+        } catch (e: any) {
             exception = e;
         }
         expect(exception, "get user group should not raise an exception").to.be.equal(null);
@@ -1036,7 +1036,7 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
 
         try {
             await userGroup!.getMemberUserIds();
-        } catch (e) {
+        } catch (e: any) {
             exception = e;
         }
         expect(exception).to.be.equal(null);
@@ -1050,7 +1050,7 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
 
         try {
             userGroupSubadamins = await client.getUserGroupSubadmins(userGroupId)
-        } catch (e) {
+        } catch (e: any) {
             exception = e;
         }
         expect(exception, "get user group should not raise an exception").to.be.equal(null);
@@ -1058,7 +1058,7 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
 
         try {
             await client.getUserGroupSubadmins(userGroupId + " this group should never exist")
-        } catch (e) {
+        } catch (e: any) {
             exception = e;
         }
         expect(exception).to.be.instanceOf(UserGroupDoesNotExistError);
@@ -1068,7 +1068,7 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
 
         try {
             userGroup = await client.getUserGroup(userGroupId)
-        } catch (e) {
+        } catch (e: any) {
             exception = e;
         }
         expect(exception, "get user group should not raise an exception").to.be.equal(null);
@@ -1076,7 +1076,7 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
 
         try {
             await userGroup!.getSubadminUserIds();
-        } catch (e) {
+        } catch (e: any) {
             exception = e;
         }
         expect(exception).to.be.equal(null);
@@ -1091,7 +1091,7 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
 
         try {
             userGroup = await client.getUserGroup(userGroupId)
-        } catch (e) {
+        } catch (e: any) {
             exception = e;
         }
         expect(exception, "get user group should not raise an exception").to.be.equal(null);
@@ -1099,7 +1099,7 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
         if (userGroup) {
             try {
                 await userGroup.delete();
-            } catch (e) {
+            } catch (e: any) {
                 exception = e;
             }
         }
@@ -1109,14 +1109,14 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
         // now the user group is deleted
         try {
             await client.createUserGroup(userGroupId);
-        } catch (e) {
+        } catch (e: any) {
             exception = e;
         }
         expect(exception).to.be.equal(null);
 
         try {
             userGroup = await client.getUserGroup(userGroupId)
-        } catch (e) {
+        } catch (e: any) {
             exception = e;
         }
         expect(exception, "get user group should not raise an exception").to.be.equal(null);
@@ -1124,7 +1124,7 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
 
         try {
             userGroup1 = await client.getUserGroup(userGroupId)
-        } catch (e) {
+        } catch (e: any) {
             exception = e;
         }
         expect(exception, "get user group should not raise an exception").to.be.equal(null);
@@ -1132,14 +1132,14 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
 
         try {
             await userGroup!.delete();
-        } catch (e) {
+        } catch (e: any) {
             exception = e;
         }
         expect(exception).to.be.equal(null);
 
         try {
             await userGroup1!.delete();
-        } catch (e) {
+        } catch (e: any) {
             exception = e;
         }
         // even if the user group has been deleted previously, the delete should not fail
@@ -1160,14 +1160,14 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
         try {
             await client.deleteUserGroup(userGroupId1);
             await client.deleteUserGroup(userGroupId2);
-        } catch (e) {
+        } catch (e: any) {
             // ignore
         }
 
         try {
             userGroup1 = await client.createUserGroup(userGroupId1);
             userGroup2 = await client.createUserGroup(userGroupId2);
-        } catch (e) {
+        } catch (e: any) {
             exception = e;
         }
         expect(exception, "create user group should not raise an exception").to.be.equal(null);
@@ -1176,13 +1176,13 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
 
         try {
             await client.deleteUser(userId);
-        } catch (e) {
+        } catch (e: any) {
             // ignore
         }
 
         try {
             user = await client.createUser({ id: userId, password: "this is a secure password" });
-        } catch (e) {
+        } catch (e: any) {
             exception = e;
         }
         // user should be created successfully
@@ -1193,7 +1193,7 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
         try {
             await user!.addToMemberUserGroup(userGroup1!);
             await user!.addToMemberUserGroup(userGroup2!);
-        } catch (e) {
+        } catch (e: any) {
             exception = e;
         }
         expect(exception, "adding a user to a user group should not raise an exception").to.be.equal(null);
@@ -1201,7 +1201,7 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
         let userGroups: UserGroup[] = [];
         try {
             userGroups = await user!.getMemberUserGroups();
-        } catch (e) {
+        } catch (e: any) {
             exception = e;
         }
         expect(exception).to.be.equal(null);
@@ -1210,7 +1210,7 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
         // cleanup
         try {
             await user!.delete();
-        } catch (e) {
+        } catch (e: any) {
             exception = e;
         }
         expect(exception, "delete user should not raise an exception").to.be.equal(null);
@@ -1218,7 +1218,7 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
         try {
             await client.deleteUserGroup(userGroupId1);
             await client.deleteUserGroup(userGroupId2);
-        } catch (e) {
+        } catch (e: any) {
             exception = e;
         }
         expect(exception, "delete user group should not raise an exception").to.be.equal(null);
@@ -1233,13 +1233,13 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
         // cleanup and setup
         try {
             await client.deleteUserGroup(userGroupId);
-        } catch (e) {
+        } catch (e: any) {
             // ignore
         }
 
         try {
             userGroup = await client.createUserGroup(userGroupId);
-        } catch (e) {
+        } catch (e: any) {
             exception = e;
         }
         expect(exception, "create user group should not raise an exception").to.be.equal(null);
@@ -1247,13 +1247,13 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
 
         try {
             await client.deleteUser(userId);
-        } catch (e) {
+        } catch (e: any) {
             // ignore
         }
 
         try {
             user = await client.createUser({ id: userId, password: "this is a secure password" });
-        } catch (e) {
+        } catch (e: any) {
             exception = e;
         }
         // user should be created successfully
@@ -1263,7 +1263,7 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
         // the test:
         try {
             await client.addUserToMemberUserGroup(userId, "ThisGroupDoesNotExist")
-        } catch (e) {
+        } catch (e: any) {
             exception = e;
         }
 
@@ -1272,7 +1272,7 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
         exception = null;
         try {
             await client.addUserToMemberUserGroup("ThisUserNotExist", userGroupId)
-        } catch (e) {
+        } catch (e: any) {
             exception = e;
         }
 
@@ -1282,14 +1282,14 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
         // cleanup
         try {
             await user!.delete();
-        } catch (e) {
+        } catch (e: any) {
             exception = e;
         }
         expect(exception, "delete user should not raise an exception").to.be.equal(null);
 
         try {
             await client.deleteUserGroup(userGroupId);
-        } catch (e) {
+        } catch (e: any) {
             exception = e;
         }
         expect(exception, "delete user group should not raise an exception").to.be.equal(null);
@@ -1315,7 +1315,7 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
         const lclient: Client = new Client(new FakeServer(entries));
         try {
             await lclient.addUserToMemberUserGroup("someUserId", "someGroupId")
-        } catch (e) {
+        } catch (e: any) {
             exception = e;
         }
         expect(exception).to.be.instanceOf(InsufficientPrivilegesError);
@@ -1341,7 +1341,7 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
         const lclient: Client = new Client(new FakeServer(entries));
         try {
             await lclient.addUserToMemberUserGroup("someUserId", "someGroupId")
-        } catch (e) {
+        } catch (e: any) {
             exception = e;
         }
         expect(exception).to.be.instanceOf(OperationFailedError);
@@ -1357,13 +1357,13 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
         // cleanup and setup
         try {
             await client.deleteUserGroup(userGroupId);
-        } catch (e) {
+        } catch (e: any) {
             // ignore
         }
 
         try {
             userGroup = await client.createUserGroup(userGroupId);
-        } catch (e) {
+        } catch (e: any) {
             exception = e;
         }
         expect(exception, "create user group should not raise an exception").to.be.equal(null);
@@ -1371,13 +1371,13 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
 
         try {
             await client.deleteUser(userId);
-        } catch (e) {
+        } catch (e: any) {
             // ignore
         }
 
         try {
             user = await client.createUser({ id: userId, password: "this is a secure password" });
-        } catch (e) {
+        } catch (e: any) {
             exception = e;
         }
         // user should be created successfully
@@ -1387,7 +1387,7 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
         // the test:
         try {
             await user!.addToMemberUserGroup(userGroup!);
-        } catch (e) {
+        } catch (e: any) {
             exception = e;
         }
         expect(exception, "adding a user to a user group should not raise an exception").to.be.equal(null);
@@ -1395,14 +1395,14 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
         let userGroups: UserGroup[] = [];
         try {
             userGroups = await user!.getMemberUserGroups();
-        } catch (e) {
+        } catch (e: any) {
             exception = e;
         }
         expect(exception).to.be.equal(null);
 
         try {
             await user!.removeFromMemberUserGroup(userGroup!)
-        } catch (e) {
+        } catch (e: any) {
             exception = e;
         }
         expect(exception).to.be.equal(null);
@@ -1410,7 +1410,7 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
         userGroups = [];
         try {
             userGroups = await user!.getMemberUserGroups();
-        } catch (e) {
+        } catch (e: any) {
             exception = e;
         }
         expect(exception).to.be.equal(null);
@@ -1419,7 +1419,7 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
         // remove non existing user from user group
         try {
             await client.removeUserFromMemberUserGroup("nonExistingUser", userGroup!.id);
-        } catch (e) {
+        } catch (e: any) {
             exception = e;
         }
         expect(exception).to.be.instanceOf(UserNotFoundError);
@@ -1428,7 +1428,7 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
         exception = null;
         try {
             await client.removeUserFromMemberUserGroup(user!.id, "nonExistingUserGroup");
-        } catch (e) {
+        } catch (e: any) {
             exception = e;
         }
         expect(exception).to.be.instanceOf(UserGroupDoesNotExistError);
@@ -1436,7 +1436,7 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
         exception = null;
         try {
             await user!.removeFromMemberUserGroup(userGroup!)
-        } catch (e) {
+        } catch (e: any) {
             exception = e;
         }
         expect(exception).to.be.equal(null);
@@ -1444,14 +1444,14 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
         // cleanup
         try {
             await user!.delete();
-        } catch (e) {
+        } catch (e: any) {
             exception = e;
         }
         expect(exception, "delete user should not raise an exception").to.be.equal(null);
 
         try {
             await client.deleteUserGroup(userGroupId);
-        } catch (e) {
+        } catch (e: any) {
             exception = e;
         }
         expect(exception, "delete user group should not raise an exception").to.be.equal(null);
@@ -1477,7 +1477,7 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
         const lclient: Client = new Client(new FakeServer(entries));
         try {
             await lclient.removeUserFromMemberUserGroup("someUserId", "someGroupId")
-        } catch (e) {
+        } catch (e: any) {
             exception = e;
         }
         expect(exception).to.be.instanceOf(InsufficientPrivilegesError);
@@ -1503,7 +1503,7 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
         const lclient: Client = new Client(new FakeServer(entries));
         try {
             await lclient.removeUserFromMemberUserGroup("someUserId", "someGroupId")
-        } catch (e) {
+        } catch (e: any) {
             exception = e;
         }
         expect(exception).to.be.instanceOf(OperationFailedError);
@@ -1530,7 +1530,7 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
         let userGroups: UserGroup[] = [new UserGroup(client, "g1")];
         try {
             userGroups = await lclient.getUserGroups()
-        } catch (e) {
+        } catch (e: any) {
             exception = e;
         }
         expect(exception).to.be.equal(null);
@@ -1558,7 +1558,7 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
         let member: string[] = ["u1"];
         try {
             member = await lclient.getUserGroupMembers("admin");
-        } catch (e) {
+        } catch (e: any) {
             exception = e;
         }
         expect(exception).to.be.equal(null);
@@ -1578,14 +1578,14 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
         try {
             await client.deleteUserGroup(userGroupId1);
             await client.deleteUserGroup(userGroupId2);
-        } catch (e) {
+        } catch (e: any) {
             // ignore
         }
 
         try {
             userGroup1 = await client.createUserGroup(userGroupId1);
             userGroup2 = await client.createUserGroup(userGroupId2);
-        } catch (e) {
+        } catch (e: any) {
             exception = e;
         }
         expect(exception, "create user group should not raise an exception").to.be.equal(null);
@@ -1594,13 +1594,13 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
 
         try {
             await client.deleteUser(userId);
-        } catch (e) {
+        } catch (e: any) {
             // ignore
         }
 
         try {
             user = await client.createUser({ id: userId, password: "this is a secure password" });
-        } catch (e) {
+        } catch (e: any) {
             exception = e;
         }
         // user should be created successfully
@@ -1611,7 +1611,7 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
         try {
             await user!.promoteToUserGroupSubadmin(userGroup1!);
             await user!.promoteToUserGroupSubadmin(userGroup2!);
-        } catch (e) {
+        } catch (e: any) {
             exception = e;
         }
         expect(exception, "adding a user to a user group should not raise an exception").to.be.equal(null);
@@ -1619,7 +1619,7 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
         let userGroups: UserGroup[] = [];
         try {
             userGroups = await user!.getSubadminUserGroups();
-        } catch (e) {
+        } catch (e: any) {
             exception = e;
         }
         expect(exception).to.be.equal(null);
@@ -1627,7 +1627,7 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
 
         try {
             await client.getUserGroupSubadmins(userGroupId1)
-        } catch (e) {
+        } catch (e: any) {
             exception = e;
         }
         expect(exception).to.be.equal(null);
@@ -1635,7 +1635,7 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
         // cleanup
         try {
             await user!.delete();
-        } catch (e) {
+        } catch (e: any) {
             exception = e;
         }
         expect(exception, "delete user should not raise an exception").to.be.equal(null);
@@ -1643,7 +1643,7 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
         try {
             await client.deleteUserGroup(userGroupId1);
             await client.deleteUserGroup(userGroupId2);
-        } catch (e) {
+        } catch (e: any) {
             exception = e;
         }
         expect(exception, "delete user group should not raise an exception").to.be.equal(null);
@@ -1659,13 +1659,13 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
         // cleanup and setup
         try {
             await client.deleteUserGroup(userGroupId);
-        } catch (e) {
+        } catch (e: any) {
             // ignore
         }
 
         try {
             userGroup = await client.createUserGroup(userGroupId);
-        } catch (e) {
+        } catch (e: any) {
             exception = e;
         }
         expect(exception, "create user group should not raise an exception").to.be.equal(null);
@@ -1673,13 +1673,13 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
 
         try {
             await client.deleteUser(userId);
-        } catch (e) {
+        } catch (e: any) {
             // ignore
         }
 
         try {
             user = await client.createUser({ id: userId, password: "this is a secure password" });
-        } catch (e) {
+        } catch (e: any) {
             exception = e;
         }
         // user should be created successfully
@@ -1689,7 +1689,7 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
         // the test:
         try {
             await client.promoteUserToUserGroupSubadmin(userId, "ThisGroupDoesNotExist")
-        } catch (e) {
+        } catch (e: any) {
             exception = e;
         }
 
@@ -1698,7 +1698,7 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
         exception = null;
         try {
             await client.promoteUserToUserGroupSubadmin("ThisUserNotExist", userGroupId)
-        } catch (e) {
+        } catch (e: any) {
             exception = e;
         }
 
@@ -1708,14 +1708,14 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
         // cleanup
         try {
             await user!.delete();
-        } catch (e) {
+        } catch (e: any) {
             exception = e;
         }
         expect(exception, "delete user should not raise an exception").to.be.equal(null);
 
         try {
             await client.deleteUserGroup(userGroupId);
-        } catch (e) {
+        } catch (e: any) {
             exception = e;
         }
         expect(exception, "delete user group should not raise an exception").to.be.equal(null);
@@ -1741,7 +1741,7 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
         const lclient: Client = new Client(new FakeServer(entries));
         try {
             await lclient.promoteUserToUserGroupSubadmin("someUserId", "someGroupId")
-        } catch (e) {
+        } catch (e: any) {
             exception = e;
         }
         expect(exception).to.be.instanceOf(OperationFailedError);
@@ -1767,7 +1767,7 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
         const lclient: Client = new Client(new FakeServer(entries));
         try {
             await lclient.promoteUserToUserGroupSubadmin("someUserId", "someGroupId")
-        } catch (e) {
+        } catch (e: any) {
             exception = e;
         }
         expect(exception).to.be.instanceOf(InsufficientPrivilegesError);
@@ -1783,13 +1783,13 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
         // cleanup and setup
         try {
             await client.deleteUserGroup(userGroupId);
-        } catch (e) {
+        } catch (e: any) {
             // ignore
         }
 
         try {
             userGroup = await client.createUserGroup(userGroupId);
-        } catch (e) {
+        } catch (e: any) {
             exception = e;
         }
         expect(exception, "create user group should not raise an exception").to.be.equal(null);
@@ -1797,13 +1797,13 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
 
         try {
             await client.deleteUser(userId);
-        } catch (e) {
+        } catch (e: any) {
             // ignore
         }
 
         try {
             user = await client.createUser({ id: userId, password: "this is a secure password" });
-        } catch (e) {
+        } catch (e: any) {
             exception = e;
         }
         // user should be created successfully
@@ -1813,7 +1813,7 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
         // the test:
         try {
             await user!.promoteToUserGroupSubadmin(userGroup!);
-        } catch (e) {
+        } catch (e: any) {
             exception = e;
         }
         expect(exception, "promoting a user to as a subadmin user group should not raise an exception").to.be.equal(null);
@@ -1821,14 +1821,14 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
         let userGroups: UserGroup[] = [];
         try {
             userGroups = await user!.getSubadminUserGroups();
-        } catch (e) {
+        } catch (e: any) {
             exception = e;
         }
         expect(exception).to.be.equal(null);
 
         try {
             await user!.demoteFromSubadminUserGroup(userGroup!)
-        } catch (e) {
+        } catch (e: any) {
             exception = e;
         }
         expect(exception).to.be.equal(null);
@@ -1836,7 +1836,7 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
         userGroups = [];
         try {
             userGroups = await user!.getSubadminUserGroups();
-        } catch (e) {
+        } catch (e: any) {
             exception = e;
         }
         expect(exception).to.be.equal(null);
@@ -1845,7 +1845,7 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
         // demote from non existing user from user group
         try {
             await client.demoteUserFromSubadminUserGroup("nonExistingUser", userGroup!.id);
-        } catch (e) {
+        } catch (e: any) {
             exception = e;
         }
         expect(exception).to.be.instanceOf(OperationFailedError);
@@ -1854,7 +1854,7 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
         exception = null;
         try {
             await client.demoteUserFromSubadminUserGroup(user!.id, "nonExistingUserGroup");
-        } catch (e) {
+        } catch (e: any) {
             exception = e;
         }
         expect(exception).to.be.instanceOf(OperationFailedError);
@@ -1862,7 +1862,7 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
         exception = null;
         try {
             await user!.demoteFromSubadminUserGroup(userGroup!)
-        } catch (e) {
+        } catch (e: any) {
             exception = e;
         }
         expect(exception).to.be.instanceOf(OperationFailedError);
@@ -1871,14 +1871,14 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
         // cleanup
         try {
             await user!.delete();
-        } catch (e) {
+        } catch (e: any) {
             exception = e;
         }
         expect(exception, "delete user should not raise an exception").to.be.equal(null);
 
         try {
             await client.deleteUserGroup(userGroupId);
-        } catch (e) {
+        } catch (e: any) {
             exception = e;
         }
         expect(exception, "delete user group should not raise an exception").to.be.equal(null);
@@ -1904,7 +1904,7 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
         const lclient: Client = new Client(new FakeServer(entries));
         try {
             await lclient.demoteUserFromSubadminUserGroup("someUserId", "someGroupId")
-        } catch (e) {
+        } catch (e: any) {
             exception = e;
         }
         expect(exception).to.be.instanceOf(InsufficientPrivilegesError);
@@ -1930,7 +1930,7 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
         const lclient: Client = new Client(new FakeServer(entries));
         try {
             await lclient.demoteUserFromSubadminUserGroup("someUserId", "someGroupId")
-        } catch (e) {
+        } catch (e: any) {
             exception = e;
         }
         expect(exception).to.be.instanceOf(OperationFailedError);
@@ -1957,7 +1957,7 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
         let member: string[] = ["u1"];
         try {
             member = await lclient.getUserGroupSubadmins("admin");
-        } catch (e) {
+        } catch (e: any) {
             exception = e;
         }
         expect(exception).to.be.equal(null);
@@ -1984,7 +1984,7 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
         const lclient: Client = new Client(new FakeServer(entries));
         try {
             await lclient.addUserToMemberUserGroup("someUserId", "someGroupId")
-        } catch (e) {
+        } catch (e: any) {
             exception = e;
         }
         expect(exception).to.be.instanceOf(InvalidServiceResponseFormatError);
@@ -2000,7 +2000,7 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
         // cleanup
         try {
             await client.deleteUser(userId);
-        } catch (e) {
+        } catch (e: any) {
             // nop
         }
 
@@ -2009,7 +2009,7 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
             await client.deleteUserGroup(userGroupId2);
             await client.deleteUserGroup(userGroupId3);
             await client.deleteUserGroup(userGroupId4);
-        } catch (e) {
+        } catch (e: any) {
             // nop
         }
 
@@ -2118,7 +2118,7 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
         // cleanup
         try {
             await client.deleteUser(userId);
-        } catch (e) {
+        } catch (e: any) {
             // nop
         }
 
@@ -2127,7 +2127,7 @@ describe("12-NEXCLOUD-NODE-CLIENT-USER-MANAGEMENT", function () {
             await client.deleteUserGroup(userGroupId2);
             await client.deleteUserGroup(userGroupId3);
             await client.deleteUserGroup(userGroupId4);
-        } catch (e) {
+        } catch (e: any) {
             // nop
         }
 

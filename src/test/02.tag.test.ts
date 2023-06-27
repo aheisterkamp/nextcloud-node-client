@@ -122,7 +122,7 @@ describe("02-NEXCLOUD-NODE-CLIENT-TAG", function () {
         try {
             await file!.addTag(`tag-61`);
             await file!.addTag(`tag-62`);
-        } catch (e) {
+        } catch (e: any) {
             expect(true, "we do not expect an exception adding tags").to.be.equal(false);
         }
 
@@ -164,7 +164,7 @@ describe("02-NEXCLOUD-NODE-CLIENT-TAG", function () {
             for (const tagName of tagsCreated) {
                 await file!.addTag(tagName);
             }
-        } catch (e) {
+        } catch (e: any) {
             expect(true, "we do not expect an exception adding tags").to.be.equal(false);
         }
 
@@ -207,7 +207,7 @@ describe("02-NEXCLOUD-NODE-CLIENT-TAG", function () {
             for (const tagName of tagsCreated) {
                 await folder!.addTag(tagName);
             }
-        } catch (e) {
+        } catch (e: any) {
             expect(true, "we do not expect an exception adding tags").to.be.equal(false);
         }
 
@@ -266,7 +266,7 @@ describe("02-NEXCLOUD-NODE-CLIENT-TAG", function () {
             for (const tagName of tagsCreated) {
                 await file!.addTag(tagName);
             }
-        } catch (e) {
+        } catch (e: any) {
             expect(true, "we do not expect an exception adding tags").to.be.equal(false);
         }
         tagsCreated.sort();
@@ -326,7 +326,7 @@ describe("02-NEXCLOUD-NODE-CLIENT-TAG", function () {
             try {
                 // tslint:disable-next-line:no-unused-expression
                 await file1.removeTag(tagName);
-            } catch (e) {
+            } catch (e: any) {
                 expect(false, "Expect no exception when removing a non existing tag from a file").to.be.equal(true);
             } finally {
                 await file1.delete();
@@ -345,7 +345,7 @@ describe("02-NEXCLOUD-NODE-CLIENT-TAG", function () {
         try {
             // tslint:disable-next-line:no-unused-expression
             await baseDir.removeTag(tagName);
-        } catch (e) {
+        } catch (e: any) {
             expect(false, "Expect no exception when removing a non existing tag from a folder").to.be.equal(true);
         } finally {
             await baseDir.delete();
@@ -406,7 +406,7 @@ describe("02-NEXCLOUD-NODE-CLIENT-TAG", function () {
         try {
             const tag: Tag = await lclient.createTag(tagName);
             expect(true, "expect an exception").to.be.equal(false);
-        } catch (e) {
+        } catch (e: any) {
             expect(true, "expect an exception").to.be.equal(true);
         }
 
@@ -434,7 +434,7 @@ describe("02-NEXCLOUD-NODE-CLIENT-TAG", function () {
         const tagName: string = "tag-15";
         try {
             await lclient.addTagToFile(123, tagName);
-        } catch (e) {
+        } catch (e: any) {
             expect(e.message, "expect no exception").to.be.equal('Error: No permission to assign tag "tag-15" to file. Tag is not assignable');
         }
 

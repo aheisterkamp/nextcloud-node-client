@@ -67,13 +67,12 @@ export class HttpClient {
         // set the proxy
         if (this.proxy) {
             log.debug("proxy agent used");
-            const options: HttpProxyAgentOptions = {
+
+            requestInit.agent = new HttpProxyAgent({
                 host: this.proxy.host,
                 port: this.proxy.port,
                 protocol: this.proxy.protocol,
-            };
-
-            requestInit.agent = new HttpProxyAgent(options);
+            });
 
             if (this.proxy.proxyAuthorizationHeader) {
                 (requestInit.headers as Headers).append("Proxy-Authorization", this.proxy.proxyAuthorizationHeader);
@@ -93,9 +92,11 @@ export class HttpClient {
                 return responseText;
             };
 
-            response.body.pipe = (destination: NodeJS.WritableStream, options?: { end?: boolean; }): any => {
-                destination.write(responseText);
-            };
+            if (response.body) {
+                response.body.pipe = (destination: NodeJS.WritableStream, options?: { end?: boolean; }): any => {
+                    destination.write(responseText);
+                };
+            }
 
             response.json = async () => {
                 return JSON.parse(responseText);

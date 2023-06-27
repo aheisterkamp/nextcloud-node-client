@@ -51,7 +51,7 @@ describe("15-NEXCLOUD-NODE-CLIENT-NOTIFICATION", function () {
         try {
             notifications = await lclient.getNotifications();
             //            console.log(notifications);
-        } catch (e) {
+        } catch (e: any) {
             expect(e.message, "expect an array and no exception").to.be.equal("no exception");
         }
         expect(notifications).to.be.a("array");
@@ -80,7 +80,7 @@ describe("15-NEXCLOUD-NODE-CLIENT-NOTIFICATION", function () {
         try {
             notifications = await lclient.getNotifications();
             //            console.log(notifications);
-        } catch (e) {
+        } catch (e: any) {
             expect(e.message, "expect an empty array and no exception").to.be.equal("no exception");
         }
         expect(notifications).to.be.a("array");
@@ -108,7 +108,7 @@ describe("15-NEXCLOUD-NODE-CLIENT-NOTIFICATION", function () {
         const lclient: Client = new Client(new FakeServer(entries));
         try {
             await lclient.getNotifications();
-        } catch (e) {
+        } catch (e: any) {
             error = e;
         }
         // expect(error).to.be.a("object");
@@ -123,7 +123,7 @@ describe("15-NEXCLOUD-NODE-CLIENT-NOTIFICATION", function () {
 
         try {
             await client.sendNotificationToUser("test", "Donnerwetter", "This is a real long Message");
-        } catch (e) {
+        } catch (e: any) {
             error = e;
         }
         // expect(error).to.be.a("object");

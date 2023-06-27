@@ -53,7 +53,7 @@ describe("13-NEXCLOUD-NODE-CLIENT-SHARE", function () {
 
             try {
                 await share.setPassword("some password");
-            } catch (e) {
+            } catch (e: any) {
                 expect(e.message, "expect no exception setting password").to.be.equal(null);
             }
 
@@ -62,31 +62,31 @@ describe("13-NEXCLOUD-NODE-CLIENT-SHARE", function () {
                 const note: string = "This is a Note\nNew Line";
                 await share.setNote(note);
                 expect(share.note).to.be.equal(note);
-            } catch (e) {
+            } catch (e: any) {
                 expect(e.message, "expect no exception setting note").to.be.equal(null);
             }
 
             try {
                 await share.setExpiration(new Date(2020, 11, 5));
                 expect(share.expiration).to.be.a("Date");
-            } catch (e) {
+            } catch (e: any) {
                 expect(e.message, "expect no exception setting expiration").to.be.equal(null);
             }
 
             try {
                 await share.delete();
-            } catch (e) {
+            } catch (e: any) {
                 expect(e.message, "expect no exception deleting share").to.be.equal(null);
             }
 
-        } catch (e) {
+        } catch (e: any) {
             expect(e.message, "expect no exception").to.be.equal(null);
         }
 
         createShare = { fileSystemElement: file, publicUpload: true };
         try {
             share = await client.createShare(createShare);
-        } catch (e) {
+        } catch (e: any) {
             expect(e.message, "expect no exception 'publicUpload:true'").to.be.equal(null);
         }
 
@@ -200,7 +200,7 @@ describe("13-NEXCLOUD-NODE-CLIENT-SHARE", function () {
         let errorCode: string = "noError";
         try {
             await Share.getShare(lclient, "60");
-        } catch (e) {
+        } catch (e: any) {
             errorCode = e.code;
         }
         expect(errorCode, "expect an exception").to.be.equal("ERR_INVALID_SHARE_RESPONSE");
@@ -208,7 +208,7 @@ describe("13-NEXCLOUD-NODE-CLIENT-SHARE", function () {
         errorCode = "noError";
         try {
             await Share.getShare(lclient, "60");
-        } catch (e) {
+        } catch (e: any) {
             errorCode = e.code;
         }
         expect(errorCode, "expect an exception").to.be.equal("ERR_INVALID_SHARE_RESPONSE");
@@ -216,7 +216,7 @@ describe("13-NEXCLOUD-NODE-CLIENT-SHARE", function () {
         errorCode = "noError";
         try {
             await Share.getShare(lclient, "60");
-        } catch (e) {
+        } catch (e: any) {
             errorCode = e.code;
         }
         expect(errorCode, "expect an exception").to.be.equal("ERR_INVALID_SHARE_RESPONSE");
@@ -224,7 +224,7 @@ describe("13-NEXCLOUD-NODE-CLIENT-SHARE", function () {
         errorCode = "noError";
         try {
             await Share.getShare(lclient, "60");
-        } catch (e) {
+        } catch (e: any) {
             errorCode = e.code;
         }
         expect(errorCode, "expect an exception").to.be.equal("ERR_INVALID_SHARE_RESPONSE");
@@ -232,28 +232,28 @@ describe("13-NEXCLOUD-NODE-CLIENT-SHARE", function () {
         errorCode = "noError";
         try {
             await Share.getShare(lclient, "60");
-        } catch (e) {
+        } catch (e: any) {
             expect(e.message, "expect no exception").to.be.equal("expect no exception");
         }
 
         errorCode = "noError";
         try {
             await Share.getShare(lclient, "60");
-        } catch (e) {
+        } catch (e: any) {
             expect(e.message, "expect no exception").to.be.equal("expect no exception");
         }
 
         errorCode = "noError";
         try {
             await Share.getShare(lclient, "60");
-        } catch (e) {
+        } catch (e: any) {
             expect(e.message, "expect no exception").to.be.equal("expect no exception");
         }
 
         errorCode = "noError";
         try {
             await Share.getShare(lclient, "60");
-        } catch (e) {
+        } catch (e: any) {
             expect(e.message, "expect no exception").to.be.equal("expect no exception");
         }
 
@@ -272,7 +272,7 @@ describe("13-NEXCLOUD-NODE-CLIENT-SHARE", function () {
         let error: Error | null = null;
         try {
             share = await client.createShare(createShare);
-        } catch (e) {
+        } catch (e: any) {
             error = e;
         }
         expect(error).to.be.equal(null);

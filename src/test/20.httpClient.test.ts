@@ -37,8 +37,7 @@ describe("20-NEXCLOUD-NODE-CLIENT-HTTP-CLIENT", function () {
         const httpClient: HttpClient = new HttpClient(options);
 
         const requestInit: RequestInit = {
-            method: "GET",
-            timeout: 1,
+            method: "GET"
         };
         const url: string = "https://this.server.does.not.exist:1234/root";
 
@@ -51,7 +50,7 @@ describe("20-NEXCLOUD-NODE-CLIENT-HTTP-CLIENT", function () {
                 requestInit,
                 [200],
                 { description: "test Call" });
-        } catch (e) {
+        } catch (e: any) {
             exceptionOccurred = true;
         }
         expect(exceptionOccurred, "expect an exception").to.be.equal(true);
@@ -84,7 +83,7 @@ describe("20-NEXCLOUD-NODE-CLIENT-HTTP-CLIENT", function () {
 
             const body = await response.text();
             expect(body).to.be.equal("Thank you for this dump. I hope you have a lovely day!");
-        } catch (e) {
+        } catch (e: any) {
             expect(true, "expect no exception").to.be.equal(e.message);
         }
 
@@ -112,7 +111,7 @@ describe("20-NEXCLOUD-NODE-CLIENT-HTTP-CLIENT", function () {
                 requestInit,
                 [200],
                 { description: "test Call" });
-        } catch (e) {
+        } catch (e: any) {
             expect(true, "expect an exception").to.be.equal(true);
             exceptionMessage = e.message;
         }
@@ -154,7 +153,7 @@ describe("20-NEXCLOUD-NODE-CLIENT-HTTP-CLIENT", function () {
             const body3: Buffer = await response.buffer();
             expect(body3).to.be.not.equal(null);
 
-        } catch (e) {
+        } catch (e: any) {
             expect(true, "expect no exception").to.be.equal(e.message);
         }
 
@@ -184,7 +183,7 @@ describe("20-NEXCLOUD-NODE-CLIENT-HTTP-CLIENT", function () {
                 [200],
                 { description: "test Call" });
 
-        } catch (e) {
+        } catch (e: any) {
             expect(true, "expect an exception").to.be.equal(true);
         }
 
@@ -210,7 +209,6 @@ describe("20-NEXCLOUD-NODE-CLIENT-HTTP-CLIENT", function () {
         const httpClient: HttpClient = new HttpClient(options);
 
         const requestInit: RequestInit = {
-            timeout: 1,
         };
         const url: string = "https://this.server.does.not.exist:1234/root";
 
@@ -222,7 +220,7 @@ describe("20-NEXCLOUD-NODE-CLIENT-HTTP-CLIENT", function () {
                 requestInit,
                 [200],
                 {});
-        } catch (e) {
+        } catch (e: any) {
             exceptionOccurred = true;
         }
         expect(exceptionOccurred).to.be.equal(true);

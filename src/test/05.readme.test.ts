@@ -27,7 +27,7 @@ describe("05-NEXCLOUD-NODE-CLIENT-README", function () {
             await folder.delete();
 
             const content: Buffer = await file.getContent();
-        } catch (e) {
+        } catch (e: any) {
             // some error handling
         }
     });

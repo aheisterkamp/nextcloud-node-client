@@ -104,7 +104,7 @@ export default class RequestResponseLog {
                 await fsPromises.mkdir(p);
                   /* istanbul ignore next */
                   log.debug(`directory "${p}" created`);
-            } catch (e) {
+            } catch (e: any) {
                   /* istanbul ignore next */
                   log.debug(`directory "${p}" already exists`);
             }

@@ -1,719 +1,400 @@
-<!doctype html>
-<html class="default no-js">
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>@a.heisterkamp/nextcloud-node-client</title>
-	<meta name="description" content="Documentation for @a.heisterkamp/nextcloud-node-client">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="assets/css/main.css">
-</head>
-<body>
-<header>
-	<div class="tsd-page-toolbar">
-		<div class="container">
-			<div class="table-wrap">
-				<div class="table-cell" id="tsd-search" data-index="assets/js/search.json" data-base=".">
-					<div class="field">
-						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
-						<input id="tsd-search-field" type="text" />
-					</div>
-					<ul class="results">
-						<li class="state loading">Preparing search index...</li>
-						<li class="state failure">The search index is not available</li>
-					</ul>
-					<a href="index.html" class="title">@a.heisterkamp/nextcloud-node-client</a>
-				</div>
-				<div class="table-cell" id="tsd-widgets">
-					<div id="tsd-filter">
-						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
-						<div class="tsd-filter-group">
-							<div class="tsd-select" id="tsd-filter-visibility">
-								<span class="tsd-select-label">All</span>
-								<ul class="tsd-select-list">
-									<li data-value="public">Public</li>
-									<li data-value="protected">Public/Protected</li>
-									<li data-value="private" class="selected">All</li>
-								</ul>
-							</div>
-							<input type="checkbox" id="tsd-filter-inherited" checked />
-							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
-						</div>
-					</div>
-					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="tsd-page-title">
-		<div class="container">
-			<ul class="tsd-breadcrumb">
-				<li>
-					<a href="globals.html">Globals</a>
-				</li>
-			</ul>
-			<h1>@a.heisterkamp/nextcloud-node-client</h1>
-		</div>
-	</div>
-</header>
+<!DOCTYPE html><html class="default" lang="en"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="IE=edge"/><title>@a.heisterkamp/nextcloud-node-client</title><meta name="description" content="Documentation for @a.heisterkamp/nextcloud-node-client"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="assets/style.css"/><link rel="stylesheet" href="assets/highlight.css"/><script defer src="assets/main.js"></script><script async src="assets/search.js" id="tsd-search-script"></script></head><body><script>document.documentElement.dataset.theme = localStorage.getItem("tsd-theme") || "os"</script><header class="tsd-page-toolbar">
+<div class="tsd-toolbar-contents container">
+<div class="table-cell" id="tsd-search" data-base=".">
+<div class="field"><label for="tsd-search-field" class="tsd-widget tsd-toolbar-icon search no-caption"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M15.7824 13.833L12.6666 10.7177C12.5259 10.5771 12.3353 10.499 12.1353 10.499H11.6259C12.4884 9.39596 13.001 8.00859 13.001 6.49937C13.001 2.90909 10.0914 0 6.50048 0C2.90959 0 0 2.90909 0 6.49937C0 10.0896 2.90959 12.9987 6.50048 12.9987C8.00996 12.9987 9.39756 12.4863 10.5008 11.6239V12.1332C10.5008 12.3332 10.5789 12.5238 10.7195 12.6644L13.8354 15.7797C14.1292 16.0734 14.6042 16.0734 14.8948 15.7797L15.7793 14.8954C16.0731 14.6017 16.0731 14.1267 15.7824 13.833ZM6.50048 10.499C4.29094 10.499 2.50018 8.71165 2.50018 6.49937C2.50018 4.29021 4.28781 2.49976 6.50048 2.49976C8.71001 2.49976 10.5008 4.28708 10.5008 6.49937C10.5008 8.70852 8.71314 10.499 6.50048 10.499Z" fill="var(--color-text)"></path></svg></label><input type="text" id="tsd-search-field" aria-label="Search"/></div>
+<div class="field">
+<div id="tsd-toolbar-links"></div></div>
+<ul class="results">
+<li class="state loading">Preparing search index...</li>
+<li class="state failure">The search index is not available</li></ul><a href="index.html" class="title">@a.heisterkamp/nextcloud-node-client</a></div>
+<div class="table-cell" id="tsd-widgets"><a href="#" class="tsd-widget tsd-toolbar-icon menu no-caption" data-toggle="menu" aria-label="Menu"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="1" y="3" width="14" height="2" fill="var(--color-text)"></rect><rect x="1" y="7" width="14" height="2" fill="var(--color-text)"></rect><rect x="1" y="11" width="14" height="2" fill="var(--color-text)"></rect></svg></a></div></div></header>
 <div class="container container-main">
-	<div class="row">
-		<div class="col-8 col-content">
-			<div class="tsd-panel tsd-typography">
-				<a href="#nextcloud-node-client" id="nextcloud-node-client" style="color: inherit; text-decoration: none;">
-					<h1>nextcloud-node-client</h1>
-				</a>
-				<img src="https://raw.githubusercontent.com/hobigo/nextcloud-node-client/master/ncnc-logo.png" width="100"  style="max-width:100%;">
-				<p>Access nextcloud remotely from node.js applications with a rich and simple TypeScript / JavaScript API.</p>
-				<p><a href="https://www.typescriptlang.org"><img src="https://img.shields.io/badge/Language-Typescript-Blue.svg?style=flat-square" alt="lang: Typescript"></a>
-					<img src="https://github.com/hobigo/nextcloud-node-client/workflows/CI/badge.svg" alt="">
-					<a href="https://npmjs.org/package/nextcloud-node-client"><img src="https://img.shields.io/npm/dm/nextcloud-node-client.svg?style=flat" alt="NPM Downloads"></a>
-					<a href="https://david-dm.org/hobigo/nextcloud-node-client"><img src="https://david-dm.org/hobigo/nextcloud-node-client.svg?style=flat" alt="Dependency Status"></a>
-					<a href="https://coveralls.io/github/hobigo/nextcloud-node-client?branch=master"><img src="https://coveralls.io/repos/github/hobigo/nextcloud-node-client/badge.svg?branch=master" alt="Coverage Status"></a>
-					<a href="https://packagephobia.now.sh/result?p=nextcloud-node-client"><img src="https://packagephobia.now.sh/badge?p=commander" alt="Install Size"></a>
-				<a href="https://hobigo.github.io/nextcloud-node-client"><img src="https://img.shields.io/website-up-down-green-red/https/hobigo.github.io/nextcloud-node-client.svg?label=documentation-website" alt="documentation"></a></p>
-				<ul>
-					<li>upload and download files</li>
-					<li>create files and folder structures</li>
-					<li>all user management functions</li>
-					<li>create shares</li>
-					<li>tagging and commenting</li>
-				</ul>
-				<p>The nextcloud node client is used to automate access to nextcloud servers from node.js apppliactions. </p>
-				<a href="#example" id="example" style="color: inherit; text-decoration: none;">
-					<h1>Example</h1>
-				</a>
-				<pre><code class="language-typescript"><span class="hljs-comment">// typescript</span>
-<span class="hljs-keyword">import</span> Client, { File, Folder, Tag, Share } <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;nextcloud-node-client&quot;</span>;
+<div class="col-content">
+<div class="tsd-page-title">
+<h2>@a.heisterkamp/nextcloud-node-client</h2></div>
+<div class="tsd-panel tsd-typography"><a id="md:nextcloud-node-client" class="tsd-anchor"></a><h1><a href="#md:nextcloud-node-client">nextcloud-node-client</a></h1> <img src="https://raw.githubusercontent.com/hobigo/nextcloud-node-client/master/ncnc-logo.png" width="100"  style="max-width:100%;">
 
-(<span class="hljs-keyword">async</span> () =&gt; {
-    <span class="hljs-keyword">try</span> {
-        <span class="hljs-comment">// create a new client using connectivity information from environment </span>
-        <span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> Client();
-        <span class="hljs-comment">// create a folder structure if not available</span>
-        <span class="hljs-keyword">const</span> folder: Folder = <span class="hljs-keyword">await</span> client.createFolder(<span class="hljs-string">&quot;folder/subfolder&quot;</span>);
-        <span class="hljs-comment">// create file within the folder</span>
-        <span class="hljs-keyword">const</span> file: File = <span class="hljs-keyword">await</span> folder.createFile(<span class="hljs-string">&quot;myFile.txt&quot;</span>, Buffer.from(<span class="hljs-string">&quot;My file content&quot;</span>));
-        <span class="hljs-comment">// add a tag to the file and create the tag if not existing</span>
-        <span class="hljs-keyword">await</span> file.addTag(<span class="hljs-string">&quot;MyTag&quot;</span>);
-        <span class="hljs-comment">// add a comment to the file</span>
-        <span class="hljs-keyword">await</span> file.addComment(<span class="hljs-string">&quot;myComment&quot;</span>);
-        <span class="hljs-comment">// get the file content</span>
-        <span class="hljs-keyword">const</span> content: Buffer = <span class="hljs-keyword">await</span> file.getContent();
-        <span class="hljs-comment">// share the file publicly with password and note</span>
-        <span class="hljs-keyword">const</span> share: Share = <span class="hljs-keyword">await</span> client.createShare({ <span class="hljs-attr">fileSystemElement</span>: file });
-        <span class="hljs-keyword">await</span> share.setPassword(<span class="hljs-string">&quot;some password&quot;</span>);
-        <span class="hljs-keyword">await</span> share.setNote(<span class="hljs-string">&quot;some note\nnew line&quot;</span>);
-        <span class="hljs-comment">// use the url to access the share </span>
-        <span class="hljs-keyword">const</span> shareLink:<span class="hljs-built_in">string</span> = share.url;
-        <span class="hljs-comment">// delete the folder including the file and share</span>
-        <span class="hljs-keyword">await</span> folder.delete();
-    } <span class="hljs-keyword">catch</span> (e) {
-        <span class="hljs-comment">// some error handling   </span>
-        <span class="hljs-built_in">console</span>.log(e);
-    }
-})();
-</code></pre>
-				<a href="#documentation" id="documentation" style="color: inherit; text-decoration: none;">
-					<h1>Documentation</h1>
-				</a>
-				<ul>
-					<li><a href="#installation">Installation</a></li>
-					<li><a href="./docs/upload.md">Upload files and folders</a></li>
-					<li><a href="./docs/download.md">Download files and folders</a></li>
-					<li><a href="./docs/getFiles.md">Get files recursively</a></li>
-					<li><a href="./docs/userManagement.md">User Management</a></li>
-					<li><a href="./docs/tagging.md">Tagging</a></li>
-					<li><a href="#security-and-access-management">Security and access management</a></li>
-					<li><a href="#concepts-and-philosophy">Concepts and Philosophy</a></li>
-					<li><a href="#api">API</a></li>
-					<li><a href="#architecture">Architecture</a></li>
-					<li><a href="#examples">Examples</a></li>
-				</ul>
-				<a href="#installation" id="installation" style="color: inherit; text-decoration: none;">
-					<h2>Installation</h2>
-				</a>
-				<p><code>npm install nextcloud-node-client</code></p>
-				<a href="#security-and-access-management" id="security-and-access-management" style="color: inherit; text-decoration: none;">
-					<h2>Security and access management</h2>
-				</a>
-				<p>The client requires the url of the nextcloud server and the credentials. </p>
-				<p>Use an app specific password generated in the security - devices &amp; sessions section of the nextcloud settings.</p>
-				<a href="#environment" id="environment" style="color: inherit; text-decoration: none;">
-					<h3>Environment</h3>
-				</a>
-				<p>Credentials can be specified in the environment:</p>
-				<pre><code><span class="hljs-attr">NEXTCLOUD_USERNAME</span>= <span class="hljs-string">&quot;&lt;your user name&gt;&quot;</span>
-<span class="hljs-attr">NEXTCLOUD_PASSWORD</span> = <span class="hljs-string">&quot;&lt;your password&gt;&quot;</span>
-<span class="hljs-attr">NEXTCLOUD_URL</span>= <span class="hljs-string">&quot;https://&lt;your nextcloud host&gt;&quot;</span>
-</code></pre>
-				<p>The cloud service configuration <code>VCAP_SERVICES</code> can be used alternativley (refer to the Cloud Foundry documentation for details).</p>
-				<p>The nextcloud credentials are stored in the section for user provided services <code>user-provided</code>.
-				The client is able to access the service credentials by providing the instance name.</p>
-				<pre><code class="language-json">{
-    <span class="hljs-attr">&quot;user-provided&quot;</span>: [
-        {
-            <span class="hljs-attr">&quot;credentials&quot;</span>: {
-                <span class="hljs-attr">&quot;password&quot;</span>: <span class="hljs-string">&quot;&lt;your password&gt;&quot;</span>,
-                <span class="hljs-attr">&quot;url&quot;</span>: <span class="hljs-string">&quot;https://&lt;your nextcloud host&gt;&quot;</span>,
-                <span class="hljs-attr">&quot;username&quot;</span>: <span class="hljs-string">&quot;&lt;your user name&gt;&quot;</span>
-            },
-            <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;&lt;your service instance name&gt;&quot;</span>
-        }
-    ]
-}
-</code></pre>
-				<a href="#creating-a-client" id="creating-a-client" style="color: inherit; text-decoration: none;">
-					<h3>Creating a client</h3>
-				</a>
-				<p>Creating a nextcloud client </p>
-				<pre><code class="language-typescript">  <span class="hljs-comment">// uses the environment to initialize</span>
-  <span class="hljs-keyword">import</span> Client <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;nextcloud-node-client&quot;</span>;
-  <span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> Client();
-</code></pre>
-				<pre><code class="language-typescript">  <span class="hljs-comment">// uses explicite credentials</span>
-  <span class="hljs-keyword">import</span> Client, { Server } <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;nextcloud-node-client&quot;</span>;
-  <span class="hljs-keyword">const</span> server: Server = <span class="hljs-keyword">new</span> Server(
-            { <span class="hljs-attr">basicAuth</span>:
-                { <span class="hljs-attr">password</span>: <span class="hljs-string">&quot;&lt;your password&gt;&quot;</span>,
-                  <span class="hljs-attr">username</span>: <span class="hljs-string">&quot;&lt;your user name&gt;&quot;</span>,
-                },
-                <span class="hljs-attr">url</span>: <span class="hljs-string">&quot;https://&lt;your nextcloud host&gt;&quot;</span>,
-            });
-
-  <span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> Client(server);
-</code></pre>
-				<a href="#concepts-and-philosophy" id="concepts-and-philosophy" style="color: inherit; text-decoration: none;">
-					<h2>Concepts and Philosophy</h2>
-				</a>
-				<p>The nextcloud-node-client provids a object oriented API in TypeScript. The focus is to provide a simple access to the nextcloud resources rather than a full functional coverage.</p>
-				<p><img src="https://raw.githubusercontent.com/hobigo/nextcloud-node-client/master/ncnc-object-model.png" alt="nextcloud node client object model"></p>
-				<p>The client comes with an object oriented API to access the APIs of nextcloud. The following object types are supported:</p>
-				<a href="#client" id="client" style="color: inherit; text-decoration: none;">
-					<h3>Client</h3>
-				</a>
-				<p>The client is the root object and represents the connection to the nextcloud server. The client is used to get access to the root folder and the tag repository.</p>
-				<a href="#folder" id="folder" style="color: inherit; text-decoration: none;">
-					<h3>Folder</h3>
-				</a>
-				<p>The folder is the representation of a nextcloud folder. It may contain many files. All files of a folder are deleted, if the folder is deleted.</p>
-				<a href="#file" id="file" style="color: inherit; text-decoration: none;">
-					<h3>File</h3>
-				</a>
-				<p>The file is the representation of a nextcloud file. Every file is contained in a folder.</p>
-				<a href="#tag" id="tag" style="color: inherit; text-decoration: none;">
-					<h3>Tag</h3>
-				</a>
-				<p>Tags are used to filter for file and folders. Tags can be created and assigned to files or folders.</p>
-				<a href="#share" id="share" style="color: inherit; text-decoration: none;">
-					<h3>Share</h3>
-				</a>
-				<p>Files and folders can be shared with user, user groups or publicly. The share can be password protected and an exiration date can be applied.</p>
-				<a href="#api" id="api" style="color: inherit; text-decoration: none;">
-					<h2>API</h2>
-				</a>
-				<p>This is an overview of the client API.
-				Details can be found in the <a href="https://hobigo.github.io/nextcloud-node-client">API docs</a></p>
-				<a href="#client-1" id="client-1" style="color: inherit; text-decoration: none;">
-					<h3>Client</h3>
-				</a>
-				<ul>
-					<li>factory method for client </li>
-					<li>create folder</li>
-					<li>get folder, get root folder</li>
-					<li>create file</li>
-					<li>get file</li>
-					<li>create tag*</li>
-					<li>get tags, by name, by id</li>
-					<li>get quota</li>
-					<li>find users, get user by id</li>
-					<li>create user</li>
-					<li>mass creations and changes of users</li>
-					<li>get user groups, by id</li>
-					<li>create user group
-						<a href="#folder-1" id="folder-1" style="color: inherit; text-decoration: none;">
-							<h3>Folder</h3>
-						</a>
-					</li>
-					<li>get name, id, base name, urls</li>
-					<li>delete</li>
-					<li>create sub folders </li>
-					<li>get sub folder</li>
-					<li>create file</li>
-					<li>get files</li>
-					<li>get tags, add tag, remove tag</li>
-					<li>add comment</li>
-					<li>get comments</li>
-					<li>move/rename
-						<a href="#file-1" id="file-1" style="color: inherit; text-decoration: none;">
-							<h3>File</h3>
-						</a>
-					</li>
-					<li>get name, id, base name, urls, content type</li>
-					<li>get content</li>
-					<li>delete</li>
-					<li>get tags, add tag, remove tag</li>
-					<li>add comment</li>
-					<li>get comments</li>
-					<li>get folder</li>
-					<li>move/rename
-						<a href="#tag-1" id="tag-1" style="color: inherit; text-decoration: none;">
-							<h3>Tag</h3>
-						</a>
-					</li>
-					<li>get name, id</li>
-					<li>delete*
-						<a href="#share-1" id="share-1" style="color: inherit; text-decoration: none;">
-							<h3>Share</h3>
-						</a>
-					</li>
-					<li>create, update, delete
-						<a href="#user-group" id="user-group" style="color: inherit; text-decoration: none;">
-							<h3>User Group</h3>
-						</a>
-					</li>
-					<li>delete</li>
-					<li>get members, get subadmins
-						<a href="#user" id="user" style="color: inherit; text-decoration: none;">
-							<h3>User</h3>
-						</a>
-					</li>
-					<li>delete</li>
-					<li>get properties (display name, email, quota and usage, language, last login, ...)</li>
-					<li>change properties (display name, email, quota, language, password, ...)</li>
-					<li>send welcome email</li>
-					<li>enable / disable</li>
-					<li>promote to super admin / demote from super admin</li>
-					<li>get member groups, get subadmin groups</li>
-					<li>add to user group as member / remove from member user group</li>
-					<li>promote as subadmin for user group / demote from subadmin user group</li>
-				</ul>
-				<p>* admin permissions required</p>
-				<a href="#api-examples" id="api-examples" style="color: inherit; text-decoration: none;">
-					<h3>API Examples</h3>
-				</a>
-				<a href="#quota" id="quota" style="color: inherit; text-decoration: none;">
-					<h4>Quota</h4>
-				</a>
-				<pre><code class="language-typescript">    <span class="hljs-keyword">const</span> q: IQuota = <span class="hljs-keyword">await</span> client.getQuota();
-    <span class="hljs-comment">// { used: 479244777, available: 10278950773 }</span>
-</code></pre>
-				<a href="#sytem-information" id="sytem-information" style="color: inherit; text-decoration: none;">
-					<h4>Sytem information</h4>
-				</a>
-				<pre><code class="language-typescript">    <span class="hljs-keyword">const</span> si: ISystemInfo = <span class="hljs-keyword">await</span> client.getSystemInfo();
-</code></pre>
-				<a href="#create-folder" id="create-folder" style="color: inherit; text-decoration: none;">
-					<h4>Create folder</h4>
-				</a>
-				<pre><code class="language-typescript">    <span class="hljs-comment">// create folder</span>
-    <span class="hljs-keyword">const</span> folder: Folder = <span class="hljs-keyword">await</span> client.createFolder(<span class="hljs-string">&quot;/products/brooms&quot;</span>);
-    <span class="hljs-comment">// create subfolder</span>
-    <span class="hljs-keyword">const</span> subfolder: Folder = <span class="hljs-keyword">await</span> folder.createSubFolder(<span class="hljs-string">&quot;soft brooms&quot;</span>);
-    <span class="hljs-comment">// &quot;/products/brooms/soft brooms&quot;</span>
-    
-</code></pre>
-				<a href="#get-folders" id="get-folders" style="color: inherit; text-decoration: none;">
-					<h4>Get folder(s)</h4>
-				</a>
-				<pre><code class="language-typescript">    <span class="hljs-comment">// get folder</span>
-    <span class="hljs-keyword">const</span> folder: Folder = <span class="hljs-keyword">await</span> client.getFolder(<span class="hljs-string">&quot;/products&quot;</span>);
-    <span class="hljs-comment">// get subfolders</span>
-    <span class="hljs-keyword">const</span> subfolders: Folder[] = <span class="hljs-keyword">await</span> folder.getSubFolders();    
-</code></pre>
-				<a href="#delete-folder" id="delete-folder" style="color: inherit; text-decoration: none;">
-					<h4>Delete folder</h4>
-				</a>
-				<pre><code class="language-typescript">    <span class="hljs-comment">// get folder</span>
-    <span class="hljs-keyword">const</span> folder: Folder = <span class="hljs-keyword">await</span> client.getFolder(<span class="hljs-string">&quot;/products&quot;</span>);
-    <span class="hljs-keyword">await</span> folder.delete();
-</code></pre>
-				<a href="#create-file" id="create-file" style="color: inherit; text-decoration: none;">
-					<h4>Create file</h4>
-				</a>
-				<pre><code class="language-javascript">    <span class="hljs-keyword">const</span> folder = <span class="hljs-keyword">await</span> client.getFolder(<span class="hljs-string">&quot;/products&quot;</span>);
-    <span class="hljs-keyword">const</span> file = folder.createFile(<span class="hljs-string">&quot;MyFile.txt&quot;</span>, <span class="hljs-keyword">new</span> Buffer(<span class="hljs-string">&quot;My new file&quot;</span>));
-</code></pre>
-				<a href="#get-file" id="get-file" style="color: inherit; text-decoration: none;">
-					<h4>Get file</h4>
-				</a>
-				<pre><code class="language-javascript">    <span class="hljs-keyword">const</span> file = <span class="hljs-keyword">await</span> client.getFile(<span class="hljs-string">&quot;/products/MyFile.txt&quot;</span>);
-    <span class="hljs-comment">// or</span>
-    <span class="hljs-keyword">const</span> folder = <span class="hljs-keyword">await</span> client.getFolder(<span class="hljs-string">&quot;/products&quot;</span>);
-    <span class="hljs-keyword">const</span> file = <span class="hljs-keyword">await</span> folder.getFile(<span class="hljs-string">&quot;MyFile.txt&quot;</span>);
-    <span class="hljs-comment">// file: name, baseName, lastmod, size, mime</span>
-</code></pre>
-				<a href="#get-file-content" id="get-file-content" style="color: inherit; text-decoration: none;">
-					<h4>Get file content</h4>
-				</a>
-				<pre><code class="language-javascript">    <span class="hljs-keyword">const</span> file = <span class="hljs-keyword">await</span> client.getFile(<span class="hljs-string">&quot;/products/MyFile.txt&quot;</span>);
-    <span class="hljs-keyword">const</span> buffer = <span class="hljs-keyword">await</span> file.getContent();
-</code></pre>
-				<a href="#get-file-url" id="get-file-url" style="color: inherit; text-decoration: none;">
-					<h4>Get file Url</h4>
-				</a>
-				<pre><code class="language-javascript">    <span class="hljs-keyword">const</span> file = <span class="hljs-keyword">await</span> client.getFile(<span class="hljs-string">&quot;/products/MyFile.txt&quot;</span>);
-    <span class="hljs-keyword">const</span> url = <span class="hljs-keyword">await</span> file.getUrl();
-</code></pre>
-				<a href="#add-tag-to-file" id="add-tag-to-file" style="color: inherit; text-decoration: none;">
-					<h4>Add tag to file</h4>
-				</a>
-				<pre><code class="language-javascript">    <span class="hljs-keyword">const</span> file = <span class="hljs-keyword">await</span> client.getFile(<span class="hljs-string">&quot;/products/MyFile.txt&quot;</span>);
-    <span class="hljs-keyword">await</span> file.addTag(<span class="hljs-string">&quot;myTag&quot;</span>);
-</code></pre>
-				<a href="#delete-file" id="delete-file" style="color: inherit; text-decoration: none;">
-					<h4>Delete file</h4>
-				</a>
-				<pre><code class="language-javascript">    <span class="hljs-keyword">const</span> file = <span class="hljs-keyword">await</span> client.getFile(<span class="hljs-string">&quot;/products/MyFile.txt&quot;</span>);
-    <span class="hljs-keyword">await</span> file.delete();
-</code></pre>
-				<a href="#get-files" id="get-files" style="color: inherit; text-decoration: none;">
-					<h4>Get files</h4>
-				</a>
-				<pre><code class="language-javascript">    <span class="hljs-keyword">const</span> folder = <span class="hljs-keyword">await</span> client.getFolder(<span class="hljs-string">&quot;/products&quot;</span>);
-    <span class="hljs-keyword">const</span> files = <span class="hljs-keyword">await</span> folder.getFiles();
-</code></pre>
-				<a href="#move-andor-rename-file" id="move-andor-rename-file" style="color: inherit; text-decoration: none;">
-					<h4>Move and/or rename file</h4>
-				</a>
-				<pre><code class="language-javascript">    <span class="hljs-keyword">const</span> file = <span class="hljs-keyword">await</span> client.getFile(<span class="hljs-string">&quot;/products/MyFile.txt&quot;</span>);
-    <span class="hljs-keyword">await</span> file.move(<span class="hljs-string">&quot;/products/brooms/MyFileRenamed.txt&quot;</span>);
-</code></pre>
-				<a href="#create-change-and-delete-a-share" id="create-change-and-delete-a-share" style="color: inherit; text-decoration: none;">
-					<h4>Create, change and delete a share</h4>
-				</a>
-				<pre><code class="language-typescript">    <span class="hljs-keyword">const</span> file = <span class="hljs-keyword">await</span> client.getFile(<span class="hljs-string">&quot;/products/MyFile.txt&quot;</span>);
-    <span class="hljs-comment">// share the file (works also for folder)</span>
-    <span class="hljs-keyword">const</span> createShare: ICreateShare = { <span class="hljs-attr">fileSystemElement</span>: file };
-    <span class="hljs-keyword">const</span> share: Share = <span class="hljs-keyword">await</span> client.createShare(createShare);
-    <span class="hljs-comment">// change share settings</span>
-    <span class="hljs-keyword">await</span> share.setPassword(<span class="hljs-string">&quot;some password&quot;</span>);
-    <span class="hljs-keyword">await</span> share.setNote(<span class="hljs-string">&quot;some note\nnew line&quot;</span>);
-    <span class="hljs-keyword">await</span> share.setExpiration(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(<span class="hljs-number">2020</span>, <span class="hljs-number">11</span>, <span class="hljs-number">5</span>));  
-    <span class="hljs-comment">// use the url to access the share </span>
-    <span class="hljs-keyword">const</span> shareLink:<span class="hljs-built_in">string</span> = share.url;
-    <span class="hljs-comment">// delete share, if not required anymore</span>
-    <span class="hljs-keyword">await</span> share.delete();
-</code></pre>
-				<a href="#architecture" id="architecture" style="color: inherit; text-decoration: none;">
-					<h2>Architecture</h2>
-				</a>
-				<p>The nextcloud node client can be used by node applications to extend the nextcloud functionality remotely. The client uses only HTTP apis of nextcloud for access.</p>
-				<p><img src="https://raw.githubusercontent.com/hobigo/nextcloud-node-client/master/ncnc-architecture.png" alt="nextcloud node client component architecture"></p>
-				<a href="#examples" id="examples" style="color: inherit; text-decoration: none;">
-					<h2>Examples</h2>
-				</a>
-				<a href="#user-management" id="user-management" style="color: inherit; text-decoration: none;">
-					<h3>User management</h3>
-				</a>
-				<pre><code class="language-typescript"><span class="hljs-comment">// typescript</span>
-<span class="hljs-keyword">import</span> Client, { User, UserGroup } <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;nextcloud-node-client&quot;</span>;
-
-(<span class="hljs-keyword">async</span> () =&gt; {
-    <span class="hljs-keyword">try</span> {
-        <span class="hljs-comment">// create a new client using connectivity </span>
-        <span class="hljs-comment">// information from environment</span>
-        <span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> Client();
-        <span class="hljs-comment">// create a new user group</span>
-        <span class="hljs-keyword">const</span> group: UserGroup = <span class="hljs-keyword">await</span> client.createUserGroup(<span class="hljs-string">&quot;MyGroup&quot;</span>);
-        <span class="hljs-comment">// create a new user with a email or password</span>
-        <span class="hljs-keyword">const</span> user: User = <span class="hljs-keyword">await</span> client.createUser({ <span class="hljs-attr">id</span>: <span class="hljs-string">&quot;MyUserId&quot;</span>, <span class="hljs-attr">email</span>: <span class="hljs-string">&quot;mail@example.com&quot;</span> });
-        <span class="hljs-comment">// set some properties </span>
-        <span class="hljs-comment">// ... password, phone, website, twitter, address, email, locale</span>
-        <span class="hljs-keyword">await</span> user.setDisplayName(<span class="hljs-string">&quot;My Display Name&quot;</span>);
-        <span class="hljs-keyword">await</span> user.setQuota(<span class="hljs-string">&quot;5 GB&quot;</span>);
-        <span class="hljs-keyword">await</span> user.setLanguage(<span class="hljs-string">&quot;en&quot;</span>);
-        <span class="hljs-comment">// get properties </span>
-        <span class="hljs-comment">// ... quota, user friendly quota, phone, website, twitter, address, locale</span>
-        <span class="hljs-keyword">const</span> email = <span class="hljs-keyword">await</span> user.getEmail();
-        <span class="hljs-comment">// disable user</span>
-        <span class="hljs-keyword">await</span> user.disable();
-        <span class="hljs-comment">// enable user</span>
-        <span class="hljs-keyword">await</span> user.enable();
-        <span class="hljs-comment">// promote to super administrator</span>
-        <span class="hljs-keyword">await</span> user.promoteToSuperAdmin();
-        <span class="hljs-comment">// demote from super administrator</span>
-        <span class="hljs-keyword">await</span> user.demoteFromSuperAdmin();
-        <span class="hljs-comment">// resend welcome email to user</span>
-        <span class="hljs-keyword">await</span> user.resendWelcomeEmail();
-        <span class="hljs-comment">// add to user group as member</span>
-        <span class="hljs-keyword">await</span> user.addToMemberUserGroup(group);
-        <span class="hljs-comment">// get member user groups</span>
-        <span class="hljs-keyword">const</span> memberGroups: UserGroup[] = <span class="hljs-keyword">await</span> user.getMemberUserGroups();
-        <span class="hljs-comment">// get user ids of memembers</span>
-        <span class="hljs-keyword">await</span> group.getMemberUserIds();
-        <span class="hljs-comment">// remove user from member group</span>
-        <span class="hljs-keyword">await</span> user.removeFromMemberUserGroup(group);
-        <span class="hljs-comment">// promote user as subadmin for user group</span>
-        <span class="hljs-keyword">await</span> user.promoteToUserGroupSubadmin(group);
-        <span class="hljs-comment">// get user groups where the user is subadmin</span>
-        <span class="hljs-keyword">const</span> subadminGroups: UserGroup[] = <span class="hljs-keyword">await</span> user.getSubadminUserGroups();
-        <span class="hljs-comment">// get user ids of subadmins</span>
-        <span class="hljs-keyword">await</span> group.getSubadminUserIds();
-        <span class="hljs-comment">// demote user from being subadmin for user group</span>
-        <span class="hljs-keyword">await</span> user.demoteFromSubadminUserGroup(group);
-        <span class="hljs-comment">// delete the user</span>
-        <span class="hljs-keyword">await</span> user.delete();
-        <span class="hljs-comment">// delete the user group</span>
-        <span class="hljs-keyword">await</span> group.delete();
-        <span class="hljs-comment">// mass creations / updates of users</span>
-        <span class="hljs-comment">// groups are created on the fly</span>
-        <span class="hljs-keyword">await</span> client.upsertUsers([
-            { <span class="hljs-attr">id</span>: <span class="hljs-string">&quot;myUser1&quot;</span>, <span class="hljs-attr">email</span>: <span class="hljs-string">&quot;myUser1@example.com&quot;</span>, <span class="hljs-attr">enabled</span>: <span class="hljs-literal">false</span>, <span class="hljs-attr">memberGroups</span>: [<span class="hljs-string">&quot;group1&quot;</span>, <span class="hljs-string">&quot;group2&quot;</span>] },
-            { <span class="hljs-attr">id</span>: <span class="hljs-string">&quot;myUser2&quot;</span>, <span class="hljs-attr">password</span>: <span class="hljs-string">&quot;mySecurePassword&quot;</span>, <span class="hljs-attr">displayName</span>: <span class="hljs-string">&quot;My Name&quot;</span>, <span class="hljs-attr">superAdmin</span>: <span class="hljs-literal">true</span>, <span class="hljs-attr">quota</span>: <span class="hljs-string">&quot;2 GB&quot;</span> },
-            <span class="hljs-comment">// ...</span>
-        ]);
-    } <span class="hljs-keyword">catch</span> (e) {
-        <span class="hljs-comment">// use specific exception *error classes </span>
-        <span class="hljs-comment">// for error handling documented in @throws</span>
-    }
-})();
-</code></pre>
-				<a href="#tagging" id="tagging" style="color: inherit; text-decoration: none;">
-					<h3>Tagging</h3>
-				</a>
-				<pre><code class="language-typescript"><span class="hljs-comment">// typescript</span>
-<span class="hljs-keyword">import</span> Client, { File, Folder, Share, Tag, FileSystemElement } <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;nextcloud-node-client&quot;</span>;
-
-(<span class="hljs-keyword">async</span> () =&gt; {
-    <span class="hljs-keyword">try</span> {
-        <span class="hljs-comment">// create a new client using connectivity information from environment</span>
-        <span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> Client();
-        <span class="hljs-comment">// create a folder structure if not available</span>
-        <span class="hljs-keyword">const</span> folder: Folder = <span class="hljs-keyword">await</span> client.createFolder(<span class="hljs-string">&quot;folder/subfolder&quot;</span>);
-        <span class="hljs-comment">// create file within the folder</span>
-        <span class="hljs-keyword">const</span> file: File = <span class="hljs-keyword">await</span> folder.createFile(<span class="hljs-string">&quot;myFile.txt&quot;</span>, Buffer.from(<span class="hljs-string">&quot;My file content&quot;</span>));
-        <span class="hljs-comment">// create two tags</span>
-        <span class="hljs-keyword">const</span> tag1: Tag = <span class="hljs-keyword">await</span> client.createTag(<span class="hljs-string">&quot;tag 1&quot;</span>);
-        <span class="hljs-keyword">const</span> tag2: Tag = <span class="hljs-keyword">await</span> client.createTag(<span class="hljs-string">&quot;tag 2&quot;</span>);
-        <span class="hljs-comment">// assign tag to folder</span>
-        folder.addTag(tag1.name);
-        <span class="hljs-comment">// assign tag to files</span>
-        file.addTag(tag1.name);
-        file.addTag(tag2.name);
-
-        <span class="hljs-comment">// get list of file system elements with the tag1 assigned</span>
-        <span class="hljs-keyword">let</span> fse: FileSystemElement[] = <span class="hljs-keyword">await</span> client.getFileSystemElementByTags([tag1]);
-        <span class="hljs-comment">// print names of folder and file</span>
-        <span class="hljs-built_in">console</span>.log(fse[<span class="hljs-number">0</span>].name);
-        <span class="hljs-built_in">console</span>.log(fse[<span class="hljs-number">1</span>].name);
-
-        <span class="hljs-comment">// get list of file system elements with the tag1 and tag2</span>
-        fse = <span class="hljs-keyword">await</span> client.getFileSystemElementByTags([tag1, tag2]);
-        <span class="hljs-comment">// print name of file</span>
-        <span class="hljs-built_in">console</span>.log(fse[<span class="hljs-number">0</span>].name);
-
-        <span class="hljs-comment">// delete the tags</span>
-        <span class="hljs-keyword">await</span> tag1.delete();
-        <span class="hljs-keyword">await</span> tag2.delete();
-        <span class="hljs-comment">// delete the folder including the file and share</span>
-        <span class="hljs-keyword">await</span> folder.delete();
-    } <span class="hljs-keyword">catch</span> (e) {
-        <span class="hljs-comment">// some error handling</span>
-        <span class="hljs-built_in">console</span>.log(e);
-    }
-})();
-</code></pre>
-				<a href="#quality" id="quality" style="color: inherit; text-decoration: none;">
-					<h2>Quality</h2>
-				</a>
-				<p>Tested with nextcloud 17.0.1, 18.0.0</p>
-				<p>A code coverage of 100% is aspired</p>
-				<a href="#todo-list" id="todo-list" style="color: inherit; text-decoration: none;">
-					<h2>Todo list</h2>
-				</a>
-				<a href="#version-20" id="version-20" style="color: inherit; text-decoration: none;">
-					<h3>Version 2.0</h3>
-				</a>
-				<ul>
-					<li>remove vcap services support</li>
-					<li>remove server object and replace with connection object</li>
-					<li>connection object handles all http requets (new Connection, conn.connect() ...)</li>
-					<li>refactor client - use connection instead of client in sub objects move client methods to sub objects</li>
-					<li>Move exceptions to relevant objects, prefix all exceptions with &quot;Error&quot;</li>
-					<li>Remove &quot;I&quot; from interface names</li>
-				</ul>
-				<a href="#sharing" id="sharing" style="color: inherit; text-decoration: none;">
-					<h3>Sharing</h3>
-				</a>
-				<p>Share with </p>
-				<ul>
-					<li>user</li>
-					<li>usergroup</li>
-					<li>email-address</li>
-				</ul>
-				<a href="#search" id="search" style="color: inherit; text-decoration: none;">
-					<h3>Search</h3>
-				</a>
-				<ul>
-					<li>Search for files api</li>
-					<li>client in github actions - upload files</li>
-				</ul>
-				<a href="#server-api" id="server-api" style="color: inherit; text-decoration: none;">
-					<h3>Server API</h3>
-				</a>
-				<ul>
-					<li><strike>support also the nextcloud server url instead of the WebDAV url only</strike></li>
-				</ul>
-				<a href="#download" id="download" style="color: inherit; text-decoration: none;">
-					<h3>Download</h3>
-				</a>
-				<ul>
-					<li><strike>download folder contents example</strike></li>
-					<li><strike>download folder contents to disk recursively</strike></li>
-				</ul>
-				<a href="#upload" id="upload" style="color: inherit; text-decoration: none;">
-					<h3>Upload</h3>
-				</a>
-				<ul>
-					<li><strike>upload local file on disk to nextcloud</strike></li>
-					<li><strike>upload local folder on disk to nextcloud recursively</strike></li>
-				</ul>
-				<a href="#get-files-recursively" id="get-files-recursively" style="color: inherit; text-decoration: none;">
-					<h3>Get Files recursively</h3>
-				</a>
-				<ul>
-					<li><strike>command get files recurively</strike></li>
-					<li><strike>filter get files recurively</strike></li>
-					<li><strike>example get files recurively</strike></li>
-				</ul>
-				<a href="#access-using-tags" id="access-using-tags" style="color: inherit; text-decoration: none;">
-					<h3>Access using tags</h3>
-				</a>
-				<p><strike>* Get files and folders by tags client.getFileSystemObjectByTags</strike></p>
-				<a href="#user-management-1" id="user-management-1" style="color: inherit; text-decoration: none;">
-					<h3>User management</h3>
-				</a>
-				<p>User: </p>
-				<ul>
-					<li><strike>get</strike></li>
-					<li><strike>getIds limit, offset, search</strike></li>
-					<li><strike>create</strike></li>
-					<li><strike>update</strike></li>
-					<li><strike>delete</strike></li>
-					<li><strike>deactivate</strike></li>
-					<li><strike>add/remove group member</strike></li>
-					<li><strike>add/remove group subadmin</strike></li>
-					<li><strike>example in readme</strike></li>
-					<li>send notification</li>
-				</ul>
-				<p>User group: </p>
-				<ul>
-					<li><strike>get</strike></li>
-					<li><strike>create</strike></li>
-					<li><strike>delete</strike></li>
-				</ul>
-				<a href="#streams" id="streams" style="color: inherit; text-decoration: none;">
-					<h3>Streams</h3>
-				</a>
-				<p>Create file and get file using streams</p>
-				<a href="#eventing" id="eventing" style="color: inherit; text-decoration: none;">
-					<h3>Eventing</h3>
-				</a>
-				<ul>
-					<li>create event objects</li>
-					<li>start observer</li>
-					<li>subscribe to events and register handler functions</li>
-					<li>telegram support</li>
-				</ul>
-				<a href="#notifications" id="notifications" style="color: inherit; text-decoration: none;">
-					<h3>notifications</h3>
-				</a>
-				<p>basic methods are available since 1.2.0 without strong typing</p>
-				<ul>
-					<li>notification object</li>
-				</ul>
-				<a href="#refactoring" id="refactoring" style="color: inherit; text-decoration: none;">
-					<h3>Refactoring</h3>
-				</a>
-				<ul>
-					<li>Introduction of exception classes instead of error codes (breaking change)</li>
-					<li><strike>Move from codecov to coveralls</strike></li>
-					<li>move to eslint instead of using tslint</li>
-					<li>remove &quot;I&quot; from all interfaces - (breaking change)</li>
-				</ul>
-				<a href="#search-1" id="search-1" style="color: inherit; text-decoration: none;">
-					<h3>Search</h3>
-				</a>
-				<ul>
-					<li>Search for files api</li>
-					<li>client in github actions - upload files</li>
-				</ul>
-				<a href="#license" id="license" style="color: inherit; text-decoration: none;">
-					<h2>License</h2>
-				</a>
-				<p>Apache</p>
-			</div>
-		</div>
-		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
-			<nav class="tsd-navigation primary">
-				<ul>
-					<li class="globals  ">
-						<a href="globals.html"><em>Globals</em></a>
-					</li>
-				</ul>
-			</nav>
-			<nav class="tsd-navigation secondary menu-sticky">
-				<ul class="before-current">
-					<li class=" tsd-kind-class">
-						<a href="classes/client.html" class="tsd-kind-icon">Client</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/iquota.html" class="tsd-kind-icon">IQuota</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/istat.html" class="tsd-kind-icon">IStat</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/isysbasicdata.html" class="tsd-kind-icon">ISys<wbr>Basic<wbr>Data</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/isysinfonextcloud.html" class="tsd-kind-icon">ISys<wbr>Info<wbr>Nextcloud</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/isysinfonextcloudclient.html" class="tsd-kind-icon">ISys<wbr>Info<wbr>Nextcloud<wbr>Client</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/isysteminfo.html" class="tsd-kind-icon">ISystem<wbr>Info</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/iupsertuseroptions.html" class="tsd-kind-icon">IUpsert<wbr>User<wbr>Options</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/iupsertuserreport.html" class="tsd-kind-icon">IUpsert<wbr>User<wbr>Report</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/iuserpropertychange.html" class="tsd-kind-icon">IUser<wbr>Property<wbr>Change</a>
-					</li>
-					<li class=" tsd-kind-variable">
-						<a href="globals.html#log" class="tsd-kind-icon">log</a>
-					</li>
-				</ul>
-			</nav>
-		</div>
-	</div>
-</div>
-<footer class="with-border-bottom">
-	<div class="container">
-		<h2>Legend</h2>
-		<div class="tsd-legend-group">
-			<ul class="tsd-legend">
-				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
-			</ul>
-		</div>
-	</div>
-</footer>
-<div class="container tsd-generator">
-	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
-</div>
-<div class="overlay"></div>
-<script src="assets/js/main.js"></script>
-</body>
-</html>
+<p>Access nextcloud remotely from node.js applications with a rich and simple TypeScript / JavaScript API.</p>
+<p><a href="https://www.typescriptlang.org"><img src="https://img.shields.io/badge/Language-Typescript-Blue.svg?style=flat-square" alt="lang: Typescript"></a>
+<img src="https://github.com/hobigo/nextcloud-node-client/workflows/CI/badge.svg" alt="">
+<a href="https://npmjs.org/package/nextcloud-node-client"><img src="https://img.shields.io/npm/dm/nextcloud-node-client.svg?style=flat" alt="NPM Downloads"></a>
+<a href="https://david-dm.org/hobigo/nextcloud-node-client"><img src="https://david-dm.org/hobigo/nextcloud-node-client.svg?style=flat" alt="Dependency Status"></a>
+<a href="https://coveralls.io/github/hobigo/nextcloud-node-client?branch=master"><img src="https://coveralls.io/repos/github/hobigo/nextcloud-node-client/badge.svg?branch=master" alt="Coverage Status"></a>
+<a href="https://packagephobia.now.sh/result?p=nextcloud-node-client"><img src="https://packagephobia.now.sh/badge?p=commander" alt="Install Size"></a>
+<a href="https://hobigo.github.io/nextcloud-node-client"><img src="https://img.shields.io/website-up-down-green-red/https/hobigo.github.io/nextcloud-node-client.svg?label=documentation-website" alt="documentation"></a></p>
+<ul>
+<li>upload and download files</li>
+<li>create files and folder structures</li>
+<li>all user management functions</li>
+<li>create shares</li>
+<li>tagging and commenting</li>
+</ul>
+<p>The nextcloud node client is used to automate access to nextcloud servers from node.js apppliactions. </p>
+<a id="md:example" class="tsd-anchor"></a><h1><a href="#md:example">Example</a></h1><pre><code class="language-typescript"><span class="hl-0">// typescript</span><br/><span class="hl-1">import</span><span class="hl-2"> </span><span class="hl-3">Client</span><span class="hl-2">, { </span><span class="hl-3">File</span><span class="hl-2">, </span><span class="hl-3">Folder</span><span class="hl-2">, </span><span class="hl-3">Tag</span><span class="hl-2">, </span><span class="hl-3">Share</span><span class="hl-2"> } </span><span class="hl-1">from</span><span class="hl-2"> </span><span class="hl-4">&quot;nextcloud-node-client&quot;</span><span class="hl-2">;</span><br/><br/><span class="hl-2">(</span><span class="hl-5">async</span><span class="hl-2"> () </span><span class="hl-5">=&gt;</span><span class="hl-2"> {</span><br/><span class="hl-2">    </span><span class="hl-1">try</span><span class="hl-2"> {</span><br/><span class="hl-2">        </span><span class="hl-0">// create a new client using connectivity information from environment </span><br/><span class="hl-2">        </span><span class="hl-5">const</span><span class="hl-2"> </span><span class="hl-6">client</span><span class="hl-2"> = </span><span class="hl-5">new</span><span class="hl-2"> </span><span class="hl-7">Client</span><span class="hl-2">();</span><br/><span class="hl-2">        </span><span class="hl-0">// create a folder structure if not available</span><br/><span class="hl-2">        </span><span class="hl-5">const</span><span class="hl-2"> </span><span class="hl-6">folder</span><span class="hl-2">: </span><span class="hl-8">Folder</span><span class="hl-2"> = </span><span class="hl-1">await</span><span class="hl-2"> </span><span class="hl-3">client</span><span class="hl-2">.</span><span class="hl-7">createFolder</span><span class="hl-2">(</span><span class="hl-4">&quot;folder/subfolder&quot;</span><span class="hl-2">);</span><br/><span class="hl-2">        </span><span class="hl-0">// create file within the folder</span><br/><span class="hl-2">        </span><span class="hl-5">const</span><span class="hl-2"> </span><span class="hl-6">file</span><span class="hl-2">: </span><span class="hl-8">File</span><span class="hl-2"> = </span><span class="hl-1">await</span><span class="hl-2"> </span><span class="hl-3">folder</span><span class="hl-2">.</span><span class="hl-7">createFile</span><span class="hl-2">(</span><span class="hl-4">&quot;myFile.txt&quot;</span><span class="hl-2">, </span><span class="hl-3">Buffer</span><span class="hl-2">.</span><span class="hl-7">from</span><span class="hl-2">(</span><span class="hl-4">&quot;My file content&quot;</span><span class="hl-2">));</span><br/><span class="hl-2">        </span><span class="hl-0">// add a tag to the file and create the tag if not existing</span><br/><span class="hl-2">        </span><span class="hl-1">await</span><span class="hl-2"> </span><span class="hl-3">file</span><span class="hl-2">.</span><span class="hl-7">addTag</span><span class="hl-2">(</span><span class="hl-4">&quot;MyTag&quot;</span><span class="hl-2">);</span><br/><span class="hl-2">        </span><span class="hl-0">// add a comment to the file</span><br/><span class="hl-2">        </span><span class="hl-1">await</span><span class="hl-2"> </span><span class="hl-3">file</span><span class="hl-2">.</span><span class="hl-7">addComment</span><span class="hl-2">(</span><span class="hl-4">&quot;myComment&quot;</span><span class="hl-2">);</span><br/><span class="hl-2">        </span><span class="hl-0">// get the file content</span><br/><span class="hl-2">        </span><span class="hl-5">const</span><span class="hl-2"> </span><span class="hl-6">content</span><span class="hl-2">: </span><span class="hl-8">Buffer</span><span class="hl-2"> = </span><span class="hl-1">await</span><span class="hl-2"> </span><span class="hl-3">file</span><span class="hl-2">.</span><span class="hl-7">getContent</span><span class="hl-2">();</span><br/><span class="hl-2">        </span><span class="hl-0">// share the file publicly with password and note</span><br/><span class="hl-2">        </span><span class="hl-5">const</span><span class="hl-2"> </span><span class="hl-6">share</span><span class="hl-2">: </span><span class="hl-8">Share</span><span class="hl-2"> = </span><span class="hl-1">await</span><span class="hl-2"> </span><span class="hl-3">client</span><span class="hl-2">.</span><span class="hl-7">createShare</span><span class="hl-2">({ </span><span class="hl-3">fileSystemElement:</span><span class="hl-2"> </span><span class="hl-3">file</span><span class="hl-2"> });</span><br/><span class="hl-2">        </span><span class="hl-1">await</span><span class="hl-2"> </span><span class="hl-3">share</span><span class="hl-2">.</span><span class="hl-7">setPassword</span><span class="hl-2">(</span><span class="hl-4">&quot;some password&quot;</span><span class="hl-2">);</span><br/><span class="hl-2">        </span><span class="hl-1">await</span><span class="hl-2"> </span><span class="hl-3">share</span><span class="hl-2">.</span><span class="hl-7">setNote</span><span class="hl-2">(</span><span class="hl-4">&quot;some note</span><span class="hl-9">\n</span><span class="hl-4">new line&quot;</span><span class="hl-2">);</span><br/><span class="hl-2">        </span><span class="hl-0">// use the url to access the share </span><br/><span class="hl-2">        </span><span class="hl-5">const</span><span class="hl-2"> </span><span class="hl-6">shareLink</span><span class="hl-2">:</span><span class="hl-8">string</span><span class="hl-2"> = </span><span class="hl-3">share</span><span class="hl-2">.</span><span class="hl-3">url</span><span class="hl-2">;</span><br/><span class="hl-2">        </span><span class="hl-0">// delete the folder including the file and share</span><br/><span class="hl-2">        </span><span class="hl-1">await</span><span class="hl-2"> </span><span class="hl-3">folder</span><span class="hl-2">.</span><span class="hl-7">delete</span><span class="hl-2">();</span><br/><span class="hl-2">    } </span><span class="hl-1">catch</span><span class="hl-2"> (</span><span class="hl-3">e</span><span class="hl-2">) {</span><br/><span class="hl-2">        </span><span class="hl-0">// some error handling   </span><br/><span class="hl-2">        </span><span class="hl-3">console</span><span class="hl-2">.</span><span class="hl-7">log</span><span class="hl-2">(</span><span class="hl-3">e</span><span class="hl-2">);</span><br/><span class="hl-2">    }</span><br/><span class="hl-2">})();</span>
+</code><button>Copy</button></pre>
+<a id="md:documentation" class="tsd-anchor"></a><h1><a href="#md:documentation">Documentation</a></h1><ul>
+<li><a href="#installation">Installation</a></li>
+<li><a href="./docs/upload.md">Upload files and folders</a></li>
+<li><a href="./docs/download.md">Download files and folders</a></li>
+<li><a href="./docs/getFiles.md">Get files recursively</a></li>
+<li><a href="./docs/userManagement.md">User Management</a></li>
+<li><a href="./docs/tagging.md">Tagging</a></li>
+<li><a href="#security-and-access-management">Security and access management</a></li>
+<li><a href="#concepts-and-philosophy">Concepts and Philosophy</a></li>
+<li><a href="#api">API</a></li>
+<li><a href="#architecture">Architecture</a></li>
+<li><a href="#examples">Examples</a></li>
+</ul>
+<a id="md:installation" class="tsd-anchor"></a><h2><a href="#md:installation">Installation</a></h2><p><code>npm install nextcloud-node-client</code></p>
+<a id="md:security-and-access-management" class="tsd-anchor"></a><h2><a href="#md:security-and-access-management">Security and access management</a></h2><p>The client requires the url of the nextcloud server and the credentials. </p>
+<p>Use an app specific password generated in the security - devices &amp; sessions section of the nextcloud settings.</p>
+<a id="md:environment" class="tsd-anchor"></a><h3><a href="#md:environment">Environment</a></h3><p>Credentials can be specified in the environment:</p>
+<pre><code><span class="hl-6">NEXTCLOUD_USERNAME</span><span class="hl-2">= </span><span class="hl-4">&quot;&lt;your user name&gt;&quot;</span><br/><span class="hl-6">NEXTCLOUD_PASSWORD</span><span class="hl-2"> = </span><span class="hl-4">&quot;&lt;your password&gt;&quot;</span><br/><span class="hl-6">NEXTCLOUD_URL</span><span class="hl-2">= </span><span class="hl-4">&quot;https://&lt;your nextcloud host&gt;&quot;</span>
+</code><button>Copy</button></pre>
+<p>The cloud service configuration <code>VCAP_SERVICES</code> can be used alternativley (refer to the Cloud Foundry documentation for details).</p>
+<p>The nextcloud credentials are stored in the section for user provided services <code>user-provided</code>.
+The client is able to access the service credentials by providing the instance name.</p>
+<pre><code class="language-json"><span class="hl-2">{</span><br/><span class="hl-2">    </span><span class="hl-10">&quot;user-provided&quot;</span><span class="hl-2">: [</span><br/><span class="hl-2">        {</span><br/><span class="hl-2">            </span><span class="hl-10">&quot;credentials&quot;</span><span class="hl-2">: {</span><br/><span class="hl-2">                </span><span class="hl-10">&quot;password&quot;</span><span class="hl-2">: </span><span class="hl-4">&quot;&lt;your password&gt;&quot;</span><span class="hl-2">,</span><br/><span class="hl-2">                </span><span class="hl-10">&quot;url&quot;</span><span class="hl-2">: </span><span class="hl-4">&quot;https://&lt;your nextcloud host&gt;&quot;</span><span class="hl-2">,</span><br/><span class="hl-2">                </span><span class="hl-10">&quot;username&quot;</span><span class="hl-2">: </span><span class="hl-4">&quot;&lt;your user name&gt;&quot;</span><br/><span class="hl-2">            },</span><br/><span class="hl-2">            </span><span class="hl-10">&quot;name&quot;</span><span class="hl-2">: </span><span class="hl-4">&quot;&lt;your service instance name&gt;&quot;</span><br/><span class="hl-2">        }</span><br/><span class="hl-2">    ]</span><br/><span class="hl-2">}</span>
+</code><button>Copy</button></pre>
+<a id="md:creating-a-client" class="tsd-anchor"></a><h3><a href="#md:creating-a-client">Creating a client</a></h3><p>Creating a nextcloud client </p>
+<pre><code class="language-typescript"><span class="hl-2">  </span><span class="hl-0">// uses the environment to initialize</span><br/><span class="hl-2">  </span><span class="hl-1">import</span><span class="hl-2"> </span><span class="hl-3">Client</span><span class="hl-2"> </span><span class="hl-1">from</span><span class="hl-2"> </span><span class="hl-4">&quot;nextcloud-node-client&quot;</span><span class="hl-2">;</span><br/><span class="hl-2">  </span><span class="hl-5">const</span><span class="hl-2"> </span><span class="hl-6">client</span><span class="hl-2"> = </span><span class="hl-5">new</span><span class="hl-2"> </span><span class="hl-7">Client</span><span class="hl-2">();</span>
+</code><button>Copy</button></pre>
+<pre><code class="language-typescript"><span class="hl-2">  </span><span class="hl-0">// uses explicite credentials</span><br/><span class="hl-2">  </span><span class="hl-1">import</span><span class="hl-2"> </span><span class="hl-3">Client</span><span class="hl-2">, { </span><span class="hl-3">Server</span><span class="hl-2"> } </span><span class="hl-1">from</span><span class="hl-2"> </span><span class="hl-4">&quot;nextcloud-node-client&quot;</span><span class="hl-2">;</span><br/><span class="hl-2">  </span><span class="hl-5">const</span><span class="hl-2"> </span><span class="hl-6">server</span><span class="hl-2">: </span><span class="hl-8">Server</span><span class="hl-2"> = </span><span class="hl-5">new</span><span class="hl-2"> </span><span class="hl-7">Server</span><span class="hl-2">(</span><br/><span class="hl-2">            { </span><span class="hl-3">basicAuth:</span><br/><span class="hl-2">                { </span><span class="hl-3">password:</span><span class="hl-2"> </span><span class="hl-4">&quot;&lt;your password&gt;&quot;</span><span class="hl-2">,</span><br/><span class="hl-2">                  </span><span class="hl-3">username:</span><span class="hl-2"> </span><span class="hl-4">&quot;&lt;your user name&gt;&quot;</span><span class="hl-2">,</span><br/><span class="hl-2">                },</span><br/><span class="hl-2">                </span><span class="hl-3">url:</span><span class="hl-2"> </span><span class="hl-4">&quot;https://&lt;your nextcloud host&gt;&quot;</span><span class="hl-2">,</span><br/><span class="hl-2">            });</span><br/><br/><span class="hl-2">  </span><span class="hl-5">const</span><span class="hl-2"> </span><span class="hl-6">client</span><span class="hl-2"> = </span><span class="hl-5">new</span><span class="hl-2"> </span><span class="hl-7">Client</span><span class="hl-2">(</span><span class="hl-3">server</span><span class="hl-2">);</span>
+</code><button>Copy</button></pre>
+<a id="md:concepts-and-philosophy" class="tsd-anchor"></a><h2><a href="#md:concepts-and-philosophy">Concepts and Philosophy</a></h2><p>The nextcloud-node-client provids a object oriented API in TypeScript. The focus is to provide a simple access to the nextcloud resources rather than a full functional coverage.</p>
+<p><img src="https://raw.githubusercontent.com/hobigo/nextcloud-node-client/master/ncnc-object-model.png" alt="nextcloud node client object model"></p>
+<p>The client comes with an object oriented API to access the APIs of nextcloud. The following object types are supported:</p>
+<a id="md:client" class="tsd-anchor"></a><h3><a href="#md:client">Client</a></h3><p>The client is the root object and represents the connection to the nextcloud server. The client is used to get access to the root folder and the tag repository.</p>
+<a id="md:folder" class="tsd-anchor"></a><h3><a href="#md:folder">Folder</a></h3><p>The folder is the representation of a nextcloud folder. It may contain many files. All files of a folder are deleted, if the folder is deleted.</p>
+<a id="md:file" class="tsd-anchor"></a><h3><a href="#md:file">File</a></h3><p>The file is the representation of a nextcloud file. Every file is contained in a folder.</p>
+<a id="md:tag" class="tsd-anchor"></a><h3><a href="#md:tag">Tag</a></h3><p>Tags are used to filter for file and folders. Tags can be created and assigned to files or folders.</p>
+<a id="md:share" class="tsd-anchor"></a><h3><a href="#md:share">Share</a></h3><p>Files and folders can be shared with user, user groups or publicly. The share can be password protected and an exiration date can be applied.</p>
+<a id="md:api" class="tsd-anchor"></a><h2><a href="#md:api">API</a></h2><p>This is an overview of the client API.
+Details can be found in the <a href="https://hobigo.github.io/nextcloud-node-client">API docs</a></p>
+<a id="md:client-1" class="tsd-anchor"></a><h3><a href="#md:client-1">Client</a></h3><ul>
+<li>factory method for client </li>
+<li>create folder</li>
+<li>get folder, get root folder</li>
+<li>create file</li>
+<li>get file</li>
+<li>create tag*</li>
+<li>get tags, by name, by id</li>
+<li>get quota</li>
+<li>find users, get user by id</li>
+<li>create user</li>
+<li>mass creations and changes of users</li>
+<li>get user groups, by id</li>
+<li>create user group</li>
+</ul>
+<a id="md:folder-1" class="tsd-anchor"></a><h3><a href="#md:folder-1">Folder</a></h3><ul>
+<li>get name, id, base name, urls</li>
+<li>delete</li>
+<li>create sub folders </li>
+<li>get sub folder</li>
+<li>create file</li>
+<li>get files</li>
+<li>get tags, add tag, remove tag</li>
+<li>add comment</li>
+<li>get comments</li>
+<li>move/rename</li>
+</ul>
+<a id="md:file-1" class="tsd-anchor"></a><h3><a href="#md:file-1">File</a></h3><ul>
+<li>get name, id, base name, urls, content type</li>
+<li>get content</li>
+<li>delete</li>
+<li>get tags, add tag, remove tag</li>
+<li>add comment</li>
+<li>get comments</li>
+<li>get folder</li>
+<li>move/rename</li>
+</ul>
+<a id="md:tag-1" class="tsd-anchor"></a><h3><a href="#md:tag-1">Tag</a></h3><ul>
+<li>get name, id</li>
+<li>delete*</li>
+</ul>
+<a id="md:share-1" class="tsd-anchor"></a><h3><a href="#md:share-1">Share</a></h3><ul>
+<li>create, update, delete</li>
+</ul>
+<a id="md:user-group" class="tsd-anchor"></a><h3><a href="#md:user-group">User Group</a></h3><ul>
+<li>delete</li>
+<li>get members, get subadmins</li>
+</ul>
+<a id="md:user" class="tsd-anchor"></a><h3><a href="#md:user">User</a></h3><ul>
+<li>delete</li>
+<li>get properties (display name, email, quota and usage, language, last login, ...)</li>
+<li>change properties (display name, email, quota, language, password, ...)</li>
+<li>send welcome email</li>
+<li>enable / disable</li>
+<li>promote to super admin / demote from super admin</li>
+<li>get member groups, get subadmin groups</li>
+<li>add to user group as member / remove from member user group</li>
+<li>promote as subadmin for user group / demote from subadmin user group</li>
+</ul>
+<p>* admin permissions required</p>
+<a id="md:api-examples" class="tsd-anchor"></a><h3><a href="#md:api-examples">API Examples</a></h3><a id="md:quota" class="tsd-anchor"></a><h4><a href="#md:quota">Quota</a></h4><pre><code class="language-typescript"><span class="hl-2">    </span><span class="hl-5">const</span><span class="hl-2"> </span><span class="hl-6">q</span><span class="hl-2">: </span><span class="hl-8">IQuota</span><span class="hl-2"> = </span><span class="hl-1">await</span><span class="hl-2"> </span><span class="hl-3">client</span><span class="hl-2">.</span><span class="hl-7">getQuota</span><span class="hl-2">();  </span><br/><span class="hl-2">    </span><span class="hl-0">// { used: 479244777, available: 10278950773 }</span>
+</code><button>Copy</button></pre>
+<a id="md:sytem-information" class="tsd-anchor"></a><h4><a href="#md:sytem-information">Sytem information</a></h4><pre><code class="language-typescript"><span class="hl-2">    </span><span class="hl-5">const</span><span class="hl-2"> </span><span class="hl-6">si</span><span class="hl-2">: </span><span class="hl-8">ISystemInfo</span><span class="hl-2"> = </span><span class="hl-1">await</span><span class="hl-2"> </span><span class="hl-3">client</span><span class="hl-2">.</span><span class="hl-7">getSystemInfo</span><span class="hl-2">();  </span>
+</code><button>Copy</button></pre>
+<a id="md:create-folder" class="tsd-anchor"></a><h4><a href="#md:create-folder">Create folder</a></h4><pre><code class="language-typescript"><span class="hl-2">    </span><span class="hl-0">// create folder</span><br/><span class="hl-2">    </span><span class="hl-5">const</span><span class="hl-2"> </span><span class="hl-6">folder</span><span class="hl-2">: </span><span class="hl-8">Folder</span><span class="hl-2"> = </span><span class="hl-1">await</span><span class="hl-2"> </span><span class="hl-3">client</span><span class="hl-2">.</span><span class="hl-7">createFolder</span><span class="hl-2">(</span><span class="hl-4">&quot;/products/brooms&quot;</span><span class="hl-2">);</span><br/><span class="hl-2">    </span><span class="hl-0">// create subfolder</span><br/><span class="hl-2">    </span><span class="hl-5">const</span><span class="hl-2"> </span><span class="hl-6">subfolder</span><span class="hl-2">: </span><span class="hl-8">Folder</span><span class="hl-2"> = </span><span class="hl-1">await</span><span class="hl-2"> </span><span class="hl-3">folder</span><span class="hl-2">.</span><span class="hl-7">createSubFolder</span><span class="hl-2">(</span><span class="hl-4">&quot;soft brooms&quot;</span><span class="hl-2">);</span><br/><span class="hl-2">    </span><span class="hl-0">// &quot;/products/brooms/soft brooms&quot;</span><br/><span class="hl-2">    </span>
+</code><button>Copy</button></pre>
+<a id="md:get-folders" class="tsd-anchor"></a><h4><a href="#md:get-folders">Get folder(s)</a></h4><pre><code class="language-typescript"><span class="hl-2">    </span><span class="hl-0">// get folder</span><br/><span class="hl-2">    </span><span class="hl-5">const</span><span class="hl-2"> </span><span class="hl-6">folder</span><span class="hl-2">: </span><span class="hl-8">Folder</span><span class="hl-2"> = </span><span class="hl-1">await</span><span class="hl-2"> </span><span class="hl-3">client</span><span class="hl-2">.</span><span class="hl-7">getFolder</span><span class="hl-2">(</span><span class="hl-4">&quot;/products&quot;</span><span class="hl-2">);</span><br/><span class="hl-2">    </span><span class="hl-0">// get subfolders</span><br/><span class="hl-2">    </span><span class="hl-5">const</span><span class="hl-2"> </span><span class="hl-6">subfolders</span><span class="hl-2">: </span><span class="hl-8">Folder</span><span class="hl-2">[] = </span><span class="hl-1">await</span><span class="hl-2"> </span><span class="hl-3">folder</span><span class="hl-2">.</span><span class="hl-7">getSubFolders</span><span class="hl-2">();    </span>
+</code><button>Copy</button></pre>
+<a id="md:delete-folder" class="tsd-anchor"></a><h4><a href="#md:delete-folder">Delete folder</a></h4><pre><code class="language-typescript"><span class="hl-2">    </span><span class="hl-0">// get folder</span><br/><span class="hl-2">    </span><span class="hl-5">const</span><span class="hl-2"> </span><span class="hl-6">folder</span><span class="hl-2">: </span><span class="hl-8">Folder</span><span class="hl-2"> = </span><span class="hl-1">await</span><span class="hl-2"> </span><span class="hl-3">client</span><span class="hl-2">.</span><span class="hl-7">getFolder</span><span class="hl-2">(</span><span class="hl-4">&quot;/products&quot;</span><span class="hl-2">);</span><br/><span class="hl-2">    </span><span class="hl-1">await</span><span class="hl-2"> </span><span class="hl-3">folder</span><span class="hl-2">.</span><span class="hl-7">delete</span><span class="hl-2">();</span>
+</code><button>Copy</button></pre>
+<a id="md:create-file" class="tsd-anchor"></a><h4><a href="#md:create-file">Create file</a></h4><pre><code class="language-javascript"><span class="hl-2">    </span><span class="hl-5">const</span><span class="hl-2"> </span><span class="hl-6">folder</span><span class="hl-2"> = </span><span class="hl-1">await</span><span class="hl-2"> </span><span class="hl-3">client</span><span class="hl-2">.</span><span class="hl-7">getFolder</span><span class="hl-2">(</span><span class="hl-4">&quot;/products&quot;</span><span class="hl-2">);</span><br/><span class="hl-2">    </span><span class="hl-5">const</span><span class="hl-2"> </span><span class="hl-6">file</span><span class="hl-2"> = </span><span class="hl-3">folder</span><span class="hl-2">.</span><span class="hl-7">createFile</span><span class="hl-2">(</span><span class="hl-4">&quot;MyFile.txt&quot;</span><span class="hl-2">, </span><span class="hl-5">new</span><span class="hl-2"> </span><span class="hl-7">Buffer</span><span class="hl-2">(</span><span class="hl-4">&quot;My new file&quot;</span><span class="hl-2">));</span>
+</code><button>Copy</button></pre>
+<a id="md:get-file" class="tsd-anchor"></a><h4><a href="#md:get-file">Get file</a></h4><pre><code class="language-javascript"><span class="hl-2">    </span><span class="hl-5">const</span><span class="hl-2"> </span><span class="hl-6">file</span><span class="hl-2"> = </span><span class="hl-1">await</span><span class="hl-2"> </span><span class="hl-3">client</span><span class="hl-2">.</span><span class="hl-7">getFile</span><span class="hl-2">(</span><span class="hl-4">&quot;/products/MyFile.txt&quot;</span><span class="hl-2">);</span><br/><span class="hl-2">    </span><span class="hl-0">// or</span><br/><span class="hl-2">    </span><span class="hl-5">const</span><span class="hl-2"> </span><span class="hl-6">folder</span><span class="hl-2"> = </span><span class="hl-1">await</span><span class="hl-2"> </span><span class="hl-3">client</span><span class="hl-2">.</span><span class="hl-7">getFolder</span><span class="hl-2">(</span><span class="hl-4">&quot;/products&quot;</span><span class="hl-2">);</span><br/><span class="hl-2">    </span><span class="hl-5">const</span><span class="hl-2"> </span><span class="hl-6">file</span><span class="hl-2"> = </span><span class="hl-1">await</span><span class="hl-2"> </span><span class="hl-3">folder</span><span class="hl-2">.</span><span class="hl-7">getFile</span><span class="hl-2">(</span><span class="hl-4">&quot;MyFile.txt&quot;</span><span class="hl-2">);</span><br/><span class="hl-2">    </span><span class="hl-0">// file: name, baseName, lastmod, size, mime</span>
+</code><button>Copy</button></pre>
+<a id="md:get-file-content" class="tsd-anchor"></a><h4><a href="#md:get-file-content">Get file content</a></h4><pre><code class="language-javascript"><span class="hl-2">    </span><span class="hl-5">const</span><span class="hl-2"> </span><span class="hl-6">file</span><span class="hl-2"> = </span><span class="hl-1">await</span><span class="hl-2"> </span><span class="hl-3">client</span><span class="hl-2">.</span><span class="hl-7">getFile</span><span class="hl-2">(</span><span class="hl-4">&quot;/products/MyFile.txt&quot;</span><span class="hl-2">);</span><br/><span class="hl-2">    </span><span class="hl-5">const</span><span class="hl-2"> </span><span class="hl-6">buffer</span><span class="hl-2"> = </span><span class="hl-1">await</span><span class="hl-2"> </span><span class="hl-3">file</span><span class="hl-2">.</span><span class="hl-7">getContent</span><span class="hl-2">();</span>
+</code><button>Copy</button></pre>
+<a id="md:get-file-url" class="tsd-anchor"></a><h4><a href="#md:get-file-url">Get file Url</a></h4><pre><code class="language-javascript"><span class="hl-2">    </span><span class="hl-5">const</span><span class="hl-2"> </span><span class="hl-6">file</span><span class="hl-2"> = </span><span class="hl-1">await</span><span class="hl-2"> </span><span class="hl-3">client</span><span class="hl-2">.</span><span class="hl-7">getFile</span><span class="hl-2">(</span><span class="hl-4">&quot;/products/MyFile.txt&quot;</span><span class="hl-2">);</span><br/><span class="hl-2">    </span><span class="hl-5">const</span><span class="hl-2"> </span><span class="hl-6">url</span><span class="hl-2"> = </span><span class="hl-1">await</span><span class="hl-2"> </span><span class="hl-3">file</span><span class="hl-2">.</span><span class="hl-7">getUrl</span><span class="hl-2">();</span>
+</code><button>Copy</button></pre>
+<a id="md:add-tag-to-file" class="tsd-anchor"></a><h4><a href="#md:add-tag-to-file">Add tag to file</a></h4><pre><code class="language-javascript"><span class="hl-2">    </span><span class="hl-5">const</span><span class="hl-2"> </span><span class="hl-6">file</span><span class="hl-2"> = </span><span class="hl-1">await</span><span class="hl-2"> </span><span class="hl-3">client</span><span class="hl-2">.</span><span class="hl-7">getFile</span><span class="hl-2">(</span><span class="hl-4">&quot;/products/MyFile.txt&quot;</span><span class="hl-2">);</span><br/><span class="hl-2">    </span><span class="hl-1">await</span><span class="hl-2"> </span><span class="hl-3">file</span><span class="hl-2">.</span><span class="hl-7">addTag</span><span class="hl-2">(</span><span class="hl-4">&quot;myTag&quot;</span><span class="hl-2">);</span>
+</code><button>Copy</button></pre>
+<a id="md:delete-file" class="tsd-anchor"></a><h4><a href="#md:delete-file">Delete file</a></h4><pre><code class="language-javascript"><span class="hl-2">    </span><span class="hl-5">const</span><span class="hl-2"> </span><span class="hl-6">file</span><span class="hl-2"> = </span><span class="hl-1">await</span><span class="hl-2"> </span><span class="hl-3">client</span><span class="hl-2">.</span><span class="hl-7">getFile</span><span class="hl-2">(</span><span class="hl-4">&quot;/products/MyFile.txt&quot;</span><span class="hl-2">);</span><br/><span class="hl-2">    </span><span class="hl-1">await</span><span class="hl-2"> </span><span class="hl-3">file</span><span class="hl-2">.</span><span class="hl-7">delete</span><span class="hl-2">();</span>
+</code><button>Copy</button></pre>
+<a id="md:get-files" class="tsd-anchor"></a><h4><a href="#md:get-files">Get files</a></h4><pre><code class="language-javascript"><span class="hl-2">    </span><span class="hl-5">const</span><span class="hl-2"> </span><span class="hl-6">folder</span><span class="hl-2"> = </span><span class="hl-1">await</span><span class="hl-2"> </span><span class="hl-3">client</span><span class="hl-2">.</span><span class="hl-7">getFolder</span><span class="hl-2">(</span><span class="hl-4">&quot;/products&quot;</span><span class="hl-2">);</span><br/><span class="hl-2">    </span><span class="hl-5">const</span><span class="hl-2"> </span><span class="hl-6">files</span><span class="hl-2"> = </span><span class="hl-1">await</span><span class="hl-2"> </span><span class="hl-3">folder</span><span class="hl-2">.</span><span class="hl-7">getFiles</span><span class="hl-2">();</span>
+</code><button>Copy</button></pre>
+<a id="md:move-andor-rename-file" class="tsd-anchor"></a><h4><a href="#md:move-andor-rename-file">Move and/or rename file</a></h4><pre><code class="language-javascript"><span class="hl-2">    </span><span class="hl-5">const</span><span class="hl-2"> </span><span class="hl-6">file</span><span class="hl-2"> = </span><span class="hl-1">await</span><span class="hl-2"> </span><span class="hl-3">client</span><span class="hl-2">.</span><span class="hl-7">getFile</span><span class="hl-2">(</span><span class="hl-4">&quot;/products/MyFile.txt&quot;</span><span class="hl-2">);</span><br/><span class="hl-2">    </span><span class="hl-1">await</span><span class="hl-2"> </span><span class="hl-3">file</span><span class="hl-2">.</span><span class="hl-7">move</span><span class="hl-2">(</span><span class="hl-4">&quot;/products/brooms/MyFileRenamed.txt&quot;</span><span class="hl-2">);</span>
+</code><button>Copy</button></pre>
+<a id="md:create-change-and-delete-a-share" class="tsd-anchor"></a><h4><a href="#md:create-change-and-delete-a-share">Create, change and delete a share</a></h4><pre><code class="language-typescript"><span class="hl-2">    </span><span class="hl-5">const</span><span class="hl-2"> </span><span class="hl-6">file</span><span class="hl-2"> = </span><span class="hl-1">await</span><span class="hl-2"> </span><span class="hl-3">client</span><span class="hl-2">.</span><span class="hl-7">getFile</span><span class="hl-2">(</span><span class="hl-4">&quot;/products/MyFile.txt&quot;</span><span class="hl-2">);</span><br/><span class="hl-2">    </span><span class="hl-0">// share the file (works also for folder)</span><br/><span class="hl-2">    </span><span class="hl-5">const</span><span class="hl-2"> </span><span class="hl-6">createShare</span><span class="hl-2">: </span><span class="hl-8">ICreateShare</span><span class="hl-2"> = { </span><span class="hl-3">fileSystemElement:</span><span class="hl-2"> </span><span class="hl-3">file</span><span class="hl-2"> };</span><br/><span class="hl-2">    </span><span class="hl-5">const</span><span class="hl-2"> </span><span class="hl-6">share</span><span class="hl-2">: </span><span class="hl-8">Share</span><span class="hl-2"> = </span><span class="hl-1">await</span><span class="hl-2"> </span><span class="hl-3">client</span><span class="hl-2">.</span><span class="hl-7">createShare</span><span class="hl-2">(</span><span class="hl-3">createShare</span><span class="hl-2">);</span><br/><span class="hl-2">    </span><span class="hl-0">// change share settings</span><br/><span class="hl-2">    </span><span class="hl-1">await</span><span class="hl-2"> </span><span class="hl-3">share</span><span class="hl-2">.</span><span class="hl-7">setPassword</span><span class="hl-2">(</span><span class="hl-4">&quot;some password&quot;</span><span class="hl-2">);</span><br/><span class="hl-2">    </span><span class="hl-1">await</span><span class="hl-2"> </span><span class="hl-3">share</span><span class="hl-2">.</span><span class="hl-7">setNote</span><span class="hl-2">(</span><span class="hl-4">&quot;some note</span><span class="hl-9">\n</span><span class="hl-4">new line&quot;</span><span class="hl-2">);</span><br/><span class="hl-2">    </span><span class="hl-1">await</span><span class="hl-2"> </span><span class="hl-3">share</span><span class="hl-2">.</span><span class="hl-7">setExpiration</span><span class="hl-2">(</span><span class="hl-5">new</span><span class="hl-2"> </span><span class="hl-7">Date</span><span class="hl-2">(</span><span class="hl-11">2020</span><span class="hl-2">, </span><span class="hl-11">11</span><span class="hl-2">, </span><span class="hl-11">5</span><span class="hl-2">));  </span><br/><span class="hl-2">    </span><span class="hl-0">// use the url to access the share </span><br/><span class="hl-2">    </span><span class="hl-5">const</span><span class="hl-2"> </span><span class="hl-6">shareLink</span><span class="hl-2">:</span><span class="hl-8">string</span><span class="hl-2"> = </span><span class="hl-3">share</span><span class="hl-2">.</span><span class="hl-3">url</span><span class="hl-2">;</span><br/><span class="hl-2">    </span><span class="hl-0">// delete share, if not required anymore</span><br/><span class="hl-2">    </span><span class="hl-1">await</span><span class="hl-2"> </span><span class="hl-3">share</span><span class="hl-2">.</span><span class="hl-7">delete</span><span class="hl-2">();</span>
+</code><button>Copy</button></pre>
+<a id="md:architecture" class="tsd-anchor"></a><h2><a href="#md:architecture">Architecture</a></h2><p>The nextcloud node client can be used by node applications to extend the nextcloud functionality remotely. The client uses only HTTP apis of nextcloud for access.</p>
+<p><img src="https://raw.githubusercontent.com/hobigo/nextcloud-node-client/master/ncnc-architecture.png" alt="nextcloud node client component architecture"></p>
+<a id="md:examples" class="tsd-anchor"></a><h2><a href="#md:examples">Examples</a></h2><a id="md:user-management" class="tsd-anchor"></a><h3><a href="#md:user-management">User management</a></h3><pre><code class="language-typescript"><span class="hl-0">// typescript</span><br/><span class="hl-1">import</span><span class="hl-2"> </span><span class="hl-3">Client</span><span class="hl-2">, { </span><span class="hl-3">User</span><span class="hl-2">, </span><span class="hl-3">UserGroup</span><span class="hl-2"> } </span><span class="hl-1">from</span><span class="hl-2"> </span><span class="hl-4">&quot;nextcloud-node-client&quot;</span><span class="hl-2">;</span><br/><br/><span class="hl-2">(</span><span class="hl-5">async</span><span class="hl-2"> () </span><span class="hl-5">=&gt;</span><span class="hl-2"> {</span><br/><span class="hl-2">    </span><span class="hl-1">try</span><span class="hl-2"> {</span><br/><span class="hl-2">        </span><span class="hl-0">// create a new client using connectivity </span><br/><span class="hl-2">        </span><span class="hl-0">// information from environment</span><br/><span class="hl-2">        </span><span class="hl-5">const</span><span class="hl-2"> </span><span class="hl-6">client</span><span class="hl-2"> = </span><span class="hl-5">new</span><span class="hl-2"> </span><span class="hl-7">Client</span><span class="hl-2">();</span><br/><span class="hl-2">        </span><span class="hl-0">// create a new user group</span><br/><span class="hl-2">        </span><span class="hl-5">const</span><span class="hl-2"> </span><span class="hl-6">group</span><span class="hl-2">: </span><span class="hl-8">UserGroup</span><span class="hl-2"> = </span><span class="hl-1">await</span><span class="hl-2"> </span><span class="hl-3">client</span><span class="hl-2">.</span><span class="hl-7">createUserGroup</span><span class="hl-2">(</span><span class="hl-4">&quot;MyGroup&quot;</span><span class="hl-2">);</span><br/><span class="hl-2">        </span><span class="hl-0">// create a new user with a email or password</span><br/><span class="hl-2">        </span><span class="hl-5">const</span><span class="hl-2"> </span><span class="hl-6">user</span><span class="hl-2">: </span><span class="hl-8">User</span><span class="hl-2"> = </span><span class="hl-1">await</span><span class="hl-2"> </span><span class="hl-3">client</span><span class="hl-2">.</span><span class="hl-7">createUser</span><span class="hl-2">({ </span><span class="hl-3">id:</span><span class="hl-2"> </span><span class="hl-4">&quot;MyUserId&quot;</span><span class="hl-2">, </span><span class="hl-3">email:</span><span class="hl-2"> </span><span class="hl-4">&quot;mail@example.com&quot;</span><span class="hl-2"> });</span><br/><span class="hl-2">        </span><span class="hl-0">// set some properties </span><br/><span class="hl-2">        </span><span class="hl-0">// ... password, phone, website, twitter, address, email, locale</span><br/><span class="hl-2">        </span><span class="hl-1">await</span><span class="hl-2"> </span><span class="hl-3">user</span><span class="hl-2">.</span><span class="hl-7">setDisplayName</span><span class="hl-2">(</span><span class="hl-4">&quot;My Display Name&quot;</span><span class="hl-2">);</span><br/><span class="hl-2">        </span><span class="hl-1">await</span><span class="hl-2"> </span><span class="hl-3">user</span><span class="hl-2">.</span><span class="hl-7">setQuota</span><span class="hl-2">(</span><span class="hl-4">&quot;5 GB&quot;</span><span class="hl-2">);</span><br/><span class="hl-2">        </span><span class="hl-1">await</span><span class="hl-2"> </span><span class="hl-3">user</span><span class="hl-2">.</span><span class="hl-7">setLanguage</span><span class="hl-2">(</span><span class="hl-4">&quot;en&quot;</span><span class="hl-2">);</span><br/><span class="hl-2">        </span><span class="hl-0">// get properties </span><br/><span class="hl-2">        </span><span class="hl-0">// ... quota, user friendly quota, phone, website, twitter, address, locale</span><br/><span class="hl-2">        </span><span class="hl-5">const</span><span class="hl-2"> </span><span class="hl-6">email</span><span class="hl-2"> = </span><span class="hl-1">await</span><span class="hl-2"> </span><span class="hl-3">user</span><span class="hl-2">.</span><span class="hl-7">getEmail</span><span class="hl-2">();</span><br/><span class="hl-2">        </span><span class="hl-0">// disable user</span><br/><span class="hl-2">        </span><span class="hl-1">await</span><span class="hl-2"> </span><span class="hl-3">user</span><span class="hl-2">.</span><span class="hl-7">disable</span><span class="hl-2">();</span><br/><span class="hl-2">        </span><span class="hl-0">// enable user</span><br/><span class="hl-2">        </span><span class="hl-1">await</span><span class="hl-2"> </span><span class="hl-3">user</span><span class="hl-2">.</span><span class="hl-7">enable</span><span class="hl-2">();</span><br/><span class="hl-2">        </span><span class="hl-0">// promote to super administrator</span><br/><span class="hl-2">        </span><span class="hl-1">await</span><span class="hl-2"> </span><span class="hl-3">user</span><span class="hl-2">.</span><span class="hl-7">promoteToSuperAdmin</span><span class="hl-2">();</span><br/><span class="hl-2">        </span><span class="hl-0">// demote from super administrator</span><br/><span class="hl-2">        </span><span class="hl-1">await</span><span class="hl-2"> </span><span class="hl-3">user</span><span class="hl-2">.</span><span class="hl-7">demoteFromSuperAdmin</span><span class="hl-2">();</span><br/><span class="hl-2">        </span><span class="hl-0">// resend welcome email to user</span><br/><span class="hl-2">        </span><span class="hl-1">await</span><span class="hl-2"> </span><span class="hl-3">user</span><span class="hl-2">.</span><span class="hl-7">resendWelcomeEmail</span><span class="hl-2">();</span><br/><span class="hl-2">        </span><span class="hl-0">// add to user group as member</span><br/><span class="hl-2">        </span><span class="hl-1">await</span><span class="hl-2"> </span><span class="hl-3">user</span><span class="hl-2">.</span><span class="hl-7">addToMemberUserGroup</span><span class="hl-2">(</span><span class="hl-3">group</span><span class="hl-2">);</span><br/><span class="hl-2">        </span><span class="hl-0">// get member user groups</span><br/><span class="hl-2">        </span><span class="hl-5">const</span><span class="hl-2"> </span><span class="hl-6">memberGroups</span><span class="hl-2">: </span><span class="hl-8">UserGroup</span><span class="hl-2">[] = </span><span class="hl-1">await</span><span class="hl-2"> </span><span class="hl-3">user</span><span class="hl-2">.</span><span class="hl-7">getMemberUserGroups</span><span class="hl-2">();</span><br/><span class="hl-2">        </span><span class="hl-0">// get user ids of memembers</span><br/><span class="hl-2">        </span><span class="hl-1">await</span><span class="hl-2"> </span><span class="hl-3">group</span><span class="hl-2">.</span><span class="hl-7">getMemberUserIds</span><span class="hl-2">();</span><br/><span class="hl-2">        </span><span class="hl-0">// remove user from member group</span><br/><span class="hl-2">        </span><span class="hl-1">await</span><span class="hl-2"> </span><span class="hl-3">user</span><span class="hl-2">.</span><span class="hl-7">removeFromMemberUserGroup</span><span class="hl-2">(</span><span class="hl-3">group</span><span class="hl-2">);</span><br/><span class="hl-2">        </span><span class="hl-0">// promote user as subadmin for user group</span><br/><span class="hl-2">        </span><span class="hl-1">await</span><span class="hl-2"> </span><span class="hl-3">user</span><span class="hl-2">.</span><span class="hl-7">promoteToUserGroupSubadmin</span><span class="hl-2">(</span><span class="hl-3">group</span><span class="hl-2">);</span><br/><span class="hl-2">        </span><span class="hl-0">// get user groups where the user is subadmin</span><br/><span class="hl-2">        </span><span class="hl-5">const</span><span class="hl-2"> </span><span class="hl-6">subadminGroups</span><span class="hl-2">: </span><span class="hl-8">UserGroup</span><span class="hl-2">[] = </span><span class="hl-1">await</span><span class="hl-2"> </span><span class="hl-3">user</span><span class="hl-2">.</span><span class="hl-7">getSubadminUserGroups</span><span class="hl-2">();</span><br/><span class="hl-2">        </span><span class="hl-0">// get user ids of subadmins</span><br/><span class="hl-2">        </span><span class="hl-1">await</span><span class="hl-2"> </span><span class="hl-3">group</span><span class="hl-2">.</span><span class="hl-7">getSubadminUserIds</span><span class="hl-2">();</span><br/><span class="hl-2">        </span><span class="hl-0">// demote user from being subadmin for user group</span><br/><span class="hl-2">        </span><span class="hl-1">await</span><span class="hl-2"> </span><span class="hl-3">user</span><span class="hl-2">.</span><span class="hl-7">demoteFromSubadminUserGroup</span><span class="hl-2">(</span><span class="hl-3">group</span><span class="hl-2">);</span><br/><span class="hl-2">        </span><span class="hl-0">// delete the user</span><br/><span class="hl-2">        </span><span class="hl-1">await</span><span class="hl-2"> </span><span class="hl-3">user</span><span class="hl-2">.</span><span class="hl-7">delete</span><span class="hl-2">();</span><br/><span class="hl-2">        </span><span class="hl-0">// delete the user group</span><br/><span class="hl-2">        </span><span class="hl-1">await</span><span class="hl-2"> </span><span class="hl-3">group</span><span class="hl-2">.</span><span class="hl-7">delete</span><span class="hl-2">();</span><br/><span class="hl-2">        </span><span class="hl-0">// mass creations / updates of users</span><br/><span class="hl-2">        </span><span class="hl-0">// groups are created on the fly</span><br/><span class="hl-2">        </span><span class="hl-1">await</span><span class="hl-2"> </span><span class="hl-3">client</span><span class="hl-2">.</span><span class="hl-7">upsertUsers</span><span class="hl-2">([</span><br/><span class="hl-2">            { </span><span class="hl-3">id:</span><span class="hl-2"> </span><span class="hl-4">&quot;myUser1&quot;</span><span class="hl-2">, </span><span class="hl-3">email:</span><span class="hl-2"> </span><span class="hl-4">&quot;myUser1@example.com&quot;</span><span class="hl-2">, </span><span class="hl-3">enabled:</span><span class="hl-2"> </span><span class="hl-5">false</span><span class="hl-2">, </span><span class="hl-3">memberGroups:</span><span class="hl-2"> [</span><span class="hl-4">&quot;group1&quot;</span><span class="hl-2">, </span><span class="hl-4">&quot;group2&quot;</span><span class="hl-2">] },</span><br/><span class="hl-2">            { </span><span class="hl-3">id:</span><span class="hl-2"> </span><span class="hl-4">&quot;myUser2&quot;</span><span class="hl-2">, </span><span class="hl-3">password:</span><span class="hl-2"> </span><span class="hl-4">&quot;mySecurePassword&quot;</span><span class="hl-2">, </span><span class="hl-3">displayName:</span><span class="hl-2"> </span><span class="hl-4">&quot;My Name&quot;</span><span class="hl-2">, </span><span class="hl-3">superAdmin:</span><span class="hl-2"> </span><span class="hl-5">true</span><span class="hl-2">, </span><span class="hl-3">quota:</span><span class="hl-2"> </span><span class="hl-4">&quot;2 GB&quot;</span><span class="hl-2"> },</span><br/><span class="hl-2">            </span><span class="hl-0">// ...</span><br/><span class="hl-2">        ]);</span><br/><span class="hl-2">    } </span><span class="hl-1">catch</span><span class="hl-2"> (</span><span class="hl-3">e</span><span class="hl-2">) {</span><br/><span class="hl-2">        </span><span class="hl-0">// use specific exception *error classes </span><br/><span class="hl-2">        </span><span class="hl-0">// for error handling documented in @throws</span><br/><span class="hl-2">    }</span><br/><span class="hl-2">})();</span>
+</code><button>Copy</button></pre>
+<a id="md:tagging" class="tsd-anchor"></a><h3><a href="#md:tagging">Tagging</a></h3><pre><code class="language-typescript"><span class="hl-0">// typescript</span><br/><span class="hl-1">import</span><span class="hl-2"> </span><span class="hl-3">Client</span><span class="hl-2">, { </span><span class="hl-3">File</span><span class="hl-2">, </span><span class="hl-3">Folder</span><span class="hl-2">, </span><span class="hl-3">Share</span><span class="hl-2">, </span><span class="hl-3">Tag</span><span class="hl-2">, </span><span class="hl-3">FileSystemElement</span><span class="hl-2"> } </span><span class="hl-1">from</span><span class="hl-2"> </span><span class="hl-4">&quot;nextcloud-node-client&quot;</span><span class="hl-2">;</span><br/><br/><span class="hl-2">(</span><span class="hl-5">async</span><span class="hl-2"> () </span><span class="hl-5">=&gt;</span><span class="hl-2"> {</span><br/><span class="hl-2">    </span><span class="hl-1">try</span><span class="hl-2"> {</span><br/><span class="hl-2">        </span><span class="hl-0">// create a new client using connectivity information from environment</span><br/><span class="hl-2">        </span><span class="hl-5">const</span><span class="hl-2"> </span><span class="hl-6">client</span><span class="hl-2"> = </span><span class="hl-5">new</span><span class="hl-2"> </span><span class="hl-7">Client</span><span class="hl-2">();</span><br/><span class="hl-2">        </span><span class="hl-0">// create a folder structure if not available</span><br/><span class="hl-2">        </span><span class="hl-5">const</span><span class="hl-2"> </span><span class="hl-6">folder</span><span class="hl-2">: </span><span class="hl-8">Folder</span><span class="hl-2"> = </span><span class="hl-1">await</span><span class="hl-2"> </span><span class="hl-3">client</span><span class="hl-2">.</span><span class="hl-7">createFolder</span><span class="hl-2">(</span><span class="hl-4">&quot;folder/subfolder&quot;</span><span class="hl-2">);</span><br/><span class="hl-2">        </span><span class="hl-0">// create file within the folder</span><br/><span class="hl-2">        </span><span class="hl-5">const</span><span class="hl-2"> </span><span class="hl-6">file</span><span class="hl-2">: </span><span class="hl-8">File</span><span class="hl-2"> = </span><span class="hl-1">await</span><span class="hl-2"> </span><span class="hl-3">folder</span><span class="hl-2">.</span><span class="hl-7">createFile</span><span class="hl-2">(</span><span class="hl-4">&quot;myFile.txt&quot;</span><span class="hl-2">, </span><span class="hl-3">Buffer</span><span class="hl-2">.</span><span class="hl-7">from</span><span class="hl-2">(</span><span class="hl-4">&quot;My file content&quot;</span><span class="hl-2">));</span><br/><span class="hl-2">        </span><span class="hl-0">// create two tags</span><br/><span class="hl-2">        </span><span class="hl-5">const</span><span class="hl-2"> </span><span class="hl-6">tag1</span><span class="hl-2">: </span><span class="hl-8">Tag</span><span class="hl-2"> = </span><span class="hl-1">await</span><span class="hl-2"> </span><span class="hl-3">client</span><span class="hl-2">.</span><span class="hl-7">createTag</span><span class="hl-2">(</span><span class="hl-4">&quot;tag 1&quot;</span><span class="hl-2">);</span><br/><span class="hl-2">        </span><span class="hl-5">const</span><span class="hl-2"> </span><span class="hl-6">tag2</span><span class="hl-2">: </span><span class="hl-8">Tag</span><span class="hl-2"> = </span><span class="hl-1">await</span><span class="hl-2"> </span><span class="hl-3">client</span><span class="hl-2">.</span><span class="hl-7">createTag</span><span class="hl-2">(</span><span class="hl-4">&quot;tag 2&quot;</span><span class="hl-2">);</span><br/><span class="hl-2">        </span><span class="hl-0">// assign tag to folder</span><br/><span class="hl-2">        </span><span class="hl-3">folder</span><span class="hl-2">.</span><span class="hl-7">addTag</span><span class="hl-2">(</span><span class="hl-3">tag1</span><span class="hl-2">.</span><span class="hl-3">name</span><span class="hl-2">);</span><br/><span class="hl-2">        </span><span class="hl-0">// assign tag to files</span><br/><span class="hl-2">        </span><span class="hl-3">file</span><span class="hl-2">.</span><span class="hl-7">addTag</span><span class="hl-2">(</span><span class="hl-3">tag1</span><span class="hl-2">.</span><span class="hl-3">name</span><span class="hl-2">);</span><br/><span class="hl-2">        </span><span class="hl-3">file</span><span class="hl-2">.</span><span class="hl-7">addTag</span><span class="hl-2">(</span><span class="hl-3">tag2</span><span class="hl-2">.</span><span class="hl-3">name</span><span class="hl-2">);</span><br/><br/><span class="hl-2">        </span><span class="hl-0">// get list of file system elements with the tag1 assigned</span><br/><span class="hl-2">        </span><span class="hl-5">let</span><span class="hl-2"> </span><span class="hl-3">fse</span><span class="hl-2">: </span><span class="hl-8">FileSystemElement</span><span class="hl-2">[] = </span><span class="hl-1">await</span><span class="hl-2"> </span><span class="hl-3">client</span><span class="hl-2">.</span><span class="hl-7">getFileSystemElementByTags</span><span class="hl-2">([</span><span class="hl-3">tag1</span><span class="hl-2">]);</span><br/><span class="hl-2">        </span><span class="hl-0">// print names of folder and file</span><br/><span class="hl-2">        </span><span class="hl-3">console</span><span class="hl-2">.</span><span class="hl-7">log</span><span class="hl-2">(</span><span class="hl-3">fse</span><span class="hl-2">[</span><span class="hl-11">0</span><span class="hl-2">].</span><span class="hl-3">name</span><span class="hl-2">);</span><br/><span class="hl-2">        </span><span class="hl-3">console</span><span class="hl-2">.</span><span class="hl-7">log</span><span class="hl-2">(</span><span class="hl-3">fse</span><span class="hl-2">[</span><span class="hl-11">1</span><span class="hl-2">].</span><span class="hl-3">name</span><span class="hl-2">);</span><br/><br/><span class="hl-2">        </span><span class="hl-0">// get list of file system elements with the tag1 and tag2</span><br/><span class="hl-2">        </span><span class="hl-3">fse</span><span class="hl-2"> = </span><span class="hl-1">await</span><span class="hl-2"> </span><span class="hl-3">client</span><span class="hl-2">.</span><span class="hl-7">getFileSystemElementByTags</span><span class="hl-2">([</span><span class="hl-3">tag1</span><span class="hl-2">, </span><span class="hl-3">tag2</span><span class="hl-2">]);</span><br/><span class="hl-2">        </span><span class="hl-0">// print name of file</span><br/><span class="hl-2">        </span><span class="hl-3">console</span><span class="hl-2">.</span><span class="hl-7">log</span><span class="hl-2">(</span><span class="hl-3">fse</span><span class="hl-2">[</span><span class="hl-11">0</span><span class="hl-2">].</span><span class="hl-3">name</span><span class="hl-2">);</span><br/><br/><span class="hl-2">        </span><span class="hl-0">// delete the tags</span><br/><span class="hl-2">        </span><span class="hl-1">await</span><span class="hl-2"> </span><span class="hl-3">tag1</span><span class="hl-2">.</span><span class="hl-7">delete</span><span class="hl-2">();</span><br/><span class="hl-2">        </span><span class="hl-1">await</span><span class="hl-2"> </span><span class="hl-3">tag2</span><span class="hl-2">.</span><span class="hl-7">delete</span><span class="hl-2">();</span><br/><span class="hl-2">        </span><span class="hl-0">// delete the folder including the file and share</span><br/><span class="hl-2">        </span><span class="hl-1">await</span><span class="hl-2"> </span><span class="hl-3">folder</span><span class="hl-2">.</span><span class="hl-7">delete</span><span class="hl-2">();</span><br/><span class="hl-2">    } </span><span class="hl-1">catch</span><span class="hl-2"> (</span><span class="hl-3">e</span><span class="hl-2">) {</span><br/><span class="hl-2">        </span><span class="hl-0">// some error handling</span><br/><span class="hl-2">        </span><span class="hl-3">console</span><span class="hl-2">.</span><span class="hl-7">log</span><span class="hl-2">(</span><span class="hl-3">e</span><span class="hl-2">);</span><br/><span class="hl-2">    }</span><br/><span class="hl-2">})();</span>
+</code><button>Copy</button></pre>
+<a id="md:quality" class="tsd-anchor"></a><h2><a href="#md:quality">Quality</a></h2><p>Tested with nextcloud 17.0.1, 18.0.0</p>
+<p>A code coverage of 100% is aspired</p>
+<a id="md:todo-list" class="tsd-anchor"></a><h2><a href="#md:todo-list">Todo list</a></h2><a id="md:version-20" class="tsd-anchor"></a><h3><a href="#md:version-20">Version 2.0</a></h3><ul>
+<li>remove vcap services support</li>
+<li>remove server object and replace with connection object</li>
+<li>connection object handles all http requets (new Connection, conn.connect() ...)</li>
+<li>refactor client - use connection instead of client in sub objects move client methods to sub objects</li>
+<li>Move exceptions to relevant objects, prefix all exceptions with &quot;Error&quot;</li>
+<li>Remove &quot;I&quot; from interface names</li>
+</ul>
+<a id="md:sharing" class="tsd-anchor"></a><h3><a href="#md:sharing">Sharing</a></h3><p>Share with </p>
+<ul>
+<li>user</li>
+<li>usergroup</li>
+<li>email-address</li>
+</ul>
+<a id="md:search" class="tsd-anchor"></a><h3><a href="#md:search">Search</a></h3><ul>
+<li>Search for files api</li>
+<li>client in github actions - upload files</li>
+</ul>
+<a id="md:server-api" class="tsd-anchor"></a><h3><a href="#md:server-api">Server API</a></h3><ul>
+<li><strike>support also the nextcloud server url instead of the WebDAV url only</strike></li>
+</ul>
+<a id="md:download" class="tsd-anchor"></a><h3><a href="#md:download">Download</a></h3><ul>
+<li><strike>download folder contents example</strike></li>
+<li><strike>download folder contents to disk recursively</strike></li>
+</ul>
+<a id="md:upload" class="tsd-anchor"></a><h3><a href="#md:upload">Upload</a></h3><ul>
+<li><strike>upload local file on disk to nextcloud</strike></li>
+<li><strike>upload local folder on disk to nextcloud recursively</strike></li>
+</ul>
+<a id="md:get-files-recursively" class="tsd-anchor"></a><h3><a href="#md:get-files-recursively">Get Files recursively</a></h3><ul>
+<li><strike>command get files recurively</strike></li>
+<li><strike>filter get files recurively</strike></li>
+<li><strike>example get files recurively</strike></li>
+</ul>
+<a id="md:access-using-tags" class="tsd-anchor"></a><h3><a href="#md:access-using-tags">Access using tags</a></h3><p><strike>* Get files and folders by tags client.getFileSystemObjectByTags</strike></p>
+<a id="md:user-management-1" class="tsd-anchor"></a><h3><a href="#md:user-management-1">User management</a></h3><p>User: </p>
+<ul>
+<li><strike>get</strike></li>
+<li><strike>getIds limit, offset, search</strike></li>
+<li><strike>create</strike></li>
+<li><strike>update</strike></li>
+<li><strike>delete</strike></li>
+<li><strike>deactivate</strike></li>
+<li><strike>add/remove group member</strike></li>
+<li><strike>add/remove group subadmin</strike></li>
+<li><strike>example in readme</strike></li>
+<li>send notification</li>
+</ul>
+<p>User group: </p>
+<ul>
+<li><strike>get</strike></li>
+<li><strike>create</strike></li>
+<li><strike>delete</strike></li>
+</ul>
+<a id="md:streams" class="tsd-anchor"></a><h3><a href="#md:streams">Streams</a></h3><p>Create file and get file using streams</p>
+<a id="md:eventing" class="tsd-anchor"></a><h3><a href="#md:eventing">Eventing</a></h3><ul>
+<li>create event objects</li>
+<li>start observer</li>
+<li>subscribe to events and register handler functions</li>
+<li>telegram support</li>
+</ul>
+<a id="md:notifications" class="tsd-anchor"></a><h3><a href="#md:notifications">notifications</a></h3><p>basic methods are available since 1.2.0 without strong typing</p>
+<ul>
+<li>notification object</li>
+</ul>
+<a id="md:refactoring" class="tsd-anchor"></a><h3><a href="#md:refactoring">Refactoring</a></h3><ul>
+<li>Introduction of exception classes instead of error codes (breaking change)</li>
+<li><strike>Move from codecov to coveralls</strike></li>
+<li>move to eslint instead of using tslint</li>
+<li>remove &quot;I&quot; from all interfaces - (breaking change)</li>
+</ul>
+<a id="md:search-1" class="tsd-anchor"></a><h3><a href="#md:search-1">Search</a></h3><ul>
+<li>Search for files api</li>
+<li>client in github actions - upload files</li>
+</ul>
+<a id="md:license" class="tsd-anchor"></a><h2><a href="#md:license">License</a></h2><p>Apache</p>
+</div></div>
+<div class="col-sidebar">
+<div class="page-menu">
+<div class="tsd-navigation settings">
+<details class="tsd-index-accordion"><summary class="tsd-accordion-summary">
+<h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4.93896 8.531L12 15.591L19.061 8.531L16.939 6.409L12 11.349L7.06098 6.409L4.93896 8.531Z" fill="var(--color-text)" id="icon-chevronDown"></path></svg>Settings</h3></summary>
+<div class="tsd-accordion-details">
+<div class="tsd-filter-visibility">
+<h4 class="uppercase">Member Visibility</h4><form>
+<ul id="tsd-filter-options">
+<li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-protected" name="protected"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Protected</span></label></li>
+<li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-inherited" name="inherited" checked/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Inherited</span></label></li></ul></form></div>
+<div class="tsd-theme-toggle">
+<h4 class="uppercase">Theme</h4><select id="tsd-theme"><option value="os">OS</option><option value="light">Light</option><option value="dark">Dark</option></select></div></div></details></div>
+<details open class="tsd-index-accordion tsd-page-navigation"><summary class="tsd-accordion-summary">
+<h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><use href="#icon-chevronDown"></use></svg>On This Page</h3></summary>
+<div class="tsd-accordion-details">
+<ul>
+<li>
+<ul>
+<li><a href="#md:nextcloud-node-client"><span>nextcloud-<wbr/>node-<wbr/>client</span></a></li>
+<li><a href="#md:example"><span>Example</span></a></li>
+<li><a href="#md:documentation"><span>Documentation</span></a></li>
+<li>
+<ul>
+<li><a href="#md:installation"><span>Installation</span></a></li>
+<li><a href="#md:security-and-access-management"><span>Security and access management</span></a></li>
+<li>
+<ul>
+<li><a href="#md:environment"><span>Environment</span></a></li>
+<li><a href="#md:creating-a-client"><span>Creating a client</span></a></li></ul></li>
+<li><a href="#md:concepts-and-philosophy"><span>Concepts and <wbr/>Philosophy</span></a></li>
+<li>
+<ul>
+<li><a href="#md:client"><span>Client</span></a></li>
+<li><a href="#md:folder"><span>Folder</span></a></li>
+<li><a href="#md:file"><span>File</span></a></li>
+<li><a href="#md:tag"><span>Tag</span></a></li>
+<li><a href="#md:share"><span>Share</span></a></li></ul></li>
+<li><a href="#md:api"><span>API</span></a></li>
+<li>
+<ul>
+<li><a href="#md:client-1"><span>Client</span></a></li>
+<li><a href="#md:folder-1"><span>Folder</span></a></li>
+<li><a href="#md:file-1"><span>File</span></a></li>
+<li><a href="#md:tag-1"><span>Tag</span></a></li>
+<li><a href="#md:share-1"><span>Share</span></a></li>
+<li><a href="#md:user-group"><span>User <wbr/>Group</span></a></li>
+<li><a href="#md:user"><span>User</span></a></li>
+<li><a href="#md:api-examples"><span>API <wbr/>Examples</span></a></li>
+<li>
+<ul>
+<li><a href="#md:quota"><span>Quota</span></a></li>
+<li><a href="#md:sytem-information"><span>Sytem information</span></a></li>
+<li><a href="#md:create-folder"><span>Create folder</span></a></li>
+<li><a href="#md:get-folders"><span>Get folder(s)</span></a></li>
+<li><a href="#md:delete-folder"><span>Delete folder</span></a></li>
+<li><a href="#md:create-file"><span>Create file</span></a></li>
+<li><a href="#md:get-file"><span>Get file</span></a></li>
+<li><a href="#md:get-file-content"><span>Get file content</span></a></li>
+<li><a href="#md:get-file-url"><span>Get file <wbr/>Url</span></a></li>
+<li><a href="#md:add-tag-to-file"><span>Add tag to file</span></a></li>
+<li><a href="#md:delete-file"><span>Delete file</span></a></li>
+<li><a href="#md:get-files"><span>Get files</span></a></li>
+<li><a href="#md:move-andor-rename-file"><span>Move and/or rename file</span></a></li>
+<li><a href="#md:create-change-and-delete-a-share"><span>Create, change and delete a share</span></a></li></ul></li></ul></li>
+<li><a href="#md:architecture"><span>Architecture</span></a></li>
+<li><a href="#md:examples"><span>Examples</span></a></li>
+<li>
+<ul>
+<li><a href="#md:user-management"><span>User management</span></a></li>
+<li><a href="#md:tagging"><span>Tagging</span></a></li></ul></li>
+<li><a href="#md:quality"><span>Quality</span></a></li>
+<li><a href="#md:todo-list"><span>Todo list</span></a></li>
+<li>
+<ul>
+<li><a href="#md:version-20"><span>Version 2.0</span></a></li>
+<li><a href="#md:sharing"><span>Sharing</span></a></li>
+<li><a href="#md:search"><span>Search</span></a></li>
+<li><a href="#md:server-api"><span>Server API</span></a></li>
+<li><a href="#md:download"><span>Download</span></a></li>
+<li><a href="#md:upload"><span>Upload</span></a></li>
+<li><a href="#md:get-files-recursively"><span>Get <wbr/>Files recursively</span></a></li>
+<li><a href="#md:access-using-tags"><span>Access using tags</span></a></li>
+<li><a href="#md:user-management-1"><span>User management</span></a></li>
+<li><a href="#md:streams"><span>Streams</span></a></li>
+<li><a href="#md:eventing"><span>Eventing</span></a></li>
+<li><a href="#md:notifications"><span>notifications</span></a></li>
+<li><a href="#md:refactoring"><span>Refactoring</span></a></li>
+<li><a href="#md:search-1"><span>Search</span></a></li></ul></li>
+<li><a href="#md:license"><span>License</span></a></li></ul></li></ul></li></ul></div></details></div>
+<div class="site-menu">
+<nav class="tsd-navigation"><a href="modules.html" class="current"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><g id="icon-4"><rect fill="var(--color-icon-background)" stroke="var(--color-ts-namespace)" stroke-width="1.5" x="1" y="1" width="22" height="22" rx="6"></rect><path d="M9.33 16V7.24H10.77L13.446 14.74C13.43 14.54 13.41 14.296 13.386 14.008C13.37 13.712 13.354 13.404 13.338 13.084C13.33 12.756 13.326 12.448 13.326 12.16V7.24H14.37V16H12.93L10.266 8.5C10.282 8.692 10.298 8.936 10.314 9.232C10.33 9.52 10.342 9.828 10.35 10.156C10.366 10.476 10.374 10.784 10.374 11.08V16H9.33Z" fill="var(--color-text)"></path></g></svg><span>@a.heisterkamp/nextcloud-<wbr/>node-<wbr/>client</span></a>
+<ul class="tsd-small-nested-navigation">
+<li><a href="modules.html#default"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><g id="icon-8388608"><rect fill="var(--color-icon-background)" stroke="#FF4D82" stroke-width="1.5" x="1" y="1" width="22" height="22" rx="12"></rect><path d="M10.354 17V8.24H13.066C13.586 8.24 14.042 8.348 14.434 8.564C14.826 8.772 15.13 9.064 15.346 9.44C15.562 9.816 15.67 10.256 15.67 10.76C15.67 11.352 15.514 11.86 15.202 12.284C14.898 12.708 14.482 13 13.954 13.16L15.79 17H14.518L12.838 13.28H11.434V17H10.354ZM11.434 12.308H13.066C13.514 12.308 13.874 12.168 14.146 11.888C14.418 11.6 14.554 11.224 14.554 10.76C14.554 10.288 14.418 9.912 14.146 9.632C13.874 9.352 13.514 9.212 13.066 9.212H11.434V12.308Z" fill="var(--color-text)"></path></g></svg><span>default</span></a></li>
+<li><a href="enums/CommandStatus.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><g id="icon-8"><rect fill="var(--color-icon-background)" stroke="var(--color-ts-enum)" stroke-width="1.5" x="1" y="1" width="22" height="22" rx="6"></rect><path d="M9.45 16V7.24H14.49V8.224H10.518V10.936H14.07V11.908H10.518V15.016H14.49V16H9.45Z" fill="var(--color-text)"></path></g></svg><span>Command<wbr/>Status</span></a></li>
+<li><a href="enums/ShareItemType.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-8"></use></svg><span>Share<wbr/>Item<wbr/>Type</span></a></li>
+<li><a href="enums/SharePermission.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-8"></use></svg><span>Share<wbr/>Permission</span></a></li>
+<li><a href="enums/UserProperty.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-8"></use></svg><span>User<wbr/>Property</span></a></li>
+<li><a href="classes/Client.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><g id="icon-128"><rect fill="var(--color-icon-background)" stroke="var(--color-ts-class)" stroke-width="1.5" x="1" y="1" width="22" height="22" rx="6"></rect><path d="M11.898 16.1201C11.098 16.1201 10.466 15.8961 10.002 15.4481C9.53803 15.0001 9.30603 14.3841 9.30603 13.6001V9.64012C9.30603 8.85612 9.53803 8.24012 10.002 7.79212C10.466 7.34412 11.098 7.12012 11.898 7.12012C12.682 7.12012 13.306 7.34812 13.77 7.80412C14.234 8.25212 14.466 8.86412 14.466 9.64012H13.386C13.386 9.14412 13.254 8.76412 12.99 8.50012C12.734 8.22812 12.37 8.09212 11.898 8.09212C11.426 8.09212 11.054 8.22412 10.782 8.48812C10.518 8.75212 10.386 9.13212 10.386 9.62812V13.6001C10.386 14.0961 10.518 14.4801 10.782 14.7521C11.054 15.0161 11.426 15.1481 11.898 15.1481C12.37 15.1481 12.734 15.0161 12.99 14.7521C13.254 14.4801 13.386 14.0961 13.386 13.6001H14.466C14.466 14.3761 14.234 14.9921 13.77 15.4481C13.306 15.8961 12.682 16.1201 11.898 16.1201Z" fill="var(--color-text)"></path></g></svg><span>Client</span></a></li>
+<li><a href="classes/ClientError.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-128"></use></svg><span>Client<wbr/>Error</span></a></li>
+<li><a href="classes/CommandAlreadyExecutedError.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-128"></use></svg><span>Command<wbr/>Already<wbr/>Executed<wbr/>Error</span></a></li>
+<li><a href="classes/DownloadFolderCommand.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-128"></use></svg><span>Download<wbr/>Folder<wbr/>Command</span></a></li>
+<li><a href="classes/Environment.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-128"></use></svg><span>Environment</span></a></li>
+<li><a href="classes/FakeServer.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-128"></use></svg><span>Fake<wbr/>Server</span></a></li>
+<li><a href="classes/File.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-128"></use></svg><span>File</span></a></li>
+<li><a href="classes/FileSystemElement.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-128"></use></svg><span>File<wbr/>System<wbr/>Element</span></a></li>
+<li><a href="classes/FileSystemFolder.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-128"></use></svg><span>File<wbr/>System<wbr/>Folder</span></a></li>
+<li><a href="classes/Folder.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-128"></use></svg><span>Folder</span></a></li>
+<li><a href="classes/GetFilesRecursivelyCommand.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-128"></use></svg><span>Get<wbr/>Files<wbr/>Recursively<wbr/>Command</span></a></li>
+<li><a href="classes/InsufficientPrivilegesError.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-128"></use></svg><span>Insufficient<wbr/>Privileges<wbr/>Error</span></a></li>
+<li><a href="classes/InvalidServiceResponseFormatError.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-128"></use></svg><span>Invalid<wbr/>Service<wbr/>Response<wbr/>Format<wbr/>Error</span></a></li>
+<li><a href="classes/OperationFailedError.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-128"></use></svg><span>Operation<wbr/>Failed<wbr/>Error</span></a></li>
+<li><a href="classes/QueryLimitError.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-128"></use></svg><span>Query<wbr/>Limit<wbr/>Error</span></a></li>
+<li><a href="classes/QueryOffsetError.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-128"></use></svg><span>Query<wbr/>Offset<wbr/>Error</span></a></li>
+<li><a href="classes/RequestResponseLog.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-128"></use></svg><span>Request<wbr/>Response<wbr/>Log</span></a></li>
+<li><a href="classes/RequestResponseLogEntry.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-128"></use></svg><span>Request<wbr/>Response<wbr/>Log<wbr/>Entry</span></a></li>
+<li><a href="classes/Server.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-128"></use></svg><span>Server</span></a></li>
+<li><a href="classes/Share.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-128"></use></svg><span>Share</span></a></li>
+<li><a href="classes/Tag.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-128"></use></svg><span>Tag</span></a></li>
+<li><a href="classes/UploadFilesCommand.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-128"></use></svg><span>Upload<wbr/>Files<wbr/>Command</span></a></li>
+<li><a href="classes/UploadFolderCommand.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-128"></use></svg><span>Upload<wbr/>Folder<wbr/>Command</span></a></li>
+<li><a href="classes/User.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-128"></use></svg><span>User</span></a></li>
+<li><a href="classes/UserAlreadyExistsError.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-128"></use></svg><span>User<wbr/>Already<wbr/>Exists<wbr/>Error</span></a></li>
+<li><a href="classes/UserCreateError.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-128"></use></svg><span>User<wbr/>Create<wbr/>Error</span></a></li>
+<li><a href="classes/UserGroup.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-128"></use></svg><span>User<wbr/>Group</span></a></li>
+<li><a href="classes/UserGroupAlreadyExistsError.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-128"></use></svg><span>User<wbr/>Group<wbr/>Already<wbr/>Exists<wbr/>Error</span></a></li>
+<li><a href="classes/UserGroupDeletionFailedError.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-128"></use></svg><span>User<wbr/>Group<wbr/>Deletion<wbr/>Failed<wbr/>Error</span></a></li>
+<li><a href="classes/UserGroupDoesNotExistError.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-128"></use></svg><span>User<wbr/>Group<wbr/>Does<wbr/>Not<wbr/>Exist<wbr/>Error</span></a></li>
+<li><a href="classes/UserNotFoundError.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-128"></use></svg><span>User<wbr/>Not<wbr/>Found<wbr/>Error</span></a></li>
+<li><a href="classes/UserResendWelcomeEmailError.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-128"></use></svg><span>User<wbr/>Resend<wbr/>Welcome<wbr/>Email<wbr/>Error</span></a></li>
+<li><a href="classes/UserUpdateError.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-128"></use></svg><span>User<wbr/>Update<wbr/>Error</span></a></li>
+<li><a href="interfaces/CommandResultMetaData.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><g id="icon-256"><rect fill="var(--color-icon-background)" stroke="var(--color-ts-interface)" stroke-width="1.5" x="1" y="1" width="22" height="22" rx="6"></rect><path d="M9.51 16V15.016H11.298V8.224H9.51V7.24H14.19V8.224H12.402V15.016H14.19V16H9.51Z" fill="var(--color-text)"></path></g></svg><span>Command<wbr/>Result<wbr/>Meta<wbr/>Data</span></a></li>
+<li><a href="interfaces/DownloadFolderCommandOptions.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg><span>Download<wbr/>Folder<wbr/>Command<wbr/>Options</span></a></li>
+<li><a href="interfaces/FolderGetFilesOptions.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg><span>Folder<wbr/>Get<wbr/>Files<wbr/>Options</span></a></li>
+<li><a href="interfaces/GetFilesRecursivelyCommandOptions.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg><span>Get<wbr/>Files<wbr/>Recursively<wbr/>Command<wbr/>Options</span></a></li>
+<li><a href="interfaces/ICreateShare.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg><span>ICreate<wbr/>Share</span></a></li>
+<li><a href="interfaces/IFileNameFormats.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg><span>IFile<wbr/>Name<wbr/>Formats</span></a></li>
+<li><a href="interfaces/IQuota.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg><span>IQuota</span></a></li>
+<li><a href="interfaces/IServerOptions.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg><span>IServer<wbr/>Options</span></a></li>
+<li><a href="interfaces/ISysBasicData.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg><span>ISys<wbr/>Basic<wbr/>Data</span></a></li>
+<li><a href="interfaces/ISysInfoNextcloud.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg><span>ISys<wbr/>Info<wbr/>Nextcloud</span></a></li>
+<li><a href="interfaces/ISysInfoNextcloudClient.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg><span>ISys<wbr/>Info<wbr/>Nextcloud<wbr/>Client</span></a></li>
+<li><a href="interfaces/ISystemInfo.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg><span>ISystem<wbr/>Info</span></a></li>
+<li><a href="interfaces/IUpsertUserOptions.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg><span>IUpsert<wbr/>User<wbr/>Options</span></a></li>
+<li><a href="interfaces/IUpsertUserReport.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg><span>IUpsert<wbr/>User<wbr/>Report</span></a></li>
+<li><a href="interfaces/IUserOptionsQuota.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg><span>IUser<wbr/>Options<wbr/>Quota</span></a></li>
+<li><a href="interfaces/IUserPropertyChange.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg><span>IUser<wbr/>Property<wbr/>Change</span></a></li>
+<li><a href="interfaces/IUserQuotaUserFriendly.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg><span>IUser<wbr/>Quota<wbr/>User<wbr/>Friendly</span></a></li>
+<li><a href="interfaces/SourceTargetFileNames.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg><span>Source<wbr/>Target<wbr/>File<wbr/>Names</span></a></li>
+<li><a href="interfaces/UploadFilesCommandOptions.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg><span>Upload<wbr/>Files<wbr/>Command<wbr/>Options</span></a></li>
+<li><a href="interfaces/UploadFolderCommandOptions.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg><span>Upload<wbr/>Folder<wbr/>Command<wbr/>Options</span></a></li></ul></nav></div></div></div>
+<div class="tsd-generator">
+<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p></div>
+<div class="overlay"></div></body></html>

@@ -47,7 +47,7 @@ describe("01-NEXCLOUD-NODE-CLIENT", function () {
             // tslint:disable-next-line:no-unused-expression
             new Client();
             expect(false, "expect an exception").to.be.equal(true);
-        } catch (e) {
+        } catch (e: any) {
             // should fail, if env is not set correctly
             expect(e).to.have.property("message");
             expect(e).to.have.property("code");
@@ -76,7 +76,7 @@ describe("01-NEXCLOUD-NODE-CLIENT", function () {
         try {
             // tslint:disable-next-line:no-unused-expression
             new Client();
-        } catch (e) {
+        } catch (e: any) {
             expect(e.message, "expect an exception").to.be.equal("expect no exception");
         } finally {
             restore();
@@ -94,7 +94,7 @@ describe("01-NEXCLOUD-NODE-CLIENT", function () {
         try {
             folder = await client.getFolder(dirName);
             errorOccurred = false;
-        } catch (e) {
+        } catch (e: any) {
             errorOccurred = true;
         }
 
@@ -112,7 +112,7 @@ describe("01-NEXCLOUD-NODE-CLIENT", function () {
         try {
             folder = await client.createFolder(dirName);
             errorOccurred = false;
-        } catch (e) {
+        } catch (e: any) {
             errorOccurred = true;
         }
 
@@ -122,7 +122,7 @@ describe("01-NEXCLOUD-NODE-CLIENT", function () {
         try {
             folder = await client.getFolder(dirName);
             errorOccurred = false;
-        } catch (e) {
+        } catch (e: any) {
             errorOccurred = true;
         }
 
@@ -133,14 +133,14 @@ describe("01-NEXCLOUD-NODE-CLIENT", function () {
         try {
             deleteResponse = await client.deleteFolder(dirName);
             errorOccurred = false;
-        } catch (e) {
+        } catch (e: any) {
             errorOccurred = true;
         }
 
         try {
             folder = await client.getFolder(dirName);
             errorOccurred = false;
-        } catch (e) {
+        } catch (e: any) {
             errorOccurred = true;
         }
 
@@ -159,7 +159,7 @@ describe("01-NEXCLOUD-NODE-CLIENT", function () {
         try {
             folder = await client.getFolder(dirName);
             errorOccurred = false;
-        } catch (e) {
+        } catch (e: any) {
             errorOccurred = true;
         }
 
@@ -177,7 +177,7 @@ describe("01-NEXCLOUD-NODE-CLIENT", function () {
         try {
             folder = await client.createFolder(dirName);
             errorOccurred = false;
-        } catch (e) {
+        } catch (e: any) {
             errorOccurred = true;
         }
 
@@ -195,7 +195,7 @@ describe("01-NEXCLOUD-NODE-CLIENT", function () {
         try {
             file = await client.createFile(fileName, Buffer.from("this is a test text"));
             errorOccurred = false;
-        } catch (e) {
+        } catch (e: any) {
             errorOccurred = true;
         }
 
@@ -214,7 +214,7 @@ describe("01-NEXCLOUD-NODE-CLIENT", function () {
         await folder.delete();
         try {
             await file!.getFolder();
-        } catch (e) {
+        } catch (e: any) {
             expect(e.message, "expect an exception").to.be.equal("Error, the folder of the file does not exist anymore");
         }
 
@@ -456,7 +456,7 @@ describe("01-NEXCLOUD-NODE-CLIENT", function () {
         try {
             // tslint:disable-next-line:no-unused-expression
             new Client(ncserver);
-        } catch (e) {
+        } catch (e: any) {
             expect(e).to.have.property("message");
             expect(e).to.have.property("code");
             expect(e.code).to.be.equal("ERR_INVALID_NEXTCLOUD_WEBDAV_URL");
@@ -477,7 +477,7 @@ describe("01-NEXCLOUD-NODE-CLIENT", function () {
         try {
             // tslint:disable-next-line:no-unused-expression
             new Client(ncserver);
-        } catch (e) {
+        } catch (e: any) {
             expect(e, "No exception expected").to.be.equal("");
         }
 
@@ -485,7 +485,7 @@ describe("01-NEXCLOUD-NODE-CLIENT", function () {
         try {
             // tslint:disable-next-line:no-unused-expression
             new Client(ncserver);
-        } catch (e) {
+        } catch (e: any) {
             expect(e, "No exception expected").to.be.equal("");
         }
     });
@@ -518,7 +518,7 @@ describe("01-NEXCLOUD-NODE-CLIENT", function () {
 
         try {
             await client.deleteFile("fileDoesNotExist.txt");
-        } catch (e) {
+        } catch (e: any) {
             expect(e, "exception expected").not.to.be.equal("");
         }
 
@@ -565,7 +565,7 @@ describe("01-NEXCLOUD-NODE-CLIENT", function () {
         try {
             // tslint:disable-next-line:no-unused-expression
             await baseDir.createFile(fileName1, Buffer.from("File 1"));
-        } catch (e) {
+        } catch (e: any) {
             expect(e).to.have.property("message");
             expect(e).to.have.property("code");
             expect(e.code).to.be.equal("ERR_INVALID_CHAR_IN_FILE_NAME");
@@ -589,7 +589,7 @@ describe("01-NEXCLOUD-NODE-CLIENT", function () {
         try {
             // tslint:disable-next-line:no-unused-expression
             await baseDir.id;
-        } catch (e) {
+        } catch (e: any) {
             expect(e).to.have.property("message");
             expect(e).to.have.property("code");
             expect(e.code).to.be.equal("ERR_FOLDER_NOT_EXISTING");
@@ -634,7 +634,7 @@ describe("01-NEXCLOUD-NODE-CLIENT", function () {
             try {
                 // tslint:disable-next-line:no-unused-expression
                 file.id;
-            } catch (e) {
+            } catch (e: any) {
                 expect(e).to.have.property("message");
                 expect(e).to.have.property("code");
                 expect(e.code).to.be.equal("ERR_FILE_NOT_EXISTING");
@@ -662,7 +662,7 @@ describe("01-NEXCLOUD-NODE-CLIENT", function () {
         try {
             new EnvironmentVcapServices("").getServer();
             expect(true, "expect no exception").to.be.equal(false);
-        } catch (e) {
+        } catch (e: any) {
             expect(e).to.have.property("message");
             expect(e).to.have.property("code");
             expect(e.code).to.be.equal("ERR_VCAP_SERVICES_NOT_FOUND");
@@ -685,7 +685,7 @@ describe("01-NEXCLOUD-NODE-CLIENT", function () {
         try {
             new EnvironmentVcapServices("").getServer();
             expect(true, "expect no exception").to.be.equal(false);
-        } catch (e) {
+        } catch (e: any) {
             expect(e).to.have.property("message");
             expect(e).to.have.property("code");
             expect(e.code).to.be.equal("ERR_VCAP_SERVICES_NOT_FOUND");
@@ -710,7 +710,7 @@ describe("01-NEXCLOUD-NODE-CLIENT", function () {
         try {
             new EnvironmentVcapServices("").getServer();
             expect(true, "expect no exception").to.be.equal(false);
-        } catch (e) {
+        } catch (e: any) {
             expect(e).to.have.property("message");
             expect(e).to.have.property("code");
             expect(e.code).to.be.equal("ERR_VCAP_SERVICES_PASSWORD_NOT_DEFINED");
@@ -735,7 +735,7 @@ describe("01-NEXCLOUD-NODE-CLIENT", function () {
         try {
             new EnvironmentVcapServices("").getServer();
             expect(true, "expect no exception").to.be.equal(false);
-        } catch (e) {
+        } catch (e: any) {
             expect(e).to.have.property("message");
             expect(e).to.have.property("code");
             expect(e.code).to.be.equal("ERR_VCAP_SERVICES_USERNAME_NOT_DEFINED");
@@ -760,7 +760,7 @@ describe("01-NEXCLOUD-NODE-CLIENT", function () {
 
         try {
             new EnvironmentVcapServices("").getServer();
-        } catch (e) {
+        } catch (e: any) {
             expect(false, "expect no exception: " + e.message).to.be.equal(true);
         } finally {
             restore();
@@ -782,7 +782,7 @@ describe("01-NEXCLOUD-NODE-CLIENT", function () {
 
         try {
             new EnvironmentVcapServices("").getServer();
-        } catch (e) {
+        } catch (e: any) {
             expect(e).to.have.property("message");
             expect(e).to.have.property("code");
             expect(e.code).to.be.equal("ERR_VCAP_SERVICES_URL_NOT_DEFINED");
@@ -801,7 +801,7 @@ describe("01-NEXCLOUD-NODE-CLIENT", function () {
 
         try {
             Environment.getNextcloudUrl();
-        } catch (e) {
+        } catch (e: any) {
             expect(e).to.have.property("message");
             expect(e).to.have.property("code");
             expect(e.code).to.be.equal("ERR_NEXTCLOUD_URL_NOT_DEFINED");
@@ -817,7 +817,7 @@ describe("01-NEXCLOUD-NODE-CLIENT", function () {
 
         try {
             Environment.getUserName();
-        } catch (e) {
+        } catch (e: any) {
             expect(e).to.have.property("message");
             expect(e).to.have.property("code");
             expect(e.code).to.be.equal("ERR_NEXTCLOUD_USERNAME_NOT_DEFINED");
@@ -833,7 +833,7 @@ describe("01-NEXCLOUD-NODE-CLIENT", function () {
 
         try {
             Environment.getPassword();
-        } catch (e) {
+        } catch (e: any) {
             expect(e).to.have.property("message");
             expect(e).to.have.property("code");
             expect(e.code).to.be.equal("ERR_NEXTCLOUD_PASSWORD_NOT_DEFINED");
@@ -851,7 +851,7 @@ describe("01-NEXCLOUD-NODE-CLIENT", function () {
             Environment.getNextcloudUrl();
             Environment.getPassword();
             Environment.getUserName();
-        } catch (e) {
+        } catch (e: any) {
             expect(false, "do not expect an exception " + e.message).to.be.equal(true);
         } finally {
             restore();
@@ -869,7 +869,7 @@ describe("01-NEXCLOUD-NODE-CLIENT", function () {
             Environment.getPassword();
             Environment.getUserName();
             Environment.getRecordingActiveIndicator();
-        } catch (e) {
+        } catch (e: any) {
             expect(false, "do not expect an exception " + e.message).to.be.equal(true);
         } finally {
             restore();
@@ -887,7 +887,7 @@ describe("01-NEXCLOUD-NODE-CLIENT", function () {
             Environment.getPassword();
             Environment.getUserName();
             Environment.getRecordingActiveIndicator();
-        } catch (e) {
+        } catch (e: any) {
             expect(false, "do not expect an exception " + e.message).to.be.equal(true);
         } finally {
             restore();
@@ -905,7 +905,7 @@ describe("01-NEXCLOUD-NODE-CLIENT", function () {
             Environment.getPassword();
             Environment.getUserName();
             Environment.getRecordingActiveIndicator();
-        } catch (e) {
+        } catch (e: any) {
             expect(false, "do not expect an exception " + e.message).to.be.equal(true);
         } finally {
             restore();
@@ -923,7 +923,7 @@ describe("01-NEXCLOUD-NODE-CLIENT", function () {
             Environment.getPassword();
             Environment.getUserName();
             Environment.getRecordingActiveIndicator();
-        } catch (e) {
+        } catch (e: any) {
             expect(false, "do not expect an exception " + e.message).to.be.equal(true);
         } finally {
             restore();
@@ -971,7 +971,7 @@ describe("01-NEXCLOUD-NODE-CLIENT", function () {
         try {
             q = await lclient.getFile("some dummy name");
             // expect(true, "expect an exception").to.be.equal(false);
-        } catch (e) {
+        } catch (e: any) {
             expect(true, "expect an exception").to.be.equal(e.message);
         }
 
@@ -982,7 +982,7 @@ describe("01-NEXCLOUD-NODE-CLIENT", function () {
 
         try {
             await client.deleteFolder(dirName);
-        } catch (e) {
+        } catch (e: any) {
             expect(true, "expect folder no exception").to.be.equal(false);
         }
 
@@ -1011,7 +1011,7 @@ describe("01-NEXCLOUD-NODE-CLIENT", function () {
         let folder: Folder;
         try {
             folder = await lclient.moveFolder(sourceDirName, targetDirName);
-        } catch (e) {
+        } catch (e: any) {
             expect(true, "expect an exception").to.be.equal(true);
         }
         expect(folder!, "expect an folder to be undefined").to.be.equal(undefined);
@@ -1054,7 +1054,7 @@ describe("01-NEXCLOUD-NODE-CLIENT", function () {
         let folder: Folder;
         try {
             folder = await lclient.moveFolder(sourceDirName, targetDirName);
-        } catch (e) {
+        } catch (e: any) {
             expect(true, "expect an exception").to.be.equal(true);
         }
         expect(folder!, "expect an folder to be undefined").to.be.equal(undefined);
@@ -1074,7 +1074,7 @@ describe("01-NEXCLOUD-NODE-CLIENT", function () {
 
         try {
             await file2?.getContent();
-        } catch (e) {
+        } catch (e: any) {
             expect(e.message, "expect an exception").to.be.equal("HTTP response status 404 not expected. Expected status: 200 - status text: Not Found");
         }
 
@@ -1087,7 +1087,7 @@ describe("01-NEXCLOUD-NODE-CLIENT", function () {
         try {
             await fs.getFakeHttpResponse("", requestInit, [201], { description: "get response without method" });
             expect(true, "expect an exception").to.be.equal(false);
-        } catch (e) {
+        } catch (e: any) {
             expect(e.message).to.be.equal("error providing fake http response. No fake response available");
         }
 
@@ -1109,7 +1109,7 @@ describe("01-NEXCLOUD-NODE-CLIENT", function () {
         try {
             await fs.getFakeHttpResponse("", requestInit, [201], { description: "get response without method" });
 
-        } catch (e) {
+        } catch (e: any) {
             expect(true, "expect no exception").to.be.equal(e.message);
         }
 
@@ -1135,7 +1135,7 @@ describe("01-NEXCLOUD-NODE-CLIENT", function () {
         try {
             await lclient.getFileId("some/url");
             expect(true, "expect an exception").to.be.equal(false);
-        } catch (e) {
+        } catch (e: any) {
             expect(true, "expect an exception").to.be.equal(true);
         }
 
@@ -1187,7 +1187,7 @@ describe("01-NEXCLOUD-NODE-CLIENT", function () {
         try {
             await lclient.createFolder("/x");
             expect(true, "expect an exception").to.be.equal(false);
-        } catch (e) {
+        } catch (e: any) {
             expect(true, "expect an exception").to.be.equal(true);
         }
 
@@ -1208,7 +1208,7 @@ describe("01-NEXCLOUD-NODE-CLIENT", function () {
         try {
             await file!.move(targetFileName);
             expect(true, "expect an exception").to.be.equal(false);
-        } catch (e) {
+        } catch (e: any) {
             expect(true, "expect an exception").to.be.equal(true);
         }
 
@@ -1247,7 +1247,7 @@ describe("01-NEXCLOUD-NODE-CLIENT", function () {
         let q;
         try {
             q = await lclient.moveFile("from", "to");
-        } catch (e) {
+        } catch (e: any) {
             expect(true, "expect an exception").to.be.equal(true);
         }
         expect(q).to.be.equal(undefined);
@@ -1271,7 +1271,7 @@ describe("01-NEXCLOUD-NODE-CLIENT", function () {
         try {
             await lclient.getQuota();
             expect(true, "expect an exception").to.be.equal(false);
-        } catch (e) {
+        } catch (e: any) {
             expect(e.message, "expect an exception").to.be.equal("Response content type expected");
         }
 
@@ -1297,7 +1297,7 @@ describe("01-NEXCLOUD-NODE-CLIENT", function () {
         try {
             await lclient.getQuota();
             expect(true, "expect an exception").to.be.equal(false);
-        } catch (e) {
+        } catch (e: any) {
             expect(e.message, "expect an exception").to.be.equal("XML response content type expected");
         }
 
@@ -1323,7 +1323,7 @@ describe("01-NEXCLOUD-NODE-CLIENT", function () {
         try {
             await lclient.getQuota();
             expect(true, "expect an exception").to.be.equal(false);
-        } catch (e) {
+        } catch (e: any) {
             expect(e.message, "expect an exception").to.be.equal("The response is not valid XML: NO XML");
         }
 
@@ -1349,7 +1349,7 @@ describe("01-NEXCLOUD-NODE-CLIENT", function () {
         try {
             await lclient.getQuota();
             expect(true, "expect an exception").to.be.equal(false);
-        } catch (e) {
+        } catch (e: any) {
             expect(e.message, "expect an exception").to.be.equal("The mulitstatus response must have a href");
         }
 
@@ -1375,7 +1375,7 @@ describe("01-NEXCLOUD-NODE-CLIENT", function () {
         try {
             await lclient.getQuota();
             expect(true, "expect an exception").to.be.equal(false);
-        } catch (e) {
+        } catch (e: any) {
             expect(e.message, "expect an exception").to.be.equal(`The mulitstatus response must have a "propstat" container`);
         }
 
@@ -1401,7 +1401,7 @@ describe("01-NEXCLOUD-NODE-CLIENT", function () {
         try {
             await lclient.getQuota();
             expect(true, "expect an exception").to.be.equal(false);
-        } catch (e) {
+        } catch (e: any) {
             expect(e.message, "expect an exception").to.be.equal(`The propstat must have a "status"`);
         }
 
@@ -1427,7 +1427,7 @@ describe("01-NEXCLOUD-NODE-CLIENT", function () {
         try {
             await lclient.getQuota();
             expect(true, "expect an exception").to.be.equal(false);
-        } catch (e) {
+        } catch (e: any) {
             expect(e.message, "expect an exception").to.be.equal(`The propstat must have a "prop"`);
         }
 
@@ -1454,7 +1454,7 @@ describe("01-NEXCLOUD-NODE-CLIENT", function () {
         try {
             await lclient.getFolder("ThisFolderDoesNotExists");
             // returns null
-        } catch (e) {
+        } catch (e: any) {
             expect(e.message, "expect no exception").to.be.equal(`no exception expected"`);
         }
 
@@ -1496,7 +1496,7 @@ describe("01-NEXCLOUD-NODE-CLIENT", function () {
         try {
             file = await lclient.createFile(fileName, Buffer.from("this is a test text"));
             errorOccurred = false;
-        } catch (e) {
+        } catch (e: any) {
             errorOccurred = true;
             expect(e.message, "expect no exception").to.be.equal(`Error creating file, file name "/file72.txt"`);
         }
@@ -1522,37 +1522,37 @@ describe("01-NEXCLOUD-NODE-CLIENT", function () {
             // tslint:disable-next-line:no-unused-expression
             arr.push(file!.baseName);
             // tslint:disable-next-line:no-empty
-        } catch (e) { }
+        } catch (e: any) { }
 
         try {
             // tslint:disable-next-line:no-unused-expression
             arr.push(file!.name);
             // tslint:disable-next-line:no-empty
-        } catch (e) { }
+        } catch (e: any) { }
 
         try {
             // tslint:disable-next-line:no-unused-expression
             arr.push(file!.id);
             // tslint:disable-next-line:no-empty
-        } catch (e) { }
+        } catch (e: any) { }
 
         try {
             // tslint:disable-next-line:no-unused-expression
             arr.push(file!.lastmod);
             // tslint:disable-next-line:no-empty
-        } catch (e) { }
+        } catch (e: any) { }
 
         try {
             // tslint:disable-next-line:no-unused-expression
             arr.push(file!.mime);
             // tslint:disable-next-line:no-empty
-        } catch (e) { }
+        } catch (e: any) { }
 
         try {
             // tslint:disable-next-line:no-unused-expression
             arr.push(file!.size);
             // tslint:disable-next-line:no-empty
-        } catch (e) { }
+        } catch (e: any) { }
 
         expect(arr.length, "expect that no property is accessible").to.be.equal(0);
         await baseDir.delete();
@@ -1570,25 +1570,25 @@ describe("01-NEXCLOUD-NODE-CLIENT", function () {
             // tslint:disable-next-line:no-unused-expression
             arr.push(baseDir.baseName);
             // tslint:disable-next-line:no-empty
-        } catch (e) { }
+        } catch (e: any) { }
 
         try {
             // tslint:disable-next-line:no-unused-expression
             arr.push(baseDir.name);
             // tslint:disable-next-line:no-empty
-        } catch (e) { }
+        } catch (e: any) { }
 
         try {
             // tslint:disable-next-line:no-unused-expression
             arr.push(baseDir.id);
             // tslint:disable-next-line:no-empty
-        } catch (e) { }
+        } catch (e: any) { }
 
         try {
             // tslint:disable-next-line:no-unused-expression
             arr.push(baseDir.lastmod);
             // tslint:disable-next-line:no-empty
-        } catch (e) { }
+        } catch (e: any) { }
 
         expect(arr.length, "expect that no property is accessible").to.be.equal(0);
         await baseDir.delete();
@@ -1613,7 +1613,7 @@ describe("01-NEXCLOUD-NODE-CLIENT", function () {
         let q;
         try {
             q = await lclient.moveFile("from", "to");
-        } catch (e) {
+        } catch (e: any) {
             expect(true, "expect an exception").to.be.equal(true);
         }
         expect(q).to.be.equal(undefined);
@@ -1632,7 +1632,7 @@ describe("01-NEXCLOUD-NODE-CLIENT", function () {
             const c: Client = new Client();
             o = JSON.parse(JSON.stringify(c));
             // console.log(o);
-        } catch (e) {
+        } catch (e: any) {
             error = e;
         } finally {
             restore();
@@ -1655,7 +1655,7 @@ describe("01-NEXCLOUD-NODE-CLIENT", function () {
             const c: Client = new Client();
             o = JSON.parse(JSON.stringify(c));
             // console.log(o);
-        } catch (e) {
+        } catch (e: any) {
             error = e;
         } finally {
             restore();
@@ -1678,7 +1678,7 @@ describe("01-NEXCLOUD-NODE-CLIENT", function () {
             const c: Client = new Client();
             o = JSON.parse(JSON.stringify(c));
             // console.log(o);
-        } catch (e) {
+        } catch (e: any) {
             error = e;
         } finally {
             restore();
@@ -1701,7 +1701,7 @@ describe("01-NEXCLOUD-NODE-CLIENT", function () {
             const c: Client = new Client();
             o = JSON.parse(JSON.stringify(c));
             // console.log(o);
-        } catch (e) {
+        } catch (e: any) {
             error = e;
         } finally {
             restore();

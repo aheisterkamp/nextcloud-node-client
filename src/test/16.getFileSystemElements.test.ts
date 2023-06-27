@@ -72,7 +72,7 @@ describe("16-NEXCLOUD-NODE-CLIENT-GET-FILESYSTEMELEMENTS", function () {
 
         try {
             fse = await client.getFileSystemElementByTags([tag1, tag2, tag3]);
-        } catch (e) {
+        } catch (e: any) {
             exception = e;
         }
         expect(exception).to.be.equal(null);
@@ -85,7 +85,7 @@ describe("16-NEXCLOUD-NODE-CLIENT-GET-FILESYSTEMELEMENTS", function () {
 
         try {
             fse = await client.getFileSystemElementByTags([tag1, tag2]);
-        } catch (e) {
+        } catch (e: any) {
             exception = e;
         }
         expect(exception).to.be.equal(null);
@@ -103,7 +103,7 @@ describe("16-NEXCLOUD-NODE-CLIENT-GET-FILESYSTEMELEMENTS", function () {
 
         try {
             fse = await client.getFileSystemElementByTags([tag1]);
-        } catch (e) {
+        } catch (e: any) {
             exception = e;
         }
         expect(exception).to.be.equal(null);
@@ -125,7 +125,7 @@ describe("16-NEXCLOUD-NODE-CLIENT-GET-FILESYSTEMELEMENTS", function () {
 
         try {
             fse = await client.getFileSystemElementByTags([tag4]);
-        } catch (e) {
+        } catch (e: any) {
             exception = e;
         }
         expect(exception).to.be.equal(null);
@@ -134,7 +134,7 @@ describe("16-NEXCLOUD-NODE-CLIENT-GET-FILESYSTEMELEMENTS", function () {
 
         try {
             fse = await client.getFileSystemElementByTags([]);
-        } catch (e) {
+        } catch (e: any) {
             exception = e;
         }
         expect(exception).not.to.be.equal(null);
