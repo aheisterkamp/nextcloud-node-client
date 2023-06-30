@@ -833,7 +833,7 @@ export default class Client {
     }
 
     try {
-      const stat: IStat = await this.stat(folderName);
+      const stat: IStat = await this.stat(folderName, true);
       log.debug(": SUCCESS!!");
       if (stat.type !== "file") {
         return new Folder(this, stat.filename.replace(/\\/g, "/"), stat.basename, stat.lastmod, stat.fileid);
@@ -2976,7 +2976,7 @@ export default class Client {
     }
   }
 
-  private async stat(fileName: string): Promise<IStat> {
+  private async stat(fileName: string, folderSearch: boolean = false): Promise<IStat> {
     const url: string = this.webDAVUrl + fileName;
     log.debug("stat ", url);
 
@@ -3031,6 +3031,9 @@ export default class Client {
 
       if (prop.getcontenttype) {
         resultStat.mime = prop.getcontenttype;
+      }
+      if (resultStat.type === "directory" && folderSearch) {
+        break
       }
     }
 
