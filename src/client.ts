@@ -599,13 +599,12 @@ export default class Client {
 
     const properties: any[] = await this.getPropertiesFromWebDAVMultistatusResponse(response, "");
 
-    // validate the properties
-    const { error, value } = schema.validate(properties);
-    if (error) {
-      throw new ClientError(`Error get folder contents - folder name "${folderName}" error ${error.message};`, "INVALID");
-    }
-
     for (const prop of properties) {
+      // validate the properties
+      const { error, value } = schema.validate(prop, { allowUnknown: true });
+      if (error) {
+        throw new ClientError(`Error get folder contents - folder name "${folderName}" error ${error.message};`, "INVALID");
+      }
       // eslint-disable-next-line @typescript-eslint/no-unsafe-call, no-underscore-dangle, @typescript-eslint/restrict-plus-operands
       let fileName = decodeURI(prop._href.substr(prop._href.indexOf(Client.webDavUrlPath) + 18));
       if (fileName.endsWith("/")) {
