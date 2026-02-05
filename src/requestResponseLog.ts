@@ -1,112 +1,112 @@
+import { promises as fsPromises } from "fs"
+import path from "path"
+import requestResponseLogEntry from "./requestResponseLogEntry"
+import Logger from "./logger"
+import { XMLParser, XMLValidator } from "fast-xml-parser"
 
-import parser from "fast-xml-parser";
-import { promises as fsPromises } from "fs";
-import path from "path";
-import requestResponseLogEntry from "./requestResponseLogEntry";
-import Logger from "./logger";
-const log: Logger = new Logger();
+const log: Logger = new Logger()
 
 export default class RequestResponseLog {
-    public static readonly defaultLogDirectory: string = "RequestResponseLog/";
+    public static readonly defaultLogDirectory: string = "RequestResponseLog/"
 
     public static deleteInstance(): void {
-        RequestResponseLog.log = null;
+        RequestResponseLog.log = null
     }
     public static getInstance(): RequestResponseLog {
         if (!RequestResponseLog.log) {
-            RequestResponseLog.log = new RequestResponseLog();
+            RequestResponseLog.log = new RequestResponseLog()
         }
-        return RequestResponseLog.log;
+        return RequestResponseLog.log
     }
-    private static log: RequestResponseLog | null = null;
+    private static log: RequestResponseLog | null = null
 
-    public baseDirectory: string = RequestResponseLog.defaultLogDirectory;
-    private context: string;
-    private entries: requestResponseLogEntry[] = [];
+    public baseDirectory: string = RequestResponseLog.defaultLogDirectory
+    private context: string
+    private entries: requestResponseLogEntry[] = []
     private constructor() {
-        this.baseDirectory = RequestResponseLog.defaultLogDirectory;
-        this.context = "";
+        this.baseDirectory = RequestResponseLog.defaultLogDirectory
+        this.context = ""
     }
 
     public async addEntry(logEntry: requestResponseLogEntry) {
-        log.debug("addEntry");
+        log.debug("addEntry")
         if (!this.context) {
-            log.debug("Error while recording, context not set");
-            throw new Error("Error while recording, context not set");
+            log.debug("Error while recording, context not set")
+            throw new Error("Error while recording, context not set")
         }
 
         if (logEntry.response.body && logEntry.response.contentType) {
             if (logEntry.response.contentType.indexOf("application/xml") !== -1) {
-                logEntry.response.jsonBody = this.xmlToJson(logEntry.response.body);
+                logEntry.response.jsonBody = this.xmlToJson(logEntry.response.body)
             }
             if (logEntry.response.contentType.indexOf("application/json") !== -1) {
-                logEntry.response.jsonBody = JSON.parse(logEntry.response.body);
+                logEntry.response.jsonBody = JSON.parse(logEntry.response.body)
             }
         }
 
         if (logEntry.request.body) {
             if (logEntry.request.body.indexOf && logEntry.request.body.indexOf("<?xml version") !== -1) {
-                logEntry.request.jsonBody = this.xmlToJson(logEntry.request.body);
+                logEntry.request.jsonBody = this.xmlToJson(logEntry.request.body)
             }
         }
 
-        this.entries.push(logEntry);
-        await fsPromises.writeFile(this.getFileName(), JSON.stringify(this.entries, null, 4));
+        this.entries.push(logEntry)
+        await fsPromises.writeFile(this.getFileName(), JSON.stringify(this.entries, null, 4))
     }
 
     public async getEntries(): Promise<requestResponseLogEntry[]> {
-        log.debug("getEntries");
+        log.debug("getEntries")
         if (!this.context) {
-            log.debug("Error while getting recording request, context not set");
-            throw new Error("Error while getting recording request, context not set");
+            log.debug("Error while getting recording request, context not set")
+            throw new Error("Error while getting recording request, context not set")
         }
 
-        const entries: string = await fsPromises.readFile(this.getFileName(), { encoding: "utf8" });
-        return JSON.parse(entries);
+        const entries: string = await fsPromises.readFile(this.getFileName(), { encoding: "utf8" })
+        return JSON.parse(entries)
     }
 
     public async setContext(context: string) {
-        log.debug("setContext");
-        const newContext: string = context.replace(/ |:|\./g, "_");
+        log.debug("setContext")
+        const newContext: string = context.replace(/ |:|\./g, "_")
         // if (this.context !== newContext) {
-        this.context = newContext;
-        this.entries = [];
+        this.context = newContext
+        this.entries = []
         // }
         // create the directory
-        await this.assertDirectory(this.getFileName());
+        await this.assertDirectory(this.getFileName())
     }
 
     public getFileName(): string {
-        return `${this.baseDirectory}${this.context}.json`;
+        return `${this.baseDirectory}${this.context}.json`
     }
 
     private xmlToJson(xml: string): any {
-        if (parser.XMLValidator.validate(xml) === true) {
-            const parser1 = new parser.XMLParser({ removeNSPrefix: true })
-            return parser1.parse(xml);
+        if (XMLValidator.validate(xml) === true) {
+            const parser1 = new XMLParser({ removeNSPrefix: true })
+            return parser1.parse(xml)
         }
-        return { info: "invalid xml" };
+        return { info: "invalid xml" }
     }
 
     private async assertDirectory(filename: string): Promise<void> {
-        const directory = path.dirname(filename);
-        const pathArray: string[] = directory.split("/");
-        let p: string = "";
+        const directory = path.dirname(filename)
+        const pathArray: string[] = directory.split("/")
+        let p: string = ""
 
         for (const dir of pathArray) {
             if (p === "") {
-                p = dir;
+                p = dir
             } else {
-                p = p + "/" + dir;
+                p = p + "/" + dir
             }
 
             try {
-                await fsPromises.mkdir(p);
-                  /* istanbul ignore next */
-                  log.debug(`directory "${p}" created`);
+                await fsPromises.mkdir(p)
+                /* istanbul ignore next */
+                log.debug(`directory "${p}" created`)
             } catch (e: any) {
-                  /* istanbul ignore next */
-                  log.debug(`directory "${p}" already exists`);
+                /* istanbul ignore next */
+                log.debug(`directory "${p}" already exists`)
             }
         }
     }
