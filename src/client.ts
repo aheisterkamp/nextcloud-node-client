@@ -43,7 +43,7 @@ import UserGroup from "./userGroup"
 import User, { IUserOptions, IUserOptionsQuota, IUserQuotaUserFriendly, UserProperty } from "./user"
 import Logger from "./logger"
 import { isNumber } from "util"
-import { XMLParser, XMLValidator } from "fast-xml-parser"
+import { X2jOptions, XMLParser, XMLValidator } from "fast-xml-parser"
 const log: Logger = new Logger()
 
 export {
@@ -3063,8 +3063,11 @@ export default class Client {
         if (XMLValidator.validate(xmlBody) !== true) {
             throw new ClientError(`The response is not valid XML: ${xmlBody}`, "ERR_RESPONSE_NOT_INVALID_XML")
         }
-        const options: any = {
-            removeNSPrefix: true
+        const options: X2jOptions = {
+            removeNSPrefix: true,
+            processEntities: {
+                maxTotalExpansions: 10000
+            }
         }
         const parser1 = new XMLParser(options)
         const body: any = parser1.parse(xmlBody)
