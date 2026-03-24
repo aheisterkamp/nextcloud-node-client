@@ -82,7 +82,7 @@ export default class RequestResponseLog {
 
     private xmlToJson(xml: string): any {
         if (XMLValidator.validate(xml) === true) {
-            const parser1 = new XMLParser({ removeNSPrefix: true })
+            const parser1 = new XMLParser({ removeNSPrefix: true, processEntities: false })
             return parser1.parse(xml)
         }
         return { info: "invalid xml" }

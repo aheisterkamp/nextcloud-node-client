@@ -3065,9 +3065,7 @@ export default class Client {
         }
         const options: X2jOptions = {
             removeNSPrefix: true,
-            processEntities: {
-                maxTotalExpansions: 10000
-            }
+            processEntities: false
         }
         const parser1 = new XMLParser(options)
         const body: any = parser1.parse(xmlBody)
